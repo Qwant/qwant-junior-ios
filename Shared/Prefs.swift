@@ -34,6 +34,8 @@ public struct PrefsKeys {
     public static let CustomWallpaperPrefKey = "customWallpaperPrefKey"
     public static let GoogleTopSiteAddedKey = "googleTopSiteAddedKey"
     public static let GoogleTopSiteHideKey = "googleTopSiteHideKey"
+    public static let QwantTopSiteAddedKey = "qwantTopSiteAddedKey"
+    public static let QwantTopSiteHideKey = "qwantTopSiteHideKey"
     public static let SessionCount = "sessionCount"
     public static let InstallType = "InstallType"
     public static let KeyCurrentInstallVersion = "KeyCurrentInstallVersion"

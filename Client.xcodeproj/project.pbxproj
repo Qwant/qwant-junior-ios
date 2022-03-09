@@ -409,6 +409,7 @@
 		66CE54A820FCF6CF00CC310B /* WebsiteDataManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CE54A720FCF6CF00CC310B /* WebsiteDataManagementViewController.swift */; };
 		68134E1E27E4DAD600C1AB7C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 68134E1D27E4DAD600C1AB7C /* SwiftyJSON */; };
 		6847CD3327B15D0700336211 /* QwantExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6847CD3227B15D0700336211 /* QwantExtensionsTests.swift */; };
+		685EBBEC27B2B9DD00F2AFD4 /* QwantTopSiteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685EBBEB27B2B9DD00F2AFD4 /* QwantTopSiteHelper.swift */; };
 		6860135227A292EB004E2708 /* QuickLinkSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6860135527A292EB004E2708 /* QuickLinkSelection.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		6860135327A292EB004E2708 /* QuickLinkSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6860135527A292EB004E2708 /* QuickLinkSelection.intentdefinition */; };
 		68820C0627AD188000F378AC /* QwantExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68820C0527AD188000F378AC /* QwantExtensions.swift */; };
@@ -1800,6 +1801,7 @@
 		67DF427B90D8B06D7BF3DB90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Today.strings; sourceTree = "<group>"; };
 		6847CD3227B15D0700336211 /* QwantExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantExtensionsTests.swift; sourceTree = "<group>"; };
 		6855435EA1F3E75E86BE92C2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/FindInPage.strings; sourceTree = "<group>"; };
+		685EBBEB27B2B9DD00F2AFD4 /* QwantTopSiteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTopSiteHelper.swift; sourceTree = "<group>"; };
 		6860135427A292EB004E2708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/QuickLinkSelection.intentdefinition; sourceTree = "<group>"; };
 		6860135727A292EF004E2708 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/QuickLinkSelection.strings; sourceTree = "<group>"; };
 		6860135927A292F0004E2708 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/QuickLinkSelection.strings; sourceTree = "<group>"; };
@@ -4918,6 +4920,7 @@
 				43AB6F9C25DC53D20016B015 /* GoogleTopSiteHelper.swift */,
 				DF036E41274FD3FC002E834E /* HistoryHighlights */,
 				C87DC85F27B2CC1A006EFCE2 /* JumpBackIn */,
+				685EBBEB27B2B9DD00F2AFD4 /* QwantTopSiteHelper.swift */,
 				43AB6FA025DC53D30016B015 /* LibraryShortcutView.swift */,
 				43AB6FA125DC53D30016B015 /* PanelDataObservers.swift */,
 				C87DC86127B2CC27006EFCE2 /* Pocket */,
@@ -6903,6 +6906,7 @@
 				E6D8D5E71B569D70009E5A58 /* BrowserTrayAnimators.swift in Sources */,
 				D51EA5CF26406D8300334331 /* ExperimentsViewController.swift in Sources */,
 				1DFE57FB27B2CB870025DE58 /* HighlightItem.swift in Sources */,
+				685EBBEC27B2B9DD00F2AFD4 /* QwantTopSiteHelper.swift in Sources */,
 				CA77ABFD24773C92005079F9 /* BreachAlertsManager.swift in Sources */,
 				C81A8F2526D3ED1900EBA539 /* UIWindowExtensions.swift in Sources */,
 				EBC4869E2195F58300CDA48D /* AboutHomeHandler.swift in Sources */,

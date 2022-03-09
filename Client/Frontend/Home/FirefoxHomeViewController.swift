@@ -785,18 +785,18 @@ extension FirefoxHomeViewController: DataObserverDelegate {
                     pinnedSites += 1
                 }
             }
-            // Special case: Adding Google topsite
-            let googleTopSite = GoogleTopSiteHelper(prefs: self.viewModel.profile.prefs)
-            if !googleTopSite.isHidden, let gSite = googleTopSite.suggestedSiteData() {
-                // Once Google top site is added, we don't remove unless it's explicitly unpinned
+            // Special cases: Adding Qwant topsite
+            let qwantTopSite = QwantTopSiteHelper(prefs: self.viewModel.profile.prefs)
+            if !qwantTopSite.isHidden, let qSite = qwantTopSite.suggestedSiteData() {
+                // Once Qwant top site is added, we don't remove unless it's explicitly unpinned
                 // Add it when pinned websites are less than max pinned sites
-                if googleTopSite.hasAdded || pinnedSites < maxItems {
-                    sites.insert(gSite, at: 0)
+                if qwantTopSite.hasAdded || pinnedSites < maxItems {
+                    sites.insert(qSite, at: 0)
                     // Purge unwated websites from the end of list
                     if sites.count > maxItems {
                         sites.removeLast(sites.count - maxItems)
                     }
-                    googleTopSite.hasAdded = true
+                    qwantTopSite.hasAdded = true
                 }
             }
             self.viewModel.topSitesManager.content = sites
@@ -925,10 +925,10 @@ extension FirefoxHomeViewController: DataObserverDelegate {
     }
 
     func removePinTopSite(_ site: Site) {
-        // Special Case: Hide google top site
-        if site.guid == GoogleTopSiteConstants.googleGUID {
-            let gTopSite = GoogleTopSiteHelper(prefs: self.viewModel.profile.prefs)
-            gTopSite.isHidden = true
+        // Special Cases: Hide qwant top sites
+        if site.guid == QwantTopSiteConstants.guid {
+            let qTopSite = QwantTopSiteHelper(prefs: viewModel.profile.prefs)
+            qTopSite.isHidden = true
         }
 
         viewModel.profile.history.removeFromPinnedTopSites(site).uponQueue(.main) { result in

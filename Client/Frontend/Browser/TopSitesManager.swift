@@ -15,14 +15,18 @@ struct TopSitesHandler {
         return profile.history.getTopSitesWithLimit(maxItems).both(profile.history.getPinnedTopSites()).bindQueue(.main) { (topsites, pinnedSites) in
             
             let deferred = Deferred<[Site]>()
-                        
-            guard let mySites = topsites.successValue?.asArray(), let pinned = pinnedSites.successValue?.asArray() else {
+            let isQwantUrl = { (urlString : String) -> Bool in
+                return URL(string: urlString)?.host == URL(string: QwantTopSiteConstants.url)?.host
+            }
+            guard let mySites = topsites.successValue?.asArray().filter( { !isQwantUrl($0.url) }), let pinned = pinnedSites.successValue?.asArray() else {
                 return deferred
             }
             
             // How sites are merged together. We compare against the url's base domain. example m.youtube.com is compared against `youtube.com`
+            // Except for Qwant Maps, that shares the same base domain as the search engine
             let unionOnURL = { (site: Site) -> String in
-                return URL(string: site.url)?.normalizedHost ?? ""
+                let url = URL(string: site.url)
+                return url?.isMapsUrl == true ? "qwant.com/maps" : (url?.normalizedHost ?? "")
             }
 
             // Fetch the default sites
