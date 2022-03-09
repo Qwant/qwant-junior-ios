@@ -566,9 +566,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
         case .searchSuggestions:
             if let site = suggestions?[indexPath.row] {
                 oneLineCell.titleLabel.text = site
-                if Locale.current.languageCode == "en" {
-                    oneLineCell.titleLabel.attributedText = getAttributedBoldSearchSuggestions(searchPhrase: site, query: savedQuery)
-                }
+                oneLineCell.titleLabel.attributedText = getAttributedBoldSearchSuggestions(searchPhrase: site, query: savedQuery)
                 oneLineCell.leftImageView.contentMode = .center
                 oneLineCell.leftImageView.layer.borderWidth = 0
                 oneLineCell.leftImageView.image = UIImage(named: SearchViewControllerUX.SearchImage)
