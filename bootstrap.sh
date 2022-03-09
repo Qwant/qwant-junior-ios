@@ -10,16 +10,17 @@
 
 getLocale() {
   echo "Getting locale..."
-  git clone https://github.com/boek/ios-l10n-scripts.git -b new_tool || exit 1
+  git clone https://github.com/Qwant/ios-l10n-scripts.git -b qwant-main || exit 1
 
   echo "Creating firefoxios-l10n Git repo"
   rm -rf firefoxios-l10n
-  git clone --depth 1 https://github.com/mozilla-l10n/firefoxios-l10n firefoxios-l10n || exit 1
+  git clone --depth 1 https://github.com/Qwant/firefoxios-l10n -b qwant-main firefoxios-l10n || exit 1
 }
 
 if [ "$1" == "--force" ]; then
     rm -rf firefoxios-l10n
     rm -rf ios-l10n-scripts
+    rm -rf /Library/Developer/Xcode/DerivedData
 fi
 
 if [ "$1" == "--importLocales" ]; then
