@@ -734,7 +734,7 @@ class AppStoreReviewSetting: Setting {
     }
 
     override func onClick(_ navigationController: UINavigationController?) {
-        RatingPromptManager.goToAppStoreReview()
+        QwantRatingPromptManager.goToAppStoreReview()
     }
 }
 

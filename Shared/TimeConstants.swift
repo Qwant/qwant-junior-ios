@@ -158,6 +158,10 @@ extension Date {
     public func isWithinLast7Days() -> Bool {
         return (Date().lastWeek ... Date()).contains(self)
     }
+
+    public func isSameDay(of date: Date) -> Bool {
+        return Calendar.current.isDate(self, equalTo: date, toGranularity: .day)
+    }
 }
 
 let MaxTimestampAsDouble = Double(UInt64.max)
