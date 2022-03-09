@@ -204,11 +204,11 @@ class MainMenuActionHelper: PhotonActionSheetProtocol, FeatureFlagsProtocol {
             append(to: &section, action: desktopSiteAction)
         }
 
-        let nightModeAction = getNightModeAction()
-        append(to: &section, action: nightModeAction)
+//        let nightModeAction = getNightModeAction()
+//        append(to: &section, action: nightModeAction)
 
-        let passwordsAction = getPasswordAction(navigationController: navigationController)
-        append(to: &section, action: passwordsAction)
+//        let passwordsAction = getPasswordAction(navigationController: navigationController)
+//        append(to: &section, action: passwordsAction)
 
         if !isHomePage && !isFileURL {
             let reportSiteIssueAction = getReportSiteIssueAction()
