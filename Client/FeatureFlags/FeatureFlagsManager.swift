@@ -200,15 +200,20 @@ class FeatureFlagsManager {
     public func qwantFeaturesOverrides(for profile: Profile) {
         features.removeAll()
         
+        let adjustEnvironmentProd = FlaggableFeature(withID: .adjustEnvironmentProd,
+                                                     and: profile,
+                                                     enabledFor: [])
+        features[.adjustEnvironmentProd] = adjustEnvironmentProd
+        
+        let bottomSearchBar = FlaggableFeature(withID: .bottomSearchBar,
+                                               and: profile,
+                                               enabledFor: [.release, .beta, .developer])
+        features[.bottomSearchBar] = bottomSearchBar
+        
         let chronTabs = FlaggableFeature(withID: .chronologicalTabs,
                                          and: profile,
                                          enabledFor: [])
         features[.chronologicalTabs] = chronTabs
-        
-        let customWallpaper = FlaggableFeature(withID: .wallpapers,
-                                               and: profile,
-                                               enabledFor: [.developer])
-        features[.wallpapers] = customWallpaper
         
         let inactiveTabs = FlaggableFeature(withID: .inactiveTabs,
                                             and: profile,
@@ -237,7 +242,6 @@ class FeatureFlagsManager {
                                       enabledFor: [])
         features[.pocket] = pocket
         
-        
         let pullToRefresh = FlaggableFeature(withID: .pullToRefresh,
                                              and: profile,
                                              enabledFor: [.release ,.beta, .developer])
@@ -255,7 +259,7 @@ class FeatureFlagsManager {
         
         let shakeToRestore = FlaggableFeature(withID: .shakeToRestore,
                                               and: profile,
-                                              enabledFor: [.beta, .developer, .other])
+                                              enabledFor: [.developer, .other])
         features[.shakeToRestore] = shakeToRestore
         
         let startAtHome = FlaggableFeature(withID: .startAtHome,
@@ -265,14 +269,13 @@ class FeatureFlagsManager {
         
         let reportSiteIssue = FlaggableFeature(withID: .reportSiteIssue,
                                                and: profile,
-                                               enabledFor: [.beta, .developer])
+                                               enabledFor: [.developer])
         
         features[.reportSiteIssue] = reportSiteIssue
         
-        
-        let adjustEnvironmentProd = FlaggableFeature(withID: .adjustEnvironmentProd,
-                                                     and: profile,
-                                                     enabledFor: [])
-        features[.adjustEnvironmentProd] = adjustEnvironmentProd
+        let wallpapers = FlaggableFeature(withID: .wallpapers,
+                                          and: profile,
+                                          enabledFor: [.developer])
+        features[.wallpapers] = wallpapers
     }
 }
