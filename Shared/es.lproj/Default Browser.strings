@@ -5,7 +5,7 @@
 "DefaultBrowserCard.Button.v2" = "Aprender cómo";
 
 /* Description for small card shown that allows user to switch their default browser to Firefox. */
-"DefaultBrowserCard.Description" = "Configura enlaces de sitios web, correos electrónicos y mensajes para que se abran automáticamente en Firefox.";
+"DefaultBrowserCard.Description" = "Configura enlaces de sitios web, correos electrónicos y mensajes para que se abran automáticamente en Qwant.";
 
 /* Title for small card shown that allows user to switch their default browser to Firefox. */
 "DefaultBrowserCard.Title" = "Cambia tu navegador predeterminado";
@@ -20,11 +20,26 @@
 "DefaultBrowserOnboarding.Description2" = "2. Tocar aplicación de navegador predeterminada";
 
 /* Description for default browser onboarding card. */
-"DefaultBrowserOnboarding.Description3" = "3. Seleccionar Firefox";
+"DefaultBrowserOnboarding.Description3" = "3. Seleccionar Qwant";
 
 /* Text for the screenshot of the iOS system settings page for Firefox. */
 "DefaultBrowserOnboarding.Screenshot" = "Aplicación de navegador predeterminado";
 
 /* Menu option for setting Firefox as default browser. */
 "Settings.DefaultBrowserMenuItem" = "Establecer como navegador predeterminado";
+
+/* First part of the title to help users understand that they can set Qwant as their default browser. */
+"DefaultBrowserOnboarding.Qwant.Title1" = "Make the Qwant app";
+
+/* Second part of the title to help users understand that they can set Qwant as their default browser. */
+"DefaultBrowserOnboarding.Qwant.Title2" = "your default browser";
+
+/* Description to help users understand that they can set Qwant as their default browser. */
+"DefaultBrowserOnboarding.Qwant.Description" = "Set links to open automatically in Qwant!";
+
+/* Button string to open settings that allows user to switch their default browser to Qwant. */
+"DefaultBrowserOnboarding.Qwant.ButtonSettings" = "Go to Settings";
+
+/* Button string to ignore the default browser capability. */
+"DefaultBrowserOnboarding.Qwant.ButtonIgnore" = "Ignore";
 
