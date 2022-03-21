@@ -812,6 +812,11 @@ class Tab: NSObject {
         guard let url = self.webView?.url else {
             return
         }
+        
+        guard !url.missesClientContext else {
+            self.webView?.relaunchNavigationWithContext()
+            return
+        }
 
         self.urlDidChangeDelegate?.tab(self, urlDidChangeTo: url)
     }
