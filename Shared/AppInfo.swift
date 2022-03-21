@@ -105,4 +105,7 @@ open class AppInfo {
 
     // The App Store page identifier for the Firefox iOS application
     public static var appStoreId = "id989804926"
+    
+    // The App Store page identifier for the Qwant iOS application
+    public static var qwantAppStoreId = "id924470452"
 }

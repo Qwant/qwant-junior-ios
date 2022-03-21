@@ -46,7 +46,7 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
 
         switch deeplink {
         case .contentBlocker:
-            viewController = ContentBlockerSettingViewController(prefs: profile.prefs)
+            viewController = QwantContentBlockerSettingViewController(prefs: profile.prefs)
             viewController.tabManager = tabManager
 
         case .customizeHomepage:
@@ -92,20 +92,25 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
         if SearchBarSettingsViewModel.isEnabled {
             generalSettings.insert(SearchBarSetting(settings: self), at: 5)
         }
+        
+        if #available(iOS 14.0, *) {
+            generalSettings.insert(DefaultBrowserSetting(), at: 4)
+        }
 
         if featureFlags.isFeatureActiveForBuild(.groupedTabs) || featureFlags.isFeatureActiveForBuild(.inactiveTabs) {
             generalSettings.insert(TabsSetting(), at: 3)
         }
 
-        let accountChinaSyncSetting: [Setting]
-        if !AppInfo.isChinaEdition {
-            accountChinaSyncSetting = []
-        } else {
-            accountChinaSyncSetting = [
-                // Show China sync service setting:
-                ChinaSyncServiceSetting(settings: self)
-            ]
-        }
+//        let accountChinaSyncSetting: [Setting]
+//        if !AppInfo.isChinaEdition {
+//            accountChinaSyncSetting = []
+//        } else {
+//            accountChinaSyncSetting = [
+//                // Show China sync service setting:
+//                ChinaSyncServiceSetting(settings: self)
+//            ]
+//        }
+
         // There is nothing to show in the Customize section if we don't include the compact tab layout
         // setting on iPad. When more options are added that work on both device types, this logic can
         // be changed.
@@ -119,24 +124,24 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagsP
                         statusText: .SettingsShowLinkPreviewsStatus)
         ]
 
-        if #available(iOS 14.0, *) {
-            settings += [
-                SettingSection(footerTitle: NSAttributedString(string: String.DefaultBrowserCardDescription), children: [DefaultBrowserSetting()])
-            ]
-        }
+//        if #available(iOS 14.0, *) {
+//            settings += [
+//                SettingSection(footerTitle: NSAttributedString(string: String.DefaultBrowserCardDescription), children: [DefaultBrowserSetting()])
+//            ]
+//        }
 
-        let accountSectionTitle = NSAttributedString(string: .FxAFirefoxAccount)
-
-        let footerText = !profile.hasAccount() ? NSAttributedString(string: .FxASyncUsageDetails) : nil
-        settings += [
-            SettingSection(title: accountSectionTitle, footerTitle: footerText, children: [
-                // Without a Firefox Account:
-                ConnectSetting(settings: self),
-                AdvancedAccountSetting(settings: self),
-                // With a Firefox Account:
-                AccountStatusSetting(settings: self),
-                SyncNowSetting(settings: self)
-            ] + accountChinaSyncSetting )]
+//        let accountSectionTitle = NSAttributedString(string: .FxAFirefoxAccount)
+//
+//        let footerText = !profile.hasAccount() ? NSAttributedString(string: .FxASyncUsageDetails) : nil
+//        settings += [
+//            SettingSection(title: accountSectionTitle, footerTitle: footerText, children: [
+//                // Without a Firefox Account:
+//                ConnectSetting(settings: self),
+//                AdvancedAccountSetting(settings: self),
+//                // With a Firefox Account:
+//                AccountStatusSetting(settings: self),
+//                SyncNowSetting(settings: self)
+//            ] + accountChinaSyncSetting )]
 
         settings += [ SettingSection(title: NSAttributedString(string: .SettingsGeneralSectionTitle), children: generalSettings)]
 

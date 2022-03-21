@@ -196,4 +196,83 @@ class FeatureFlagsManager {
                                           enabledFor: [.release, .beta, .developer])
         features[.wallpapers] = wallpapers
     }
+    
+    public func qwantFeaturesOverrides(for profile: Profile) {
+        features.removeAll()
+        
+        let chronTabs = FlaggableFeature(withID: .chronologicalTabs,
+                                         and: profile,
+                                         enabledFor: [])
+        features[.chronologicalTabs] = chronTabs
+        
+        let customWallpaper = FlaggableFeature(withID: .wallpapers,
+                                               and: profile,
+                                               enabledFor: [.developer])
+        features[.wallpapers] = customWallpaper
+        
+        let inactiveTabs = FlaggableFeature(withID: .inactiveTabs,
+                                            and: profile,
+                                            enabledFor: [.developer])
+        features[.inactiveTabs] = inactiveTabs
+        
+        let groupedTabs = FlaggableFeature(withID: .groupedTabs,
+                                           and: profile,
+                                           enabledFor: [.developer])
+        features[.groupedTabs] = groupedTabs
+        
+        let jumpBackIn = FlaggableFeature(withID: .jumpBackIn,
+                                          and: profile,
+                                          enabledFor: [.release, .beta, .developer])
+        features[.jumpBackIn] = jumpBackIn
+        
+        /// Use the Nimbus experimentation platform. If this is `true` then
+        /// `Experiments.shared` provides access to Nimbus. If false, it is a dummy object.
+        let nimbus = FlaggableFeature(withID: .nimbus,
+                                      and: profile,
+                                      enabledFor: [])
+        features[.nimbus] = nimbus
+        
+        let pocket = FlaggableFeature(withID: .pocket,
+                                      and: profile,
+                                      enabledFor: [])
+        features[.pocket] = pocket
+        
+        
+        let pullToRefresh = FlaggableFeature(withID: .pullToRefresh,
+                                             and: profile,
+                                             enabledFor: [.release ,.beta, .developer])
+        features[.pullToRefresh] = pullToRefresh
+        
+        let recentlySaved = FlaggableFeature(withID: .recentlySaved,
+                                             and: profile,
+                                             enabledFor: [.release, .beta, .developer])
+        features[.recentlySaved] = recentlySaved
+        
+        let historyHighlights = FlaggableFeature(withID: .historyHighlights,
+                                                 and: profile,
+                                                 enabledFor: [.developer])
+        features[.historyHighlights] = historyHighlights
+        
+        let shakeToRestore = FlaggableFeature(withID: .shakeToRestore,
+                                              and: profile,
+                                              enabledFor: [.beta, .developer, .other])
+        features[.shakeToRestore] = shakeToRestore
+        
+        let startAtHome = FlaggableFeature(withID: .startAtHome,
+                                           and: profile,
+                                           enabledFor: [.release, .beta, .developer])
+        features[.startAtHome] = startAtHome
+        
+        let reportSiteIssue = FlaggableFeature(withID: .reportSiteIssue,
+                                               and: profile,
+                                               enabledFor: [.beta, .developer])
+        
+        features[.reportSiteIssue] = reportSiteIssue
+        
+        
+        let adjustEnvironmentProd = FlaggableFeature(withID: .adjustEnvironmentProd,
+                                                     and: profile,
+                                                     enabledFor: [])
+        features[.adjustEnvironmentProd] = adjustEnvironmentProd
+    }
 }

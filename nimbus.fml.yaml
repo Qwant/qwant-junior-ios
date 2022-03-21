@@ -3,6 +3,7 @@ channels:
   - Fennec
   - FirefoxBeta
   - Firefox
+  - Qwant
 features:
   search:
     description: The search feature

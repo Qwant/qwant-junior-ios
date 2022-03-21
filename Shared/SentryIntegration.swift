@@ -144,8 +144,8 @@ public class Sentry: SentryProtocol {
             return
         }
 
-        let event = makeEvent(message: message, tag: tag.rawValue, severity: severity, extra: extraEvents)
-        captureEvent(event: event)
+//        let event = makeEvent(message: message, tag: tag.rawValue, severity: severity, extra: extraEvents)
+//        captureEvent(event: event)
     }
 
     public func sendWithStacktrace(message: String, tag: SentryTag = .general, severity: SentryLevel = .info, extra: [String: Any]? = nil, description: String? = nil, completion: SentryRequestFinished? = nil) {
@@ -164,8 +164,8 @@ public class Sentry: SentryProtocol {
             return
         }
         
-        let event = makeEvent(message: message, tag: tag.rawValue, severity: severity, extra: extraEvents)
-        captureEvent(event: event)
+//        let event = makeEvent(message: message, tag: tag.rawValue, severity: severity, extra: extraEvents)
+//        captureEvent(event: event)
     }
 
     public func addAttributes(_ attributes: [String: Any]) {

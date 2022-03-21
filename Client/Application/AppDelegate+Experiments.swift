@@ -10,6 +10,7 @@ import Foundation
 
 extension AppDelegate {
     func initializeExperiments() {
+        return
         let defaults = UserDefaults.standard
         let nimbusFirstRun = "NimbusFirstRun"
         let isFirstRun = defaults.object(forKey: nimbusFirstRun) == nil

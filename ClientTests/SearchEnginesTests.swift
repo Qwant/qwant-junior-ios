@@ -7,8 +7,8 @@ import Foundation
 import XCTest
 import Shared
 
-private let DefaultSearchEngineName = "Google"
-private let ExpectedEngineNames = ["Amazon.com", "Bing", "DuckDuckGo", "Google", "Twitter", "Wikipedia"]
+private let DefaultSearchEngineName = "Qwant"
+private let ExpectedEngineNames = ["Qwant", "Qwant Junior"]
 
 class SearchEnginesTests: XCTestCase {
 
@@ -71,7 +71,7 @@ class SearchEnginesTests: XCTestCase {
         let profile = MockProfile()
         let engines = SearchEngines(prefs: profile.prefs, files: profile.files)
 
-        engines.orderedEngines = [ExpectedEngineNames[4], ExpectedEngineNames[2], ExpectedEngineNames[0]].map { name in
+        engines.orderedEngines = [ExpectedEngineNames[0], ExpectedEngineNames[1]].map { name in
             for engine in engines.orderedEngines {
                 if engine.shortName == name {
                     return engine
@@ -80,20 +80,13 @@ class SearchEnginesTests: XCTestCase {
             XCTFail("Could not find engine: \(name)")
             return engines.orderedEngines.first!
         }
-        XCTAssertEqual(engines.orderedEngines[0].shortName, ExpectedEngineNames[4])
-        XCTAssertEqual(engines.orderedEngines[1].shortName, ExpectedEngineNames[2])
-        XCTAssertEqual(engines.orderedEngines[2].shortName, ExpectedEngineNames[0])
+        XCTAssertEqual(engines.orderedEngines[0].shortName, ExpectedEngineNames[0])
+        XCTAssertEqual(engines.orderedEngines[1].shortName, ExpectedEngineNames[1])
 
         let engines2 = SearchEngines(prefs: profile.prefs, files: profile.files)
         // The ordering should have been persisted.
-        XCTAssertEqual(engines2.orderedEngines[0].shortName, ExpectedEngineNames[4])
-        XCTAssertEqual(engines2.orderedEngines[1].shortName, ExpectedEngineNames[2])
-        XCTAssertEqual(engines2.orderedEngines[2].shortName, ExpectedEngineNames[0])
-
-        // Remaining engines should be appended in alphabetical order.
-        XCTAssertEqual(engines2.orderedEngines[3].shortName, ExpectedEngineNames[1])
-        XCTAssertEqual(engines2.orderedEngines[4].shortName, ExpectedEngineNames[3])
-        XCTAssertEqual(engines2.orderedEngines[5].shortName, ExpectedEngineNames[5])
+        XCTAssertEqual(engines2.orderedEngines[0].shortName, ExpectedEngineNames[0])
+        XCTAssertEqual(engines2.orderedEngines[1].shortName, ExpectedEngineNames[1])
     }
 
     func testQuickSearchEngines() {
@@ -102,40 +95,38 @@ class SearchEnginesTests: XCTestCase {
         let engineSet = engines.orderedEngines
 
         // You can't disable the default engine.
-        engines.defaultEngine = (engineSet?[1])!
-        engines.disableEngine((engineSet?[1])!)
-        XCTAssertTrue(engines.isEngineEnabled((engineSet?[1])!))
+        engines.defaultEngine = (engineSet?[0])!
+        engines.disableEngine((engineSet?[0])!)
+        XCTAssertTrue(engines.isEngineEnabled((engineSet?[0])!))
 
         // The default engine is not included in the quick search engines.
-        XCTAssertEqual(0, engines.quickSearchEngines.filter { engine in engine.shortName == engineSet?[1].shortName }.count)
+        XCTAssertEqual(0, engines.quickSearchEngines.filter { engine in engine.shortName == engineSet?[0].shortName }.count)
 
         // Enable and disable work.
-        engines.enableEngine((engineSet?[0])!)
-        XCTAssertTrue(engines.isEngineEnabled((engineSet?[0])!))
-        XCTAssertEqual(1, engines.quickSearchEngines.filter { engine in engine.shortName == engineSet?[0].shortName }.count)
+        engines.enableEngine((engineSet?[1])!)
+        XCTAssertTrue(engines.isEngineEnabled((engineSet?[1])!))
+        XCTAssertEqual(1, engines.quickSearchEngines.filter { engine in engine.shortName == engineSet?[1].shortName }.count)
 
-        engines.disableEngine((engineSet?[0])!)
-        XCTAssertFalse(engines.isEngineEnabled((engineSet?[0])!))
+        engines.disableEngine((engineSet?[1])!)
+        XCTAssertFalse(engines.isEngineEnabled((engineSet?[1])!))
         XCTAssertEqual(0, engines.quickSearchEngines.filter { engine in engine.shortName == engineSet?[0].shortName }.count)
 
         // Setting the default engine enables it.
-        engines.defaultEngine = (engineSet?[0])!
+        engines.defaultEngine = (engineSet?[1])!
         XCTAssertTrue(engines.isEngineEnabled((engineSet?[1])!))
 
         // Setting the order may change the default engine, which enables it.
-        engines.orderedEngines = [(engineSet?[2])!, (engineSet?[1])!, (engineSet?[0])!]
-        XCTAssertTrue(engines.isEngineDefault((engineSet?[2])!))
-        XCTAssertTrue(engines.isEngineEnabled((engineSet?[2])!))
+        engines.orderedEngines = [(engineSet?[1])!, (engineSet?[0])!]
+        XCTAssertTrue(engines.isEngineDefault((engineSet?[1])!))
+        XCTAssertTrue(engines.isEngineEnabled((engineSet?[1])!))
 
         // The enabling should be persisted.
-        engines.enableEngine((engineSet?[2])!)
-        engines.disableEngine((engineSet?[1])!)
-        engines.enableEngine((engineSet?[0])!)
+        engines.disableEngine((engineSet?[0])!)
+        engines.enableEngine((engineSet?[1])!)
 
         let engines2 = SearchEngines(prefs: profile.prefs, files: profile.files)
-        XCTAssertTrue(engines2.isEngineEnabled((engineSet?[2])!))
-        XCTAssertFalse(engines2.isEngineEnabled((engineSet?[1])!))
-        XCTAssertTrue(engines2.isEngineEnabled((engineSet?[0])!))
+        XCTAssertFalse(engines2.isEngineEnabled((engineSet?[0])!))
+        XCTAssertTrue(engines2.isEngineEnabled((engineSet?[1])!))
     }
 
     func testSearchSuggestionSettings() {
@@ -153,19 +144,19 @@ class SearchEnginesTests: XCTestCase {
     }
 
     func testUnorderedSearchEngines() {
-        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "zh-TW")).compactMap({$0.shortName}), ["Google", "Bing", "DuckDuckGo", "Wikipedia (zh)"])
-        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "en-CA")).compactMap({$0.shortName}), ["Google", "Bing", "Amazon.com", "DuckDuckGo", "Twitter", "Wikipedia"])
-        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "de-DE")).compactMap({$0.shortName}), ["Google", "Bing", "Amazon.de", "DuckDuckGo", "Qwant", "Twitter", "Wikipedia (de)", "Ecosia"])
-        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "en-US")).compactMap({$0.shortName}), ["Google", "Bing", "Amazon.com", "DuckDuckGo", "Twitter", "Wikipedia"])
+        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "zh-TW")).compactMap({$0.shortName}), ["Qwant", "Qwant Junior"])
+        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "en-CA")).compactMap({$0.shortName}), ["Qwant", "Qwant Junior"])
+        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "de-DE")).compactMap({$0.shortName}), ["Qwant", "Qwant Junior"])
+        XCTAssertEqual(SearchEngines.getUnorderedBundledEnginesFor(locale: Locale(identifier: "en-US")).compactMap({$0.shortName}), ["Qwant", "Qwant Junior"])
     }
 
     func testGetOrderedEngines() {
         // setup an existing search engine in the profile
         let profile = MockProfile()
-        profile.prefs.setObject(["Google"], forKey: "search.orderedEngineNames")
+        profile.prefs.setObject(["Qwant"], forKey: "search.orderedEngineNames")
         let engines = SearchEngines(prefs: profile.prefs, files: profile.files)
         XCTAssert(engines.orderedEngines.count > 1, "There should be more than one search engine")
-        XCTAssertEqual(engines.orderedEngines.first!.shortName, "Google", "Google should be the first search engine")
+        XCTAssertEqual(engines.orderedEngines.first!.shortName, "Qwant", "Qwant should be the first search engine")
     }
 
 }
