@@ -197,6 +197,12 @@ class BrowserViewController: UIViewController {
     @objc func displayThemeChanged(notification: Notification) {
         applyTheme()
     }
+    
+    @objc func contentBlockerDidBlock(notification: Notification) {
+        if let tab = tabManager.selectedTab {
+            urlBar.locationView.tabDidChangeContentBlocking(tab)
+        }
+    }
 
     @objc func searchBarPositionDidChange(notification: Notification) {
         guard let dict = notification.object as? NSDictionary,
@@ -447,6 +453,8 @@ class BrowserViewController: UIViewController {
                                                name: .DisplayThemeChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(searchBarPositionDidChange),
                                                name: .SearchBarPositionDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(contentBlockerDidBlock),
+                                               name: .ContentBlockerDidBlock, object: nil)
     }
 
     func addSubviews() {
@@ -1625,9 +1633,9 @@ extension BrowserViewController: TabDelegate {
 
         tab.addContentScript(LocalRequestHelper(), name: LocalRequestHelper.name())
 
-        let blocker = FirefoxTabContentBlocker(tab: tab, prefs: profile.prefs)
+        let blocker = QwantSpecificTabContentBlocker(tab: tab, prefs: profile.prefs)
         tab.contentBlocker = blocker
-        tab.addContentScript(blocker, name: FirefoxTabContentBlocker.name())
+        tab.addContentScript(blocker, name: QwantSpecificTabContentBlocker.name())
 
         tab.addContentScript(FocusHelper(tab: tab), name: FocusHelper.name())
     }
@@ -2091,17 +2099,18 @@ extension BrowserViewController {
         guard force || shouldShow else {
             return
         }
-        let dBOnboardingViewController = DefaultBrowserOnboardingViewController()
+        let dBOnboardingViewController = QwantDefaultBrowserOnboardingViewController()
         if topTabsVisible {
             dBOnboardingViewController.preferredContentSize = CGSize(width: ViewControllerConsts.PreferredSize.DBOnboardingViewController.width, height: ViewControllerConsts.PreferredSize.DBOnboardingViewController.height)
             dBOnboardingViewController.modalPresentationStyle = .formSheet
         } else {
             dBOnboardingViewController.modalPresentationStyle = .popover
         }
-        dBOnboardingViewController.viewModel.goToSettings = {
-//            self.firefoxHomeViewController?.dismissDefaultBrowserCard()
-            dBOnboardingViewController.dismiss(animated: true) {
-                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:])
+        dBOnboardingViewController.didFinishClosure = { controller in
+            controller.dismiss(animated: true) {
+                if self.navigationController?.viewControllers.count ?? 0 > 1 {
+                    _ = self.navigationController?.popToRootViewController(animated: true)
+                }
             }
         }
 
@@ -2144,7 +2153,10 @@ extension BrowserViewController {
     }
 
     private func showProperIntroVC() {
-        let introViewController = QwantDefaultBrowserOnboardingViewController()
+        let introViewController = QwantIntroViewController()
+        introViewController.onViewDismissed = {
+            self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
+        }
         introViewController.didFinishClosure = { controller, fxaLoginFlow in
             self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
             controller.dismiss(animated: true) {

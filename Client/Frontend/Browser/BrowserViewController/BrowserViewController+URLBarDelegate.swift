@@ -124,7 +124,7 @@ extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
 
     func urlBarDidTapShield(_ urlBar: URLBarView) {
         if let tab = self.tabManager.selectedTab {
-            let etpViewModel = EnhancedTrackingProtectionMenuVM(tab: tab, profile: profile, tabManager: tabManager)
+            let etpViewModel = QwantTPMenuVM(tab: tab, profile: profile, tabManager: tabManager)
             etpViewModel.onOpenSettingsTapped = {
                 let settingsTableViewController = AppSettingsTableViewController()
                 settingsTableViewController.profile = self.profile
@@ -142,20 +142,21 @@ extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
                 }
             }
 
-            let etpVC = EnhancedTrackingProtectionMenuVC(viewModel: etpViewModel)
+            let etpVC = QwantTPMenuVC(viewModel: etpViewModel)
+            let controller = ThemedNavigationController(rootViewController: etpVC)
             if UIDevice.current.userInterfaceIdiom == .phone {
-                etpVC.modalPresentationStyle = .custom
-                etpVC.transitioningDelegate = self
+                controller.modalPresentationStyle = .pageSheet
+                controller.transitioningDelegate = self
             } else {
                 etpVC.asPopover = true
-                etpVC.modalPresentationStyle = .popover
-                etpVC.popoverPresentationController?.sourceView = urlBar.locationView.trackingProtectionButton
-                etpVC.popoverPresentationController?.permittedArrowDirections = .up
-                etpVC.popoverPresentationController?.delegate = self
+                controller.modalPresentationStyle = .popover
+                controller.popoverPresentationController?.sourceView = urlBar.locationView.trackingProtectionButton
+                controller.popoverPresentationController?.permittedArrowDirections = .up
+                controller.popoverPresentationController?.delegate = self
             }
 
             TelemetryWrapper.recordEvent(category: .action, method: .press, object: .trackingProtectionMenu)
-            self.present(etpVC, animated: true, completion: nil)
+            self.present(controller, animated: true, completion: nil)
         }
     }
 
@@ -372,7 +373,7 @@ extension BrowserViewController: URLBarDelegate, FeatureFlagsProtocol {
 
 extension BrowserViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let globalETPStatus = FirefoxTabContentBlocker.isTrackingProtectionEnabled(prefs: profile.prefs)
+        let globalETPStatus = QwantSpecificTabContentBlocker.isTrackingProtectionEnabled(prefs: profile.prefs)
         return SlideOverPresentationController(presentedViewController: presented,
                                                presenting: presenting,
                                                withGlobalETPStatus: globalETPStatus)

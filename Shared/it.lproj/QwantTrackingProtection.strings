@@ -1,0 +1,90 @@
+/* Header - SSL Cert status when the connection is secured */
+"Qwant.TrackingProtection.ConnectionSecure" = "La connessione è sicura";
+
+/* Header - SSL Cert status when the connection is not secured */
+"Qwant.TrackingProtection.ConnectionNotSecure" = "La connessione non è sicura";
+
+/* Green title when the tracking protection is enabled for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.EnabledTitle" = "Protection enabled";
+
+/* Pale green title when the tracking protection is enabling for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.EnablingTitle" = "Enabling...";
+
+/* Pale red title when the tracking protection is disabling for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.DisablingTitle" = "Disabling...";
+
+/* Gray subtitle when the tracking protection is either enabling or disabling for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.LoadingSubtitle" = "This operation can take up to 5 seconds, please wait.";
+
+/* Gray subtitle when the tracking protection is either enabling or disabling for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.LongerLoadingSubtitle" = "Hang tight. We're almost there...";
+
+/* Red title when the tracking protection is disabled for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.DisabledTitle" = "Protection disabled";
+
+/* Gray subtitle when the tracking protection is enabled for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.EnabledSubtitle" = "A problem on this website? Try to deactivate.";
+
+/* Gray subtitle when the tracking protection is disabled for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.DisabledSubtitle" = "Deactivated for this website.";
+
+/* Row title label to explain that the righthand-sight of the cell represents the # of blocked items for the current visited website */
+"Qwant.TrackingProtection.LocalProtection.BlockedItems" = "Blocked items";
+
+/* Row title label to explain that the righthand-sight of the cell represents the current protection level */
+"Qwant.TrackingProtection.ProtectionLevel.Title" = "Level of protection";
+
+/* Standard protection level */
+"Qwant.TrackingProtection.ProtectionLevel.StandardTitle" = "Normale";
+
+/* Description of the standard protection level */
+"Qwant.TrackingProtection.ProtectionLevel.StandardDescription" = "Blocks most trackers efficiently";
+
+/* Strict protection level */
+"Qwant.TrackingProtection.ProtectionLevel.StrictTitle" = "Protezione massima";
+
+/* Description of the strict protection level */
+"Qwant.TrackingProtection.ProtectionLevel.StrictDescription" = "Blocks all trackers, may affect some sites";
+
+/* Disabled protection level */
+"Qwant.TrackingProtection.ProtectionLevel.DisabledTitle" = "Disabled";
+
+/* Description of the disabled protection level */
+"Qwant.TrackingProtection.ProtectionLevel.DisabledDescription" = "The browsing protection is disabled";
+
+/* Header of the statistics section */
+"Qwant.TrackingProtection.Statistics.LastThirtyDays" = "Last 30 days";
+
+/* Represents the # of items blocked by the tracking protection */
+"Qwant.TrackingProtection.Statistics.ItemsBlocked" = "Blocked items";
+
+/* Represents the time saved by the tracking protection */
+"Qwant.TrackingProtection.Statistics.TimeSaved" = "Saved time";
+
+/* Buttons to redirect to the details of the statistics */
+"Qwant.TrackingProtection.Statistics.SeeDetails" = "See details";
+
+/* Title of the local protection details page */
+"Qwant.TrackingProtection.LocalProtection.ScreenTitle" = "Blocked items";
+
+/* Title to describle the value underneath it is the number of items blocked within the current website */
+"Qwant.TrackingProtection.LocalProtection.TrackersTitle" = "Trackers";
+
+/* Title to describle the value underneath it is the number of domains blocked within the current website */
+"Qwant.TrackingProtection.LocalProtection.DomainsTitle" = "Domains";
+
+/* Title of the statistics details page */
+"Qwant.TrackingProtection.Statistics.ScreenTitle" = "Cumulative statistics";
+
+/* Title of the global tracking protection page */
+"Qwant.TrackingProtection.GlobalProtection.ScreenTitle" = "Qwant VIPrivacy";
+
+/* Header of the help section */
+"Qwant.TrackingProtection.GlobalProtection.Help" = "Supporto";
+
+/* Cell title */
+"Qwant.TrackingProtection.GlobalProtection.About" = "Learn about Qwant VIPrivacy";
+
+/* Cell title */
+"Qwant.TrackingProtection.GlobalProtection.Experience" = "Share your experience";
+

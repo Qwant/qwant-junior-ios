@@ -67,3 +67,39 @@
 /* The button that opens the sign in page for sync. See http://mzl.la/1T8gxwo */
 "Turn on Sync…" = "Attiva Sync…";
 
+/* Title for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Title" = "Caro anonimo, benvenuto su Qwant";
+
+/* Subtitle for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Subtitle" = "Qui puoi fare le tue ricerche con la massima riservatezza:";
+
+/* Bullet point #1 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet1" = "Zero tracciamento delle tue ricerche";
+
+/* Bullet point #2 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet2" = "Zero tracciamento pubblicitario";
+
+/* Bullet point #3 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet3" = "Zero vendita dei tuoi dati personali";
+
+/* Button to invite the user to set Qwant as their default browser for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.DefaultBrowser" = "Imposta come browser predefinito";
+
+/* Button to invite the user to go to the next screen for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Ignore" = "Ignorare";
+
+/* Title for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Title" = "Navigare in sicurezza su tutti i siti web";
+
+/* Bullet point #1 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet1" = "Meno cookie, niente più banner invadenti!";
+
+/* Bullet point #2 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet2" = "Blocco dei tracker, finalmente gratuito!";
+
+/* Subtitle for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Subtitle" = "Scoprite di più su di noi e fate la vostra prima ricerca!";
+
+/* Button to invite the user to start browsing for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.StartBrowsing" = "Andiamo!";
+

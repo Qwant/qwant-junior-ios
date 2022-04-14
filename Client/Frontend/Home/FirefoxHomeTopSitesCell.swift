@@ -161,10 +161,6 @@ class TopSiteItemCell: UICollectionViewCell, NotificationThemeable {
 
         accessibilityLabel = titleLabel.text
         self.imageView.setFaviconOrDefaultIcon(forSite: site) {}
-        
-        if site.tileURL.isAnyQwantUrl {
-            self.imageView.backgroundColor = .clear
-        }
 
         applyTheme()
     }
