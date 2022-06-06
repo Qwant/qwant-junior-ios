@@ -67,3 +67,39 @@
 /* The button that opens the sign in page for sync. See http://mzl.la/1T8gxwo */
 "Turn on Sync…" = "Sync aktivieren…";
 
+/* Title for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Title" = "Willkommen bei Qwant, lieber Anonymus!";
+
+/* Subtitle for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Subtitle" = "Hier können Sie völlig sicher und anonym suchen:";
+
+/* Bullet point #1 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet1" = "Kein Tracking Ihrer Suchanfragen";
+
+/* Bullet point #2 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet2" = "Kein Werbetracking";
+
+/* Bullet point #3 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet3" = "Kein Verkauf Ihrer persönlichen Daten";
+
+/* Button to invite the user to set Qwant as their default browser for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.DefaultBrowser" = "Als Standardbrowser festlegen";
+
+/* Button to invite the user to go to the next screen for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Ignore" = "Ignorieren";
+
+/* Title for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Title" = "Geschütztes Surfen auf allen Websites";
+
+/* Bullet point #1 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet1" = "Wir blocken alle Tracker, Sie sind endlich frei!";
+
+/* Bullet point #2 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet2" = "Wir lehnen alle Cookies ab und machen Schluss mit aufdringlichen Bannern!";
+
+/* Subtitle for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Subtitle" = "Erfahren Sie mehr über uns und starten Sie Ihre sichere Websuche!";
+
+/* Button to invite the user to start browsing for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.StartBrowsing" = "Los geht's!";
+

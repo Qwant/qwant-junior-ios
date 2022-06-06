@@ -67,3 +67,39 @@
 /* The button that opens the sign in page for sync. See http://mzl.la/1T8gxwo */
 "Turn on Sync…" = "Turn on Sync…";
 
+/* Title for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Title" = "Welcome to Qwant, dear unknown user";
+
+/* Subtitle for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Subtitle" = "Search in complete privacy:";
+
+/* Bullet point #1 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet1" = "Zero tracking of your searches";
+
+/* Bullet point #2 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet2" = "Zero advertising tracking";
+
+/* Bullet point #3 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet3" = "Zero sale of your personal data";
+
+/* Button to invite the user to set Qwant as their default browser for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.DefaultBrowser" = "Set as default browser";
+
+/* Button to invite the user to go to the next screen for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Ignore" = "Ignore";
+
+/* Title for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Title" = "Surf safely on all websites";
+
+/* Bullet point #1 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet1" = "Fewer cookies, no more intrusive banners!";
+
+/* Bullet point #2 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet2" = "Fewer trackers, finally free!";
+
+/* Subtitle for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Subtitle" = "Check us out and try your first search!";
+
+/* Button to invite the user to start browsing for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.StartBrowsing" = "Let's get started!";
+

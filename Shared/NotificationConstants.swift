@@ -74,6 +74,8 @@ extension Notification.Name {
 
     public static let OpenClearRecentHistory = Notification.Name("OpenClearRecentHistory")
 
+    public static let ContentBlockerDidBlock = Notification.Name("contentBlockerDidBlock")
+
     // MARK: Tab manager
 
     // Tab manager creates a toast for undo recently closed tabs and a notification is

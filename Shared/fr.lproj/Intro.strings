@@ -67,3 +67,39 @@
 /* The button that opens the sign in page for sync. See http://mzl.la/1T8gxwo */
 "Turn on Sync…" = "Activer Sync…";
 
+/* Title for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Title" = "Bienvenue chez Qwant, cher inconnu";
+
+/* Subtitle for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Subtitle" = "Ici, faites vos recherches en toute confidentialité :";
+
+/* Bullet point #1 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet1" = "Zéro tracking de vos recherches";
+
+/* Bullet point #2 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet2" = "Zéro tracking publicitaire";
+
+/* Bullet point #3 for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Bullet3" = "Zéro vente de vos données personnelles";
+
+/* Button to invite the user to set Qwant as their default browser for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.DefaultBrowser" = "Définir comme navigateur par défaut";
+
+/* Button to invite the user to go to the next screen for the first panel 'Welcome' in the First Run tour. */
+"Qwant.Intro.Welcome.Ignore" = "Ignorer";
+
+/* Title for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Title" = "Naviguez protégé sur tous les sites internet";
+
+/* Bullet point #1 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet1" = "Moins de cookies, fini les bandeaux intrusifs !";
+
+/* Bullet point #2 for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Bullet2" = "Moins de traqueurs, enfin libre !";
+
+/* Subtitle for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.Subtitle" = "Découvrez-nous et faites votre première recherche !";
+
+/* Button to invite the user to start browsing for the second panel 'Protection' in the First Run tour. */
+"Qwant.Intro.Protection.StartBrowsing" = "C'est parti !";
+
