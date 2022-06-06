@@ -86,7 +86,7 @@ class BrowserViewController: UIViewController {
 
     let profile: Profile
     let tabManager: TabManager
-    let ratingPromptManager: RatingPromptManager
+    let ratingPromptManager: QwantRatingPromptManager
 
     // Header can contain the top url bar, bottomContainer only containts toolbar
     // OverKeyboardContainer contains the reader mode and maybe the bottom url bar
@@ -154,7 +154,7 @@ class BrowserViewController: UIViewController {
         self.profile = profile
         self.tabManager = tabManager
         self.readerModeCache = DiskReaderModeCache.sharedInstance
-        self.ratingPromptManager = RatingPromptManager(profile: profile)
+        self.ratingPromptManager = QwantRatingPromptManager()
 
         let contextViewModel = ContextualHintViewModel(forHintType: .toolbarLocation,
                                                        with: profile)
