@@ -1067,7 +1067,7 @@ class BrowserViewController: UIViewController {
         }
 
         let shareItem = ShareItem(url: url, title: title, favicon: favicon)
-        profile.places.createBookmark(parentGUID: "mobile______", url: shareItem.url, title: shareItem.title)
+        profile.places.createBookmark(parentGUID: BookmarkRoots.MobileFolderGUID, url: shareItem.url, title: shareItem.title)
 
         var userData = [QuickActions.TabURLKey: shareItem.url]
         if let title = shareItem.title {
@@ -2098,7 +2098,7 @@ extension BrowserViewController {
         }
         etpCoverSheetViewController.viewModel.goToSettings = {
             etpCoverSheetViewController.dismiss(animated: true) {
-                let settingsTableViewController = ContentBlockerSettingViewController(prefs: self.profile.prefs)
+                let settingsTableViewController = QwantContentBlockerSettingViewController(prefs: self.profile.prefs)
                 settingsTableViewController.profile = self.profile
                 settingsTableViewController.tabManager = self.tabManager
                 settingsTableViewController.settingsDelegate = self
@@ -2125,7 +2125,7 @@ extension BrowserViewController {
             dBOnboardingViewController.modalPresentationStyle = .popover
         }
         dBOnboardingViewController.viewModel.goToSettings = {
-            self.firefoxHomeViewController?.dismissHomeTabBanner()
+//            self.firefoxHomeViewController?.dismissHomeTabBanner()
             dBOnboardingViewController.dismiss(animated: true) {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:])
             }
@@ -2170,7 +2170,7 @@ extension BrowserViewController {
     }
 
     private func showProperIntroVC() {
-        let introViewController = IntroViewController()
+        let introViewController = QwantDefaultBrowserOnboardingViewController()
         introViewController.didFinishClosure = { controller, fxaLoginFlow in
             self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
             controller.dismiss(animated: true) {
@@ -2189,14 +2189,15 @@ extension BrowserViewController {
     private func introVCPresentHelper(introViewController: UIViewController) {
         // On iPad we present it modally in a controller
         if topTabsVisible {
-            introViewController.preferredContentSize = CGSize(width: ViewControllerConsts.PreferredSize.IntroViewController.width, height: ViewControllerConsts.PreferredSize.IntroViewController.height)
+            introViewController.preferredContentSize = CGSize(width: ViewControllerConsts.PreferredSize.QwantDefaultBrowserOnboardingViewController.width, height: ViewControllerConsts.PreferredSize.QwantDefaultBrowserOnboardingViewController.height)
             introViewController.modalPresentationStyle = .formSheet
         } else {
             introViewController.modalPresentationStyle = .fullScreen
         }
         present(introViewController, animated: true) {
             // On first run (and forced) open up the homepage in the background.
-            if let homePageURL = NewTabHomePageAccessors.getHomePage(self.profile.prefs), let tab = self.tabManager.selectedTab, DeviceInfo.hasConnectivity() {
+            let introSeen = self.profile.prefs.intForKey(PrefsKeys.IntroSeen)
+            if let homePageURL = NewTabHomePageAccessors.getHomePage(self.profile.prefs), let tab = self.tabManager.selectedTab, DeviceInfo.hasConnectivity(), introSeen == nil {
                 tab.loadRequest(URLRequest(url: homePageURL))
             }
         }

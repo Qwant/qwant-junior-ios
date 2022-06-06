@@ -253,7 +253,7 @@ class FirefoxHomeViewController: UICollectionViewController, HomePanel, GleanPlu
     private var shouldDisplayHomeTabBanner: Bool {
         let message = messagingManager.getNextMessage(for: .newTabCard)
         if #available(iOS 14.0, *), message != nil || !UserDefaults.standard.bool(forKey: PrefsKeys.DidDismissDefaultBrowserMessage) {
-            return true
+            return false
         } else {
             return false
         }

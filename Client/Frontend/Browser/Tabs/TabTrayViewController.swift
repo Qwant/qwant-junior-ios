@@ -129,13 +129,15 @@ class TabTrayViewController: UIViewController {
     lazy var iPadNavigationMenuIdentifiers: UISegmentedControl = {
         return UISegmentedControl(items: [String.TabTraySegmentedControlTitlesTabs,
                                           String.TabTraySegmentedControlTitlesPrivateTabs,
-                                          String.TabTraySegmentedControlTitlesSyncedTabs])
+//                                          String.TabTraySegmentedControlTitlesSyncedTabs
+                                         ])
     }()
 
     lazy var iPhoneNavigationMenuIdentifiers: UISegmentedControl = {
         return UISegmentedControl(items: [UIImage(named: "nav-tabcounter")!.overlayWith(image: countLabel),
                                           UIImage(named: "smallPrivateMask")!,
-                                          UIImage(named: ImageIdentifiers.syncedDevicesIcon)!])
+//                                          UIImage(named: ImageIdentifiers.syncedDevicesIcon)!
+                                         ])
     }()
 
     // Toolbars
@@ -195,9 +197,6 @@ class TabTrayViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        // We expose the tab tray feature whenever it's going to be seen by the user
-        nimbus.features.tabTrayFeature.recordExposure()
-
         if shouldUseiPadSetup() {
             navigationController?.isToolbarHidden = true
         } else {
@@ -256,7 +255,7 @@ class TabTrayViewController: UIViewController {
     fileprivate func updateTitle() {
         if let newTitle = viewModel.navTitle(for: navigationMenu.selectedSegmentIndex,
                                              foriPhone: !shouldUseiPadSetup()) {
-            navigationItem.title = newTitle
+            navigationItem.title  = newTitle
         }
     }
 

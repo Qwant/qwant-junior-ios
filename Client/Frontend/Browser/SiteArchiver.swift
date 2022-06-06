@@ -18,7 +18,7 @@ struct SiteArchiver {
             return ([SavedTab](), simpleTabsDict)
         }
 
-        let unarchiver = try NSKeyedUnarchiver(forReadingWith: tabData)
+        let unarchiver = NSKeyedUnarchiver(forReadingWith: tabData)
         unarchiver.setClass(SavedTab.self, forClassName: "Client.SavedTab")
         unarchiver.setClass(SessionData.self, forClassName: "Client.SessionData")
         unarchiver.decodingFailurePolicy = .setErrorAndReturn

@@ -138,6 +138,17 @@ class TPAccessoryInfo: ThemedTableViewController {
     }
 }
 
+class QwantContentBlockerSettingViewController: ContentBlockerSettingViewController {
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let _defaultFooter = super.tableView(tableView, viewForFooterInSection: section) as? ThemedTableSectionHeaderFooterView
+        
+        let learnMoreView = _defaultFooter?.subviews.first(where: { ($0 as? UIButton)?.titleLabel?.text == .TrackerProtectionLearnMore })
+        learnMoreView?.removeFromSuperview()
+        
+        return _defaultFooter
+    }
+}
+
 class ContentBlockerSettingViewController: SettingsTableViewController {
     let prefs: Prefs
     var currentBlockingStrength: BlockingStrength

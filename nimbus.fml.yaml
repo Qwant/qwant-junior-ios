@@ -146,7 +146,7 @@ features:
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true
+            "pocket": false
           }
       sponsored-tiles:
         description: "This property defines the sponsored tile feature on the
@@ -155,7 +155,7 @@ features:
         default:
           {
             "status": false,
-            "max-number-of-tiles": 2
+            "max-number-of-tiles": 0
           }
       wallpaper-feature:
         description: "This property defines the wallpaper feature on the
@@ -163,7 +163,7 @@ features:
         type: GeneralFeature
         default:
           {
-            "status": true,
+            "status": false,
           }
     defaults:
       - channel: developer
@@ -173,14 +173,14 @@ features:
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true
+            "pocket": false
           },
           "sponsored-tiles": {
             "status": true,
-            "max-number-of-tiles": 2
+            "max-number-of-tiles": 0
           },
           "wallpaper-feature": {
-            "status": true
+            "status": false
           }
         }
       - channel: beta
@@ -190,14 +190,14 @@ features:
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true
+            "pocket": false
           },
           "sponsored-tiles": {
-            "status": true,
-            "max-number-of-tiles": 1
+            "status": false,
+            "max-number-of-tiles": 0
           },
           "wallpaper-feature": {
-            "status": true
+            "status": false
           }
         }
   search-term-groups-feature:
@@ -391,7 +391,7 @@ types:
         max-number-of-tiles:
           type: Int
           description: The maximum number of sponsored tiles a user can see
-          default: 2
+          default: 0
 
     MessageData:
       description: >

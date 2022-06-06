@@ -14,6 +14,7 @@ private let DisabledEngineNames = "search.disabledEngineNames"
 private let ShowSearchSuggestionsOptIn = "search.suggestions.showOptIn"
 private let ShowSearchSuggestions = "search.suggestions.show"
 private let customSearchEnginesFileName = "customEngines.plist"
+private let searchEnginesPromptResetNotification = "SearchEnginesPromptReset"
 
 /**
  * Manage a set of Open Search engines.
@@ -42,11 +43,18 @@ class SearchEngines {
 
     init(prefs: Prefs, files: FileAccessor) {
         self.prefs = prefs
-        // By default, show search suggestions
+        // By default, show search suggestions opt-in and don't show search suggestions automatically.
+        self.shouldShowSearchSuggestionsOptIn = prefs.boolForKey(ShowSearchSuggestionsOptIn) ?? false
         self.shouldShowSearchSuggestions = prefs.boolForKey(ShowSearchSuggestions) ?? true
         self.fileAccessor = files
         self.disabledEngineNames = getDisabledEngineNames()
         self.orderedEngines = getOrderedEngines()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(didResetSearchEnginePrompt), name: NSNotification.Name(rawValue: searchEnginesPromptResetNotification), object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     var defaultEngine: OpenSearchEngine {
@@ -62,6 +70,12 @@ class SearchEngines {
             orderedEngines.insert(defaultEngine, at: 0)
             self.orderedEngines = orderedEngines
         }
+    }
+
+    @objc
+    private func didResetSearchEnginePrompt() {
+        self.shouldShowSearchSuggestionsOptIn = true
+        self.shouldShowSearchSuggestions = false
     }
 
     func isEngineDefault(_ engine: OpenSearchEngine) -> Bool {
@@ -84,6 +98,12 @@ class SearchEngines {
     var quickSearchEngines: [OpenSearchEngine]! {
         get {
             return self.orderedEngines.filter({ (engine) in !self.isEngineDefault(engine) && self.isEngineEnabled(engine) })
+        }
+    }
+
+    var shouldShowSearchSuggestionsOptIn: Bool {
+        didSet {
+            self.prefs.setObject(shouldShowSearchSuggestionsOptIn, forKey: ShowSearchSuggestionsOptIn)
         }
     }
 

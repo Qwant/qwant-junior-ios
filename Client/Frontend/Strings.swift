@@ -1347,6 +1347,7 @@ extension String {
 
     // Quick Action - Small Size Widget - Edit Mode
     public static let QuickActionDescription = MZLocalizedString("TodayWidget.QuickActionDescription", tableName: "Today", value: "Select a Firefox shortcut to add to your Home screen.", comment: "Quick action description when widget enters edit mode", lastUpdated: .unknown)
+    public static let QuickActionTitle = MZLocalizedString("TodayWidget.QuickActionTitle", tableName: "Today", value: "Quick Link Selection", comment: "Quick link action title", lastUpdated: .unknown)
     public static let QuickActionDropDownMenu = MZLocalizedString("TodayWidget.QuickActionDropDownMenu", tableName: "Today", value: "Quick action", comment: "Quick Actions left label text for dropdown menu when widget enters edit mode", lastUpdated: .unknown)
     public static let DropDownMenuItemNewSearch = MZLocalizedString("TodayWidget.DropDownMenuItemNewSearch", tableName: "Today", value: "New Search", comment: "Quick Actions drop down menu item for new search when widget enters edit mode and drop down menu expands", lastUpdated: .unknown)
     public static let DropDownMenuItemNewPrivateSearch = MZLocalizedString("TodayWidget.DropDownMenuItemNewPrivateSearch", tableName: "Today", value: "New Private Search", comment: "Quick Actions drop down menu item for new private search when widget enters edit mode and drop down menu expands", lastUpdated: .unknown)
@@ -1398,6 +1399,12 @@ extension String {
     public static let DefaultBrowserOnboardingDescriptionStep2 = MZLocalizedString("DefaultBrowserOnboarding.Description2", tableName: "Default Browser", value: "2. Tap Default Browser App", comment: "Description for default browser onboarding card.", lastUpdated: .unknown)
     public static let DefaultBrowserOnboardingDescriptionStep3 = MZLocalizedString("DefaultBrowserOnboarding.Description3", tableName: "Default Browser", value: "3. Select Firefox", comment: "Description for default browser onboarding card.", lastUpdated: .unknown)
     public static let DefaultBrowserOnboardingButton = MZLocalizedString("DefaultBrowserOnboarding.Button", tableName: "Default Browser", value: "Go to Settings", comment: "Button string to open settings that allows user to switch their default browser to Firefox.", lastUpdated: .unknown)
+    
+    public static let QwantDefaultBrowserTitle1 = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Title1", tableName: "Default Browser", value: "Make the Qwant app", comment: "First part of the title to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
+    public static let QwantDefaultBrowserTitle2 = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Title2", tableName: "Default Browser", value: "your default browser", comment: "Second part of the title to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
+    public static let QwantDefaultBrowserDescription = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Description", tableName: "Default Browser", value: "Set links to open automatically in Qwant!", comment: "Description to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
+    public static let QwantDefaultBrowserButtonSettings = MZLocalizedString("DefaultBrowserOnboarding.Qwant.ButtonSettings", tableName: "Default Browser", value: "Go to Settings", comment: "Button string to open settings that allows user to switch their default browser to Qwant.", lastUpdated: .unknown)
+    public static let QwantDefaultBrowserButtonIgnore = MZLocalizedString("DefaultBrowserOnboarding.Qwant.ButtonIgnore", tableName: "Default Browser", value: "Ignore", comment: "Button string to ignore the default browser capability.", lastUpdated: .unknown)
 }
 
 // MARK: - FxAWebViewController

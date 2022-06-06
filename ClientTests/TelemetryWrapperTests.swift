@@ -12,7 +12,7 @@ class TelemetryWrapperTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        Glean.shared.resetGlean(clearStores: true)
+        Glean.shared.resetGlean(clearStores: true, uploadEnabled: false)
     }
 
     // MARK: - Top Site
@@ -23,7 +23,7 @@ class TelemetryWrapperTests: XCTestCase {
         let extras = [topSitePositionKey: "\(1)", topSiteTileTypeKey: "history-based"]
         TelemetryWrapper.recordEvent(category: .action, method: .tap, object: .topSiteTile, value: nil, extras: extras)
 
-        testEventMetricRecordingSuccess(metric: GleanMetrics.TopSite.tilePressed)
+        XCTAssertFalse(GleanMetrics.TopSite.tilePressed.testHasValue())
     }
 
     func test_topSiteTileWithoutExtras_GleanIsNotCalled() {
@@ -50,7 +50,7 @@ class TelemetryWrapperTests: XCTestCase {
                                       TelemetryWrapper.EventExtraKey.preferenceChanged.rawValue: BlockingStrength.strict.rawValue]
         TelemetryWrapper.recordEvent(category: .action, method: .change, object: .setting, extras: extras)
 
-        testEventMetricRecordingSuccess(metric: GleanMetrics.Preferences.changed)
+        XCTAssertFalse(GleanMetrics.Preferences.changed.testHasValue())
     }
 
     func test_preferencesWithoutExtras_GleanIsNotCalled() {
@@ -64,7 +64,7 @@ class TelemetryWrapperTests: XCTestCase {
         let extras: [String: Any] = [TelemetryWrapper.EventObject.recentlySavedBookmarkImpressions.rawValue: "\([].count)"]
         TelemetryWrapper.recordEvent(category: .action, method: .view, object: .firefoxHomepage, value: .recentlySavedBookmarkItemView, extras: extras)
 
-        testEventMetricRecordingSuccess(metric: GleanMetrics.FirefoxHomePage.recentlySavedBookmarkView)
+        XCTAssertFalse(GleanMetrics.FirefoxHomePage.recentlySavedBookmarkView.testHasValue())
     }
 
     func test_recentlySavedBookmarkViewWithoutExtras_GleanIsNotCalled() {
@@ -76,7 +76,7 @@ class TelemetryWrapperTests: XCTestCase {
         let extras: [String: Any] = [TelemetryWrapper.EventObject.recentlySavedReadingItemImpressions.rawValue: "\([].count)"]
         TelemetryWrapper.recordEvent(category: .action, method: .view, object: .firefoxHomepage, value: .recentlySavedReadingListView, extras: extras)
 
-        testEventMetricRecordingSuccess(metric: GleanMetrics.FirefoxHomePage.readingListView)
+        XCTAssertFalse(GleanMetrics.FirefoxHomePage.readingListView.testHasValue())
     }
 
     func test_recentlySavedReadingListViewWithoutExtras_GleanIsNotCalled() {
@@ -168,8 +168,8 @@ extension XCTestCase {
     func testEventMetricRecordingSuccess<Keys: ExtraKeys, Extras: EventExtras>(metric: EventMetricType<Keys, Extras>,
                                                                                file: StaticString = #file,
                                                                                line: UInt = #line) {
-        XCTAssertTrue(metric.testHasValue())
-        XCTAssertEqual(try! metric.testGetValue().count, 1)
+        XCTAssertFalse(metric.testHasValue())
+        XCTAssertThrowsError(try metric.testGetValue())
 
         XCTAssertEqual(metric.testGetNumRecordedErrors(ErrorType.invalidLabel), 0)
         XCTAssertEqual(metric.testGetNumRecordedErrors(ErrorType.invalidOverflow), 0)
@@ -180,8 +180,8 @@ extension XCTestCase {
     func testCounterMetricRecordingSuccess(metric: CounterMetricType,
                                            file: StaticString = #file,
                                            line: UInt = #line) {
-        XCTAssertTrue(metric.testHasValue())
-        XCTAssertEqual(try! metric.testGetValue(), 1)
+        XCTAssertFalse(metric.testHasValue())
+        XCTAssertThrowsError(try metric.testGetValue())
 
         XCTAssertEqual(metric.testGetNumRecordedErrors(ErrorType.invalidLabel), 0)
         XCTAssertEqual(metric.testGetNumRecordedErrors(ErrorType.invalidOverflow), 0)

@@ -8,7 +8,7 @@ import SwiftyJSON
 import Shared
 
 private let log = Logger.browserLogger
-private let ServerURL = "https://incoming.telemetry.mozilla.org".asURL!
+private let ServerURL = "localhost".asURL!
 private let AppName = "Fennec"
 
 public enum TelemetryDocType: String {
@@ -77,6 +77,7 @@ open class SyncTelemetry {
         request.addValue(Date().toRFC822String(), forHTTPHeaderField: "Date")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
+        return
         makeURLSession(userAgent: UserAgent.fxaUserAgent, configuration: URLSessionConfiguration.ephemeral).dataTask(with: request) { (_, response, error) in
             let code = (response as? HTTPURLResponse)?.statusCode
             log.debug("Ping response: \(code ?? -1).")

@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Need to get "settings.sendUsageData" this way so that Sentry can be initialized
         // before getting the Profile.
-        let sendUsageData = NSUserDefaultsPrefs(prefix: "profile").boolForKey(AppConstants.PrefSendUsageData) ?? true
+        let sendUsageData = NSUserDefaultsPrefs(prefix: "profile").boolForKey(AppConstants.PrefSendUsageData) ?? false
         SentryIntegration.shared.setup(sendUsageData: sendUsageData)
 
         // Set the Firefox UA for browsing.
@@ -503,10 +503,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let query = url.getQuery()
 
             // Check for fxa sign-in code and launch the login screen directly
-            if query["signin"] != nil {
-                // bvc.launchFxAFromDeeplinkURL(url) // Was using Adjust. Consider hooking up again when replacement system in-place.
-                return true
-            }
+//            if query["signin"] != nil {
+//                // bvc.launchFxAFromDeeplinkURL(url) // Was using Adjust. Consider hooking up again when replacement system in-place.
+//                return true
+//            }
 
             // Per Adjust documenation, https://docs.adjust.com/en/universal-links/#running-campaigns-through-universal-links,
             // it is recommended that links contain the `deep_link` query parameter. This link will also
