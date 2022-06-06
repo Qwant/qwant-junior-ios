@@ -176,7 +176,7 @@ features:
             "pocket": false
           },
           "sponsored-tiles": {
-            "status": true,
+            "status": false,
             "max-number-of-tiles": 0
           },
           "wallpaper-feature": {
