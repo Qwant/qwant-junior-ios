@@ -22,7 +22,7 @@ class FxHomeTopSitesManager: FeatureFlaggable, HasNimbusSponsoredTiles {
 
     weak var delegate: FxHomeTopSitesManagerDelegate?
     lazy var topSiteHistoryManager = TopSiteHistoryManager(profile: profile)
-    lazy var googleTopSiteManager = GoogleTopSiteManager(prefs: profile.prefs)
+    lazy var qwantTopSiteManager = QwantTopSiteManager(prefs: profile.prefs)
     lazy var contileProvider: ContileProviderInterface = ContileProvider()
 
     init(profile: Profile) {
@@ -49,7 +49,7 @@ class FxHomeTopSitesManager: FeatureFlaggable, HasNimbusSponsoredTiles {
     }
 
     func removePinTopSite(site: Site) {
-        googleTopSiteManager.removeGoogleTopSite(site: site)
+        qwantTopSiteManager.removeQwantTopSite(site: site)
         topSiteHistoryManager.removeTopSite(site: site)
     }
 
@@ -138,8 +138,8 @@ class FxHomeTopSitesManager: FeatureFlaggable, HasNimbusSponsoredTiles {
     }
 
     private func addGoogleTopSite(sites: inout [Site], availableSpacesCount: Int) {
-        guard googleTopSiteManager.shouldAddGoogleTopSite(availableSpacesCount: availableSpacesCount) else { return }
-        googleTopSiteManager.addGoogleTopSite(sites: &sites)
+        guard qwantTopSiteManager.shouldAddQwantTopSite(availableSpacesCount: availableSpacesCount) else { return }
+        qwantTopSiteManager.addQwantTopSite(sites: &sites)
     }
 
     private func countPinnedSites(sites: [Site]) -> Int {
@@ -195,7 +195,13 @@ private extension Array where Element == Site {
         var alreadyThere = Set<Site>()
         let uniqueSites = compactMap { (site) -> Site? in
             let siteDomain = site.url.asURL?.shortDomain
-            let shouldAddSite = alreadyThere.first(where: { $0.url.asURL?.shortDomain == siteDomain } ) == nil
+            var comparisonMethod: ((Site) -> Bool)!
+            if site.url.asURL?.isMapsUrl == true {
+                comparisonMethod = { $0.url.asURL?.isMapsUrl == true }
+            } else {
+                comparisonMethod = { $0.url.asURL?.shortDomain == siteDomain }
+            }
+            let shouldAddSite = alreadyThere.first(where: comparisonMethod ) == nil
             // If shouldAddSite or site domain was not found, then insert the site
             guard shouldAddSite || siteDomain == nil else { return nil }
             alreadyThere.insert(site)

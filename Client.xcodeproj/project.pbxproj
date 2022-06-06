@@ -414,6 +414,7 @@
 		6860135227A292EB004E2708 /* QuickLinkSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6860135527A292EB004E2708 /* QuickLinkSelection.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		6860135327A292EB004E2708 /* QuickLinkSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6860135527A292EB004E2708 /* QuickLinkSelection.intentdefinition */; };
 		68820C0627AD188000F378AC /* QwantExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68820C0527AD188000F378AC /* QwantExtensions.swift */; };
+		68A21BB1284E656C00A1F194 /* QwantTopSiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A21BB0284E656C00A1F194 /* QwantTopSiteManager.swift */; };
 		68E5BA81279FFE3700C6AB45 /* QwantDefaultBrowserOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E5BA80279FFE3700C6AB45 /* QwantDefaultBrowserOnboardingViewController.swift */; };
 		742A56391D80B54A00BDB803 /* PhotonActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A56381D80B54A00BDB803 /* PhotonActionSheet.swift */; };
 		744B0FFE1B4F172E00100422 /* ToolbarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B0FFD1B4F172E00100422 /* ToolbarTests.swift */; };
@@ -1898,6 +1899,7 @@
 		6860135D27A292F6004E2708 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/QuickLinkSelection.strings; sourceTree = "<group>"; };
 		68820C0527AD188000F378AC /* QwantExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantExtensions.swift; sourceTree = "<group>"; };
 		689A4CF494961DA72688CEB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ClearPrivateData.strings; sourceTree = "<group>"; };
+		68A21BB0284E656C00A1F194 /* QwantTopSiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTopSiteManager.swift; sourceTree = "<group>"; };
 		68B44DA18DC0230AEB96C03D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LoginManager.strings; sourceTree = "<group>"; };
 		68E5BA80279FFE3700C6AB45 /* QwantDefaultBrowserOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantDefaultBrowserOnboardingViewController.swift; sourceTree = "<group>"; };
 		6FAC4AC9B5397399E498ECE5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = "es.lproj/Default Browser.strings"; sourceTree = "<group>"; };
@@ -3728,6 +3730,7 @@
 				8AB8572B27D945FA0075C173 /* FxHomeTopSitesManager.swift */,
 				43AB6F9C25DC53D20016B015 /* GoogleTopSiteManager.swift */,
 				43AB6FA125DC53D30016B015 /* TopSiteHistoryManager.swift */,
+				68A21BB0284E656C00A1F194 /* QwantTopSiteManager.swift */,
 			);
 			path = DataManagement;
 			sourceTree = "<group>";
@@ -7099,7 +7102,6 @@
 				EBF47E701F7979DF00899189 /* TelemetryWrapper.swift in Sources */,
 				8AD40FCF27BADC6B00672675 /* URLTextField.swift in Sources */,
 				68E5BA81279FFE3700C6AB45 /* QwantDefaultBrowserOnboardingViewController.swift in Sources */,
-				E68F36981EA694000048CF44 /* PanelDataObservers.swift in Sources */,
 				31ADB5DA1E58CEC300E87909 /* ClipboardBarDisplayHandler.swift in Sources */,
 				8AD1980F27BEB3F100D64B0E /* PhotonActionSheetViewModel.swift in Sources */,
 				39EF4363260CEE5E0011E22E /* ExperimentConstants.swift in Sources */,
@@ -7263,7 +7265,6 @@
 				9636D92827F5D72D00771F5E /* GleanPlumbMessageManager.swift in Sources */,
 				C80685D126A0C93900DCD895 /* UserResearch.swift in Sources */,
 				8AED23C527AC1F9500DE7E97 /* BaseContentStackView.swift in Sources */,
-				DFC30BDB27A8724300FAA8B3 /* WallpaperStorageUtility.swift in Sources */,
 				6860135227A292EB004E2708 /* QuickLinkSelection.intentdefinition in Sources */,
 				CA7FC7D324A6A9B70012F347 /* LoginListDataSourceHelper.swift in Sources */,
 				43AB6FA425DC53D30016B015 /* ASHeaderView.swift in Sources */,
@@ -7348,6 +7349,7 @@
 				C834330026BAD32800ABAAA6 /* EnhancedTrackingProtectionDetailsVM.swift in Sources */,
 				E660BDD91BB06521009AC090 /* TabsButton.swift in Sources */,
 				4331A9BB27193DF0005E8080 /* ContextualHintViewController.swift in Sources */,
+				68A21BB1284E656C00A1F194 /* QwantTopSiteManager.swift in Sources */,
 				39EF434E260A73950011E22E /* Experiments.swift in Sources */,
 				DFEA639E279F468A00D489C3 /* DynamicHeightCollectionView.swift in Sources */,
 				C87DC85A27B2C8DE006EFCE2 /* WallpaperFilePathProtocol.swift in Sources */,

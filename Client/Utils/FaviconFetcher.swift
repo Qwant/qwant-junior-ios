@@ -49,6 +49,10 @@ open class FaviconFetcher: NSObject, XMLParserDelegate {
         if multiRegionDomains.contains(hostName), let icon = bundledIcons[hostName] {
             return icon
         }
+        // Exception for maps as it doesn't have its own domain.
+        if url.isMapsUrl, let icon = bundledIcons["qwant.com/maps"] {
+            return icon
+        }
         let fullURL = url.absoluteDisplayString.remove("\(url.scheme ?? "")://")
         if let name = url.baseDomain, let icon = bundledIcons[name] ?? bundledIcons[fullURL] {
             return icon

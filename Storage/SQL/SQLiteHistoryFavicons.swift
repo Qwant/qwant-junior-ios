@@ -237,6 +237,10 @@ extension SQLiteHistory: Favicons {
         if multiRegionTopSitesDomains.contains(domain), let icon = topSitesIcons[domain] {
             return imageFor(icon: icon)
         }
+        
+        if url.isMapsUrl, let icon = topSitesIcons["qwant.com/maps"] {
+            return imageFor(icon: icon)
+        }
 
         let urlWithoutScheme = url.absoluteDisplayString.remove("\(url.scheme ?? "")://")
         if let baseDomain = url.baseDomain, let icon = topSitesIcons[baseDomain] ?? topSitesIcons[urlWithoutScheme] {

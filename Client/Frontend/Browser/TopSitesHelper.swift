@@ -24,8 +24,10 @@ struct TopSitesHelper {
             }
 
             // How sites are merged together. We compare against the url's base domain. example m.youtube.com is compared against `youtube.com`
+            // Except for Qwant Maps, that shares the same base domain as the search engine
             let unionOnURL = { (site: Site) -> String in
-                return URL(string: site.url)?.normalizedHost ?? ""
+                let url = URL(string: site.url)
+                return url?.isMapsUrl == true ? "qwant.com/maps" : (url?.normalizedHost ?? "")
             }
 
             // Fetch the default sites
