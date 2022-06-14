@@ -50,6 +50,15 @@ import SwiftUI
 struct ImageButtonWithLabel: View {
     var isSmall: Bool
     var link: QuickLink
+    var isBackgroundLight: Bool
+    
+    var colorValue: Color {
+        if isBackgroundLight {
+            return .black
+        } else {
+            return .white
+        }
+    }
 
     var paddingValue: CGFloat {
         if isSmall {
@@ -72,11 +81,13 @@ struct ImageButtonWithLabel: View {
                         VStack(alignment: .leading) {
                             if isSmall {
                                 Text(link.label)
+                                    .foregroundColor(colorValue)
                                     .font(.headline)
                                     .minimumScaleFactor(0.75)
                                     .layoutPriority(1000)
                             } else {
                                 Text(link.label)
+                                    .foregroundColor(colorValue)
                                     .font(.footnote)
                                     .minimumScaleFactor(0.75)
                                     .layoutPriority(1000)
@@ -85,6 +96,7 @@ struct ImageButtonWithLabel: View {
                         Spacer()
                         if link == .search && isSmall {
                             Image("search-button")
+                                .foregroundColor(colorValue)
                                 .scaledToFit()
                                 .frame(height: 24.0)
                         } else {
