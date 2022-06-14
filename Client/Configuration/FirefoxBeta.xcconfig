@@ -5,8 +5,8 @@
 #include "Common.xcconfig"
 #include "Release.xcconfig"
 
-MOZ_BUNDLE_DISPLAY_NAME = Qwant Beta
-MOZ_BUNDLE_ID = com.qwant.mobile
+MOZ_BUNDLE_DISPLAY_NAME = Qwant Junior Beta
+MOZ_BUNDLE_ID = com.qwantjunior.mobile
 CODE_SIGN_ENTITLEMENTS = Client/Entitlements/FirefoxBetaApplication.entitlements
 OTHER_SWIFT_FLAGS = $(OTHER_SWIFT_FLAGS_common) -DMOZ_CHANNEL_BETA
-MOZ_INTERNAL_URL_SCHEME = qwant-beta
+MOZ_INTERNAL_URL_SCHEME = qwantjunior-beta
