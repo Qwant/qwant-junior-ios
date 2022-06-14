@@ -36,7 +36,7 @@ struct SmallQuickLinkView: View {
 
     @ViewBuilder
     var body: some View {
-        ImageButtonWithLabel(isSmall: true, link: entry.link)
+        ImageButtonWithLabel(isSmall: true, link: entry.link, isBackgroundLight: true)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(LinearGradient(gradient: Gradient(colors: entry.link.backgroundColors), startPoint: .bottomLeading, endPoint: .topTrailing)).widgetURL(entry.link.smallWidgetUrl)
     }
