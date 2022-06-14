@@ -8356,9 +8356,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Extensions/Today/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_TODAY";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
 				PRODUCT_NAME = Today;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Today - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Today - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec;
@@ -8371,9 +8370,8 @@
 				DEVELOPMENT_TEAM = 76Z29F769J;
 				INFOPLIST_FILE = Extensions/Today/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_RELEASE -DMOZ_TARGET_TODAY";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
 				PRODUCT_NAME = Today;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Today - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Today - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Firefox;
@@ -8386,9 +8384,8 @@
 				DEVELOPMENT_TEAM = 76Z29F769J;
 				INFOPLIST_FILE = Extensions/Today/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_BETA -DMOZ_TARGET_TODAY";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
 				PRODUCT_NAME = Today;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Today - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Today - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = FirefoxBeta;
@@ -8400,8 +8397,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Extensions/NotificationService/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_NOTIFICATIONSERVICE";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - NotificationService - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - NotificationService - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec_Enterprise;
@@ -8413,8 +8409,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Extensions/NotificationService/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_NOTIFICATIONSERVICE";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - NotificationService - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - NotificationService - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec;
@@ -8427,8 +8422,7 @@
 				DEVELOPMENT_TEAM = 76Z29F769J;
 				INFOPLIST_FILE = Extensions/NotificationService/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_RELEASE -DMOZ_TARGET_NOTIFICATIONSERVICE";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - NotificationService - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - NotificationService - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Firefox;
@@ -8441,9 +8435,8 @@
 				DEVELOPMENT_TEAM = 76Z29F769J;
 				INFOPLIST_FILE = Extensions/NotificationService/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_BETA -DMOZ_TARGET_NOTIFICATIONSERVICE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwant.mobile.NotificationService;
 				PRODUCT_NAME = NotificationService;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - NotificationService - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - NotificationService - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = FirefoxBeta;
@@ -8619,7 +8612,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).WidgetKit";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - WidgetKit - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - WidgetKit - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec;
@@ -8633,7 +8626,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).WidgetKit";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - WidgetKit - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - WidgetKit - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec_Enterprise;
@@ -8648,7 +8641,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).WidgetKit";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - WidgetKit - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - WidgetKit - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Firefox;
@@ -8663,7 +8656,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).WidgetKit";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - WidgetKit - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - WidgetKit - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = FirefoxBeta;
@@ -9253,7 +9246,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID)";
 				PRODUCT_MODULE_NAME = Client;
 				PRODUCT_NAME = Client;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Development";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Client/Client-Bridging-Header.h";
 				VALIDATE_WORKSPACE = YES;
@@ -9278,8 +9271,7 @@
 				DEVELOPMENT_TEAM = 76Z29F769J;
 				INFOPLIST_FILE = Extensions/ShareTo/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_RELEASE -DMOZ_TARGET_SHARETO";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - ShareTo - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - ShareTo - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Firefox;
@@ -9570,7 +9562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID)";
 				PRODUCT_MODULE_NAME = Client;
 				PRODUCT_NAME = Client;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Development";
 				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Client/Client-Bridging-Header.h";
@@ -9585,8 +9577,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Extensions/ShareTo/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_SHARETO";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - ShareTo - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - ShareTo - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec_Enterprise;
@@ -9598,9 +9589,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Extensions/Today/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_TODAY";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
 				PRODUCT_NAME = Today;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Today - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Today - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec_Enterprise;
@@ -9830,7 +9820,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID)";
 				PRODUCT_MODULE_NAME = Client;
 				PRODUCT_NAME = Client;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Development";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Client/Client-Bridging-Header.h";
 				VALIDATE_WORKSPACE = YES;
@@ -9855,8 +9845,7 @@
 				DEVELOPMENT_TEAM = 76Z29F769J;
 				INFOPLIST_FILE = Extensions/ShareTo/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_BETA -DMOZ_TARGET_SHARETO";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - ShareTo - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - ShareTo - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = FirefoxBeta;
@@ -10044,9 +10033,8 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(OTHER_SWIFT_FLAGS_common) -DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_CREDENTIAL_PROVIDER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwant.mobile.CredentialProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - CredentialProvider - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - CredentialProvider - Development";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -10114,9 +10102,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(OTHER_SWIFT_FLAGS_common) -DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_CREDENTIAL_PROVIDER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwant.mobile.CredentialProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - CredentialProvider - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - CredentialProvider - Development";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -10186,9 +10173,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(OTHER_SWIFT_FLAGS_common) -DMOZ_CHANNEL_RELEASE -DMOZ_TARGET_CREDENTIAL_PROVIDER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwant.mobile.CredentialProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - CredentialProvider - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - CredentialProvider - Development";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -10258,9 +10244,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(OTHER_SWIFT_FLAGS_common) -DMOZ_CHANNEL_BETA -DMOZ_TARGET_CREDENTIAL_PROVIDER";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwant.mobile.CredentialProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - CredentialProvider - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - CredentialProvider - Development";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -10298,7 +10283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID)";
 				PRODUCT_MODULE_NAME = Client;
 				PRODUCT_NAME = Client;
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - Development";
 				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Client/Client-Bridging-Header.h";
@@ -10324,8 +10309,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Extensions/ShareTo/Info.plist;
 				OTHER_SWIFT_FLAGS = "-DMOZ_CHANNEL_FENNEC -DMOZ_TARGET_SHARETO";
-				PRODUCT_BUNDLE_IDENTIFIER = "$(MOZ_BUNDLE_ID).$(PRODUCT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Qwant Mobile - ShareTo - Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Qwant Junior - ShareTo - Development";
 				SKIP_INSTALL = NO;
 			};
 			name = Fennec;
