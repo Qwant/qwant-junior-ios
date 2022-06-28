@@ -565,6 +565,15 @@ extension BrowserViewController: WKNavigationDelegate {
             decisionHandler(.cancel)
             return
         }
+        
+        policy.ensureSafety(url) { shouldCancelNavigation in
+            self.policy.startSkippingPolicyChecks()
+            if let cancelReason = shouldCancelNavigation.associatedStaticPage {
+                webView.load(URLRequest(url: cancelReason))
+                decisionHandler(.cancel)
+                return
+            }
+        }
 
         // This is the normal case, opening a http or https url, which we handle by loading them in this WKWebView. We
         // always allow this. Additionally, data URIs are also handled just like normal web pages.
@@ -811,6 +820,8 @@ extension BrowserViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.policy.stopSkippingPolicyChecks()
+        
         if let tab = tabManager[webView],
            let metadataManager = tab.metadataManager {
             navigateInTab(tab: tab, to: navigation, webViewStatus: .finishedNavigation)
