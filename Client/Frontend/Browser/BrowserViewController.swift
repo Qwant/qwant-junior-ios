@@ -147,6 +147,7 @@ class BrowserViewController: UIViewController {
 
     let downloadQueue = DownloadQueue()
     var keyboardPressesHandler = KeyboardPressesHandler()
+    let policy = QwantJuniorPolicy()
 
     fileprivate var shouldShowIntroScreen: Bool { return false }
 
@@ -1465,6 +1466,10 @@ class BrowserViewController: UIViewController {
                 postLocationChangeNotificationForTab(tab, navigation: navigation)
                 tab.readabilityResult = nil
                 webView.evaluateJavascriptInDefaultContentWorld("\(ReaderModeNamespace).checkReadability()")
+            }
+
+            if policy.shouldInsertCookie(baseUrl: url) {
+                webView.configuration.websiteDataStore.httpCookieStore.setCookie(policy.youtubeCookie)
             }
 
             TabEvent.post(.didChangeURL(url), for: tab)
