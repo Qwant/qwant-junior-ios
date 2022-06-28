@@ -20,16 +20,16 @@
 "Intro.Slides.Fast.Search.Title" = "Búsqueda rápida";
 
 /* Description for the first item in the table related to syncing data (bookmarks, history) via firefox account between devices */
-"Intro.Slides.Firefox.Account.Sync.Description" = "Lleva marcadores, historial y contraseñas a Qwant en este dispositivo.";
+"Intro.Slides.Firefox.Account.Sync.Description" = "Lleva marcadores, historial y contraseñas a Qwant Junior en este dispositivo.";
 
 /* Title for the first item in the table related to syncing data (bookmarks, history) via firefox account between devices */
-"Intro.Slides.Firefox.Account.Sync.Title" = "Sincroniza Qwant entre dispositivos";
+"Intro.Slides.Firefox.Account.Sync.Title" = "Sincroniza Qwant Junior entre dispositivos";
 
 /* Description for the 'Mail' panel in the First Run tour. */
-"Intro.Slides.Mail.Description" = "Utiliza cualquier aplicación de correo - no solo Correo - con Qwant.";
+"Intro.Slides.Mail.Description" = "Utiliza cualquier aplicación de correo - no solo Correo - con Qwant Junior.";
 
 /* Title for the fourth panel 'Mail' in the First Run tour. */
-"Intro.Slides.Mail.Title" = "Tienes nuevas opciones… de correo";
+"Intro.Slides.Mail.Title" = "Tienes nuevas opciones... de correo";
 
 /* Description for the 'Private Browsing' panel in the First Run tour. */
 "Intro.Slides.Private.Description" = "Pulsa el icono de la máscara para cambiar al modo de navegación privada.";
@@ -38,7 +38,7 @@
 "Intro.Slides.Private.Title" = "Navega como si nadie te observara";
 
 /* Description for the third item in the table related to safe syncing with a firefox account */
-"Intro.Slides.Safe.Sync.Description" = "Protege tus credenciales y datos en cualquier lugar donde uses Qwant.";
+"Intro.Slides.Safe.Sync.Description" = "Protege tus credenciales y datos en cualquier lugar donde uses Qwant Junior.";
 
 /* Title for the third item in the table related to safe syncing with a firefox account */
 "Intro.Slides.Safe.Sync.Title" = "Sincronización segura";
@@ -59,7 +59,7 @@
 "Intro.Slides.Welcome.Description.v2" = "Rápido, privado y de tu lado.";
 
 /* Title for the first panel 'Welcome' in the First Run tour. */
-"Intro.Slides.Welcome.Title.v2" = "Te damos la bienvenida a Qwant";
+"Intro.Slides.Welcome.Title.v2" = "Te damos la bienvenida a Qwant Junior";
 
 /* See http://mzl.la/1T8gxwo */
 "Start Browsing" = "Empieza a navegar";
@@ -68,7 +68,7 @@
 "Turn on Sync…" = "Activar Sync…";
 
 /* Title for the first panel 'Welcome' in the First Run tour. */
-"Qwant.Intro.Welcome.Title" = "Bienvenido a Qwant querido anónimo";
+"Qwant.Intro.Welcome.Title" = "Bienvenido a Qwant Junior querido anónimo";
 
 /* Subtitle for the first panel 'Welcome' in the First Run tour. */
 "Qwant.Intro.Welcome.Subtitle" = "Aquí puede buscar con total confidencialidad:";

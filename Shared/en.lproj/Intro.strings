@@ -20,13 +20,13 @@
 "Intro.Slides.Fast.Search.Title" = "Fast Search";
 
 /* Description for the first item in the table related to syncing data (bookmarks, history) via firefox account between devices */
-"Intro.Slides.Firefox.Account.Sync.Description" = "Bring bookmarks, history, and passwords to Qwant on this device.";
+"Intro.Slides.Firefox.Account.Sync.Description" = "Bring bookmarks, history, and passwords to Qwant Junior on this device.";
 
 /* Title for the first item in the table related to syncing data (bookmarks, history) via firefox account between devices */
-"Intro.Slides.Firefox.Account.Sync.Title" = "Sync Qwant Between Devices";
+"Intro.Slides.Firefox.Account.Sync.Title" = "Sync Qwant Junior Between Devices";
 
 /* Description for the 'Mail' panel in the First Run tour. */
-"Intro.Slides.Mail.Description" = "Use any email app — not just Mail — with Qwant.";
+"Intro.Slides.Mail.Description" = "Use any email app — not just Mail — with Qwant Junior.";
 
 /* Title for the fourth panel 'Mail' in the First Run tour. */
 "Intro.Slides.Mail.Title" = "You’ve got mail… options";
@@ -38,7 +38,7 @@
 "Intro.Slides.Private.Title" = "Browse like no one’s watching";
 
 /* Description for the third item in the table related to safe syncing with a firefox account */
-"Intro.Slides.Safe.Sync.Description" = "Protect your logins and data everywhere you use Qwant.";
+"Intro.Slides.Safe.Sync.Description" = "Protect your logins and data everywhere you use Qwant Junior.";
 
 /* Title for the third item in the table related to safe syncing with a firefox account */
 "Intro.Slides.Safe.Sync.Title" = "Safe Sync";
@@ -59,7 +59,7 @@
 "Intro.Slides.Welcome.Description.v2" = "Fast, private, and on your side.";
 
 /* Title for the first panel 'Welcome' in the First Run tour. */
-"Intro.Slides.Welcome.Title.v2" = "Welcome to Qwant";
+"Intro.Slides.Welcome.Title.v2" = "Welcome to Qwant Junior";
 
 /* See http://mzl.la/1T8gxwo */
 "Start Browsing" = "Start Browsing";
@@ -68,7 +68,7 @@
 "Turn on Sync…" = "Turn on Sync…";
 
 /* Title for the first panel 'Welcome' in the First Run tour. */
-"Qwant.Intro.Welcome.Title" = "Welcome to Qwant, dear unknown user";
+"Qwant.Intro.Welcome.Title" = "Welcome to Qwant Junior, dear unknown user";
 
 /* Subtitle for the first panel 'Welcome' in the First Run tour. */
 "Qwant.Intro.Welcome.Subtitle" = "Search in complete privacy:";

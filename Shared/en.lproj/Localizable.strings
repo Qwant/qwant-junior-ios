@@ -294,7 +294,7 @@
 "ContextualHint.SearchBarPlacement.NewUsers" = "To make entering info easier, the toolbar is now at the bottom by default.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one talks about the more personalized home feature. */
-"ContextualHints.Homepage.PersonalizedHome" = "Your personalized Qwant homepage now makes it easier to pick up where you left off. Find your recent tabs, bookmarks, and search results.";
+"ContextualHints.Homepage.PersonalizedHome" = "Your personalized Qwant Junior homepage now makes it easier to pick up where you left off. Find your recent tabs, bookmarks, and search results.";
 
 /* Contextual hints are little popups that appear for the users informing them of new features. This one is a call to action for the popup describing search bar placement. It indicates a user can navigate to the settings page that allows them to customize the placement of the search bar. */
 "ContextualHints.SearchBarPlacement.CallToAction" = "Toolbar Settings";
@@ -315,7 +315,7 @@
 "Could not load page." = "Could not load page.";
 
 /* Description for the new dark mode change in the version 22 app release. It describes the new automatic dark theme and how to change the theme settings. */
-"CoverSheet.v22.DarkMode.Description" = "For iOS 13 users, Qwant now automatically switches to a dark theme when your phone is set to Dark Mode. To change this behavior, go to Settings > Theme.";
+"CoverSheet.v22.DarkMode.Description" = "For iOS 13 users, Qwant Junior now automatically switches to a dark theme when your phone is set to Dark Mode. To change this behavior, go to Settings > Theme.";
 
 /* Title for the new dark mode change in the version 22 app release. */
 "CoverSheet.v22.DarkMode.Title" = "Dark theme now includes a dark keyboard and dark splash screen.";
@@ -374,7 +374,7 @@
 "Downloads.CancelDialog.Title" = "Cancel Download";
 
 /* The message displayed to a user when they try and perform the download of an asset that Firefox cannot currently handle. */
-"Downloads.Error.Message" = "Downloads aren’t supported in Qwant yet.";
+"Downloads.Error.Message" = "Downloads aren’t supported in Qwant Junior yet.";
 
 /* The label text in the Download Cancelled toast for showing confirmation that the download was cancelled. */
 "Downloads.Toast.Cancelled.LabelText" = "Download Cancelled";
@@ -419,7 +419,7 @@
 "ErrorPages.AdvancedWarning2.Text" = "It may be a misconfiguration or tampering by an attacker. Proceed if you accept the potential risk.";
 
 /* Warning text on the certificate error page */
-"ErrorPages.CertWarning.Description" = "The owner of %@ has configured their website improperly. To protect your information from being stolen, Qwant has not connected to this website.";
+"ErrorPages.CertWarning.Description" = "The owner of %@ has configured their website improperly. To protect your information from being stolen, Qwant Junior has not connected to this website.";
 
 /* Title on the certificate error page */
 "ErrorPages.CertWarning.Title" = "This Connection is Untrusted";
@@ -440,7 +440,7 @@
 "Facebook" = "Facebook";
 
 /* Title for firefox about:home page in tab history list */
-"Firefox.HomePage.Title" = "Qwant Home Page";
+"Firefox.HomePage.Title" = "Qwant Junior Home Page";
 
 /* A button at bottom of the Firefox homepage that, when clicked, takes users straight to the settings options, where they can customize the Firefox Home page */
 "FirefoxHome.CustomizeHomeButton.Title" = "Customize Homepage";
@@ -457,6 +457,21 @@
 /* When a user taps and holds on an item from the Recently Visited section, this label will appear indicating the option to remove that item. */
 "FirefoxHome.RecentHistory.Remove" = "Remove";
 
+/* Label showing how many sites there is in a search group. %d represents a number */
+"FirefoxHomepage.Common.SitesCount.v101" = "Sites: %d";
+
+/* The title for the Settings context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to the Shortcuts Settings. */
+"FirefoxHomepage.ContextualMenu.Settings.v101" = "Settings";
+
+/* The title for the Sponsored Content context menu action for sponsored tiles in the Firefox home page shortcuts section. Clicking this brings the users to a support page where users can learn more about Sponsored content and how it works. */
+"FirefoxHomepage.ContextualMenu.SponsoredContent.v101" = "Our Sponsors & Your Privacy";
+
+/* This string will show under the description on pocket story, indicating that the story is sponsored. */
+"FirefoxHomepage.Pocket.Sponsored.v103" = "Sponsored";
+
+/* This string will show under a shortcuts tile on the firefox home page, indicating that the tile is a sponsored tile. Space is limited, please keep as short as possible. */
+"FirefoxHomepage.Shortcuts.Sponsored.v100" = "Sponsored";
+
 /* Accessibility Label for the tab toolbar Forward button */
 "Forward" = "Forward";
 
@@ -467,13 +482,13 @@
 "FxA.AccountVerificationRequired" = "Account Verification Required";
 
 /* Message explaining that user needs to check email for Firefox Account verfication link. */
-"FxA.AccountVerificationRequiredSurface" = "You need to verify %@. Check your email for the verification link from Qwant.";
+"FxA.AccountVerificationRequiredSurface" = "You need to verify %@. Check your email for the verification link from Qwant Junior.";
 
 /* Button label to connect another device to Sync */
 "FxA.ConnectAnotherDevice" = "Connect Another Device";
 
 /* Settings section title for Firefox Account */
-"FxA.FirefoxAccount" = "Qwant Account";
+"FxA.FirefoxAccount" = "Qwant Junior Account";
 
 /* Button label to go to Firefox Account settings */
 "FxA.ManageAccount" = "Manage Account & Devices";
@@ -488,7 +503,7 @@
 "FxA.RemoveAccount" = "Remove";
 
 /* Description string for alert view that gets presented when user tries to remove an account. */
-"FxA.RemoveAccountAlertMessage" = "Remove the Qwant Account associated with this device to sign in as a different user.";
+"FxA.RemoveAccountAlertMessage" = "Remove the Qwant Junior Account associated with this device to sign in as a different user.";
 
 /* Remove account alert is the final confirmation before user removes their firefox account */
 "FxA.RemoveAccountAlertTitle" = "Remove Account";
@@ -530,7 +545,7 @@
 "FxAPush_DeviceDisconnected_title" = "Sync Disconnected";
 
 /* On the firefox homepage, the string read by the voice over prompt for accessibility, for the button which changes the wallpaper */
-"FxHomepage.Wallpaper.ButtonLabel.v99" = "Qwant logo, change the wallpaper.";
+"FxHomepage.Wallpaper.ButtonLabel.v99" = "Qwant Junior logo, change the wallpaper.";
 
 /* A re-worded offer about Sync, displayed when the Sync home panel is empty, that emphasizes one-way data transfer, not syncing. */
 "Get your open tabs, bookmarks, and passwords from your other devices." = "Get your open tabs, bookmarks, and passwords from your other devices.";
@@ -668,7 +683,7 @@
 "InactiveTabs.TabTray.AutoClosePrompt.ButtonTitle" = "Turn on Auto Close";
 
 /* In the Tabs Tray, in the Inactive Tabs section, a prompt may come up about auto-closing tabs. This string describes what happens if you elect to turn on this option. */
-"InactiveTabs.TabTray.AutoClosePrompt.Content" = "Qwant will close tabs you haven’t viewed over the past month.";
+"InactiveTabs.TabTray.AutoClosePrompt.Content" = "Qwant Junior will close tabs you haven’t viewed over the past month.";
 
 /* In the Tabs Tray, in the Inactive Tabs section, a prompt may come up about auto-closing tabs. This is the title of that Auto Close prompt */
 "InactiveTabs.TabTray.AutoClosePrompt.Title" = "Auto-close after one month?";
@@ -815,13 +830,13 @@
 "Logins.Onboarding.Message" = "Your logins and passwords are now protected by Face ID, Touch ID or a device passcode.";
 
 /* Warning message shown when you try to enable or use native AutoFill without a device passcode setup */
-"Logins.PasscodeRequirement.Warning" = "To use the AutoFill feature for Qwant, you must have a device passcode enabled.";
+"Logins.PasscodeRequirement.Warning" = "To use the AutoFill feature for Qwant Junior, you must have a device passcode enabled.";
 
 /* Label displaying welcome view tagline under the title */
 "Logins.WelcomeView.Tagline" = "Take your passwords everywhere";
 
 /* Label displaying welcome view title */
-"Logins.WelcomeView.Title2" = "AutoFill Qwant Passwords";
+"Logins.WelcomeView.Title2" = "AutoFill Qwant Junior Passwords";
 
 /* Title of the big blue button to enable AutoFill */
 "Logins.WelcomeView.TurnOnAutoFill" = "Turn on AutoFill";
@@ -869,7 +884,7 @@
 "LoginsList.LoginsListSearchPlaceholder" = "Filter";
 
 /* Label shown when there are no logins to list */
-"LoginsList.NoLoginsFound.Description" = "Saved logins will show up here. If you saved your logins to Qwant on a different device, sign in to your Qwant Account.";
+"LoginsList.NoLoginsFound.Description" = "Saved logins will show up here. If you saved your logins to Qwant Junior on a different device, sign in to your Qwant Junior Account.";
 
 /* Label shown when there are no logins saved */
 "LoginsList.NoLoginsFound.Title" = "No logins found";
@@ -893,7 +908,7 @@
 "LoginsList.Title" = "SAVED LOGINS";
 
 /* Restore Tabs Prompt Description */
-"Looks like Firefox crashed previously. Would you like to restore your tabs?" = "Looks like Qwant crashed previously. Would you like to restore your tabs?";
+"Looks like Firefox crashed previously. Would you like to restore your tabs?" = "Looks like Qwant Junior crashed previously. Would you like to restore your tabs?";
 
 /* Name for Mark as read button in reader mode
    Title for the button that marks a reading list item as read */
@@ -949,10 +964,10 @@
 "Menu.EnhancedTrackingProtectionOn.Title" = "Enhanced Tracking Protection is ON for this site.";
 
 /* Description for having standard ETP protection with ITP offered in iOS14+ */
-"Menu.EnhancedTrackingProtectionStandardWithITP.Title" = "Qwant blocks cross-site trackers, social trackers, cryptominers, and fingerprinters.";
+"Menu.EnhancedTrackingProtectionStandardWithITP.Title" = "Qwant Junior blocks cross-site trackers, social trackers, cryptominers, and fingerprinters.";
 
 /* Description for having strict ETP protection with ITP offered in iOS14+ */
-"Menu.EnhancedTrackingProtectionStrictWithITP.Title" = "Qwant blocks cross-site trackers, social trackers, cryptominers, fingerprinters, and tracking content.";
+"Menu.EnhancedTrackingProtectionStrictWithITP.Title" = "Qwant Junior blocks cross-site trackers, social trackers, cryptominers, fingerprinters, and tracking content.";
 
 /* Label for the help button in the menu page. Pressing this button opens the support page https://support.mozilla.org/en-US/products/ios */
 "Menu.Help.v99" = "Help";
@@ -1035,6 +1050,9 @@
 /* Label for the button, displayed in the menu, takes you to sync sign in when pressed. */
 "Menu.SignInToSync.Label.v99" = "Sign in to Sync";
 
+/* Label for the Firefox Sync button in the menu page. Pressing this button open the sign in to Firefox page service to sync and save data. */
+"Menu.SyncAndSaveData.v103" = "Sync and Save Data";
+
 /* Toast displayed to the user after a tab has been sent successfully. */
 "Menu.TabSent.Confirm" = "Tab Sent";
 
@@ -1051,7 +1069,7 @@
 "Menu.TrackingProtection.Details.Verifier" = "Verified by %@";
 
 /* Message in menu when no trackers blocked. */
-"Menu.TrackingProtection.NoTrackersBlockedTitle" = "No trackers known to Qwant were detected on this page.";
+"Menu.TrackingProtection.NoTrackersBlockedTitle" = "No trackers known to Qwant Junior were detected on this page.";
 
 /* The title for tracking protection settings */
 "Menu.TrackingProtection.ProtectionSettings.Title" = "Protection Settings";
@@ -1066,7 +1084,7 @@
 "Menu.TrackingProtectionBlockedSocial.Title" = "Social Trackers";
 
 /* Description of the Tracking protection menu when TP is blocking parts of the page */
-"Menu.TrackingProtectionBlocking.Description" = "Qwant is blocking parts of the page that may track your browsing.";
+"Menu.TrackingProtectionBlocking.Description" = "Qwant Junior is blocking parts of the page that may track your browsing.";
 
 /* The description of the Tracking Protection menu item when tracking is enabled */
 "Menu.TrackingProtectionBlockingDisabled.Description" = "Block online trackers";
@@ -1184,7 +1202,7 @@
 "Onboarding.WallpaperAction.v102" = "Set Wallpaper";
 
 /* Title for the wallpaper onboarding page in our Onboarding screens. This describes to the user that they can choose different wallpapers. */
-"Onboarding.WallpaperTitle.v102" = "Choose a Qwant Wallpaper";
+"Onboarding.WallpaperTitle.v102" = "Choose a Qwant Junior Wallpaper";
 
 /* On the onboarding card letting users know what's new in this version of Firefox, this is the title for the button, on the bottom of the card, used to get back to browsing on Firefox by dismissing the onboarding card */
 "Onboarding.WhatsNew.Button.Title" = "Start Browsing";
@@ -1209,10 +1227,10 @@
 
 /* On the onboarding card, letting users know what's new in this version of Firefox, this is the title for the Jump Back In bullet point on the card
    The title for the new onboarding card letting users know what is new in Firefox iOS */
-"Onboarding.WhatsNew.Title" = "What’s New in Qwant";
+"Onboarding.WhatsNew.Title" = "What’s New in Qwant Junior";
 
 /* Title for prompt displayed to user after the app crashes */
-"Oops! Firefox crashed" = "Oops! Qwant crashed";
+"Oops! Firefox crashed" = "Oops! Qwant Junior crashed";
 
 /* See http://mzl.la/1G7uHo7 */
 "Open Settings" = "Open Settings";
@@ -1224,7 +1242,7 @@
 "Open articles in Reader View by tapping the book icon when it appears in the title bar." = "Open articles in Reader View by tapping the book icon when it appears in the title bar.";
 
 /* The message displayed to a user when they try to open a URL that cannot be handled by Firefox, or any external app. */
-"OpenURL.Error.Message" = "Qwant cannot open the page because it has an invalid address.";
+"OpenURL.Error.Message" = "Qwant Junior cannot open the page because it has an invalid address.";
 
 /* Title of the message shown when the user attempts to navigate to an invalid link. */
 "OpenURL.Error.Title" = "Cannot Open Page";
@@ -1239,19 +1257,19 @@
 "Password" = "Password";
 
 /* Error message shown in the remote tabs panel */
-"PasswordAutoFill.NoPasswordsFoundTitle" = "You don’t have any credentials synced from your Qwant Account";
+"PasswordAutoFill.NoPasswordsFoundTitle" = "You don’t have any credentials synced from your Qwant Junior Account";
 
 /* Header for the list of credentials table */
 "PasswordAutoFill.PasswordsListTitle" = "Available Credentials:";
 
 /* Title of the extension that shows firefox passwords */
-"PasswordAutoFill.SectionTitle" = "Qwant Credentials";
+"PasswordAutoFill.SectionTitle" = "Qwant Junior Credentials";
 
 /* See http://mzl.la/1G7uHo7 */
 "PhotoLibrary.FirefoxWouldLikeAccessMessage" = "This allows you to save the image to your Camera Roll.";
 
 /* See http://mzl.la/1G7uHo7 */
-"PhotoLibrary.FirefoxWouldLikeAccessTitle" = "Qwant would like to access your Photos";
+"PhotoLibrary.FirefoxWouldLikeAccessTitle" = "Qwant Junior would like to access your Photos";
 
 /* Button for closing the menu action sheet */
 "PhotonMenu.close" = "Close";
@@ -1332,10 +1350,10 @@
 "ScanQRCode.InvalidDataError.Message" = "The data is invalid";
 
 /* Text of the prompt user to setup the camera authorization. */
-"ScanQRCode.PermissionError.Message" = "Please allow Qwant to access your device’s camera in ‘Settings’ -> ‘Privacy’ -> ‘Camera’.";
+"ScanQRCode.PermissionError.Message" = "Please allow Qwant Junior to access your device’s camera in ‘Settings’ -> ‘Privacy’ -> ‘Camera’.";
 
 /* Text of the prompt to setup the camera authorization for the Scan QR Code feature. */
-"ScanQRCode.PermissionError.Message.v99" = "Go to device ‘Settings’ > ‘Qwant.’ Allow Qwant to access camera.";
+"ScanQRCode.PermissionError.Message.v99" = "Go to device ‘Settings’ > ‘Qwant Junior.’ Allow Qwant Junior to access camera.";
 
 /* Title for the QR code scanner view. */
 "ScanQRCode.View.Title" = "Scan QR Code";
@@ -1352,7 +1370,7 @@
 "Search.Awesomebar.SwitchToTab" = "Switch to tab";
 
 /* When making a new search from the awesome bar, suggestions appear to the user as they write new letters in their search. Different types of suggestions can appear. This string will be used as a header to separate Firefox suggestions from normal suggestions. */
-"Search.SuggestSectionTitle.v102" = "Qwant Suggest";
+"Search.SuggestSectionTitle.v102" = "Qwant Junior Suggest";
 
 /* The message that asks the user to Add the search provider explaining where the search engine will appear */
 "Search.ThirdPartyEngines.AddMessage" = "The new search engine will appear in the quick search bar.";
@@ -1422,19 +1440,19 @@
 "SendTo.NavBar.Title" = "Send Tab";
 
 /* Error message shown in the remote tabs panel */
-"SendTo.NoDevicesFound.Message" = "You don’t have any other devices connected to this Qwant Account available to sync.";
+"SendTo.NoDevicesFound.Message" = "You don’t have any other devices connected to this Qwant Junior Account available to sync.";
 
 /* See http://mzl.la/1ISlXnU */
-"SendTo.NotSignedIn.Message" = "Please open Qwant, go to Settings and sign in to continue.";
+"SendTo.NotSignedIn.Message" = "Please open Qwant Junior, go to Settings and sign in to continue.";
 
 /* See http://mzl.la/1ISlXnU */
-"SendTo.NotSignedIn.Title" = "You are not signed in to your Qwant Account.";
+"SendTo.NotSignedIn.Title" = "You are not signed in to your Qwant Junior Account.";
 
 /* Navigation bar button to Send the current page to a device */
 "SendTo.SendAction.Text" = "Send";
 
 /* The text for the button on the Send to Device page if you are not signed in to Firefox Accounts. */
-"SendTo.SignIn.Button" = "Sign In to Qwant";
+"SendTo.SignIn.Button" = "Sign In to Qwant Junior";
 
 /* Label for an action used to add one or more tabs recieved from a notification to the reading list. */
 "SentTab.AddToReadingListAction.Title" = "Add to Reading List";
@@ -1530,7 +1548,7 @@
 "Settings.DataManagement.Title" = "Data Management";
 
 /* Body of the alert when prompting the user asking to disconnect. */
-"Settings.Disconnect.Body" = "Qwant will stop syncing with your account, but won’t delete any of your browsing data on this device.";
+"Settings.Disconnect.Body" = "Qwant Junior will stop syncing with your account, but won’t delete any of your browsing data on this device.";
 
 /* Button displayed at the bottom of settings page allowing users to Disconnect from FxA */
 "Settings.Disconnect.Button" = "Disconnect Sync";
@@ -1594,13 +1612,13 @@
 "Settings.FxA.Sync.SectionName" = "Sync Settings";
 
 /* Title displayed in header of the FxA settings panel. */
-"Settings.FxA.Title" = "Qwant Account";
+"Settings.FxA.Title" = "Qwant Junior Account";
 
 /* General settings section title */
 "Settings.General.SectionName" = "General";
 
 /* In the settings menu, on the Firefox homepage customization section, this is the description below the section, describing what the options in the section are for. */
-"Settings.Home.Option.Description" = "Choose content you see on the Qwant homepage.";
+"Settings.Home.Option.Description" = "Choose content you see on the Qwant Junior homepage.";
 
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle the Jump Back In section on homepage on or off */
 "Settings.Home.Option.JumpBackIn" = "Jump Back In";
@@ -1617,6 +1635,9 @@
 /* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to toggle Shortcuts section on the Firefox homepage on or off */
 "Settings.Home.Option.Shortcuts" = "Shortcuts";
 
+/* In the settings menu, in the Firefox homepage customization section, this is the title for the option that allows users to turn the Pocket Sponsored Stories on the Firefox homepage on or off */
+"Settings.Home.Option.SponsoredPocket.v103" = "Sponsored stories";
+
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the Homepage after four hours of inactivity. */
 "Settings.Home.Option.StartAtHome.AfterFourHours" = "Homepage after four hours of inactivity";
 
@@ -1624,7 +1645,7 @@
 "Settings.Home.Option.StartAtHome.Always" = "Homepage";
 
 /* In the settings menu, in the Start at Home customization options, this is text that appears below the section, describing what the section settings do. */
-"Settings.Home.Option.StartAtHome.Description" = "Choose what you see when you return to Qwant.";
+"Settings.Home.Option.StartAtHome.Description" = "Choose what you see when you return to Qwant Junior.";
 
 /* In the settings menu, on the Start at Home homepage customization option, this allows users to set this setting to return to the last tab they were on, every time they open up Firefox */
 "Settings.Home.Option.StartAtHome.Never" = "Last tab";
@@ -1633,22 +1654,22 @@
 "Settings.Home.Option.StartAtHome.Title" = "Opening screen";
 
 /* In the settings menu, this is the title of the Firefox Homepage customization settings section */
-"Settings.Home.Option.Title" = "Qwant Homepage";
+"Settings.Home.Option.Title" = "Qwant Junior Homepage";
 
 /* In the settings menu, on the Firefox homepage customization section, this is the title for the option that allows users to access the wallpaper settings for the application. */
 "Settings.Home.Option.Wallpaper" = "Wallpaper";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string for the amethyst firefox wallpaper. */
-"Settings.Home.Option.Wallpaper.Accessibility.AmethystWallpaper.v99" = "Qwant wallpaper, amethyst pattern.";
+"Settings.Home.Option.Wallpaper.Accessibility.AmethystWallpaper.v99" = "Qwant Junior wallpaper, amethyst pattern.";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the cerulean firefox wallpaper. */
-"Settings.Home.Option.Wallpaper.Accessibility.CeruleanWallpaper.v99" = "Qwant wallpaper, cerulean pattern.";
+"Settings.Home.Option.Wallpaper.Accessibility.CeruleanWallpaper.v99" = "Qwant Junior wallpaper, cerulean pattern.";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string for the default wallpaper. */
 "Settings.Home.Option.Wallpaper.Accessibility.DefaultWallpaper.v99" = "Default clear wallpaper.";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title accessibility string for the sunrise firefox wallpaper. */
-"Settings.Home.Option.Wallpaper.Accessibility.SunriseWallpaper.v99" = "Qwant wallpaper, sunrise pattern.";
+"Settings.Home.Option.Wallpaper.Accessibility.SunriseWallpaper.v99" = "Qwant Junior wallpaper, sunrise pattern.";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the accessibility string of the toggle for turning wallpaper cycling shortcut on or off on the homepage. */
 "Settings.Home.Option.Wallpaper.Accessibility.ToggleButton" = "Homepage wallpaper cycle toggle";
@@ -1657,7 +1678,7 @@
 "Settings.Home.Option.Wallpaper.CollectionTitle" = "OPENING SCREEN";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the string titling the switch button's function, which allows a user to toggle wallpaper switching from the homepage logo on or off. */
-"Settings.Home.Option.Wallpaper.SwitchTitle.v99" = "Change wallpaper by tapping Qwant homepage logo";
+"Settings.Home.Option.Wallpaper.SwitchTitle.v99" = "Change wallpaper by tapping Qwant Junior homepage logo";
 
 /* In the settings menu, on the Firefox wallpaper customization screen, this is the title of that screen, which allows users to change the wallpaper settings for the application. */
 "Settings.Home.Option.Wallpaper.Title" = "Wallpaper";
@@ -1717,10 +1738,10 @@
 "Settings.NewTab.Option.CustomizeFooter2" = "Sites you save or visit";
 
 /* The title for the section to customize top sites in the new tab settings page. */
-"Settings.NewTab.Option.CustomizeTitle" = "Customize Qwant Home";
+"Settings.NewTab.Option.CustomizeTitle" = "Customize Qwant Junior Home";
 
 /* Option in settings to show Firefox Home when you open a new tab */
-"Settings.NewTab.Option.FirefoxHome" = "Qwant Home";
+"Settings.NewTab.Option.FirefoxHome" = "Qwant Junior Home";
 
 /* Option in the settings to turn off recent bookmarks in the Highlights section */
 "Settings.NewTab.Option.HighlightsBookmarks" = "Recent Bookmarks";
@@ -1765,7 +1786,7 @@
 "Settings.NoImageModeBlockImages.Label.v99" = "Block Images";
 
 /* Description displayed under the ”Offer to Open Copied Link” option. See https://bug1223660.bmoattachments.org/attachment.cgi?id=8898349 */
-"Settings.OfferClipboardBar.Status" = "When Opening Qwant";
+"Settings.OfferClipboardBar.Status" = "When Opening Qwant Junior";
 
 /* Title of setting to enable the Go to Copied URL feature. See https://bug1223660.bmoattachments.org/attachment.cgi?id=8898349 */
 "Settings.OfferClipboardBar.Title" = "Offer to Open Copied Links";
@@ -1775,6 +1796,18 @@
 
 /* Label used as an item in Settings. When touched it will open a dialog to configure the open with (mail links) behavior. */
 "Settings.OpenWith.SectionName" = "Mail App";
+
+/* Touch ID prompt subtitle when accessing logins and passwords */
+"Settings.Passwords.FingerPrintReason.v103" = "Use your fingerprint to access passwords now.";
+
+/* Message shown when you enter Passwords screen for the first time. It explains how password are protected in the Firefox for iOS application. */
+"Settings.Passwords.OnboardingMessage.v103" = "Your passwords are now protected by Face ID, Touch ID or a device passcode.";
+
+/* Setting that appears in the Passwords screen to enable the built-in password manager so users can save their passwords. */
+"Settings.Passwords.SavePasswords.v103" = "Save Passwords";
+
+/* Title for the passwords screen. */
+"Settings.Passwords.Title.v103" = "Passwords";
 
 /* Setting to enable the built-in password manager */
 "Settings.SaveLogins.Title" = "Save Logins";
@@ -1807,7 +1840,7 @@
 "Settings.Siri.OpenTabShortcut" = "Open New Tab";
 
 /* The description that describes what siri shortcuts are */
-"Settings.Siri.SectionDescription" = "Use Siri shortcuts to quickly open Qwant via Siri";
+"Settings.Siri.SectionDescription" = "Use Siri shortcuts to quickly open Qwant Junior via Siri";
 
 /* The option that takes you to the siri shortcuts settings page */
 "Settings.Siri.SectionName" = "Siri Shortcuts";
@@ -1831,7 +1864,7 @@
 "Settings.Studies.Toggle.Link" = "Learn More.";
 
 /* A short description that explains that Mozilla is running studies */
-"Settings.Studies.Toggle.Message" = "Qwant may install and run studies from time to time.";
+"Settings.Studies.Toggle.Message" = "Qwant Junior may install and run studies from time to time.";
 
 /* Toggled OFF to opt-out of studies */
 "Settings.Studies.Toggle.Off" = "Off";
@@ -1841,6 +1874,15 @@
 
 /* Label used as a toggle item in Settings. When this is off, the user is opting out of all studies. */
 "Settings.Studies.Toggle.Title" = "Studies";
+
+/* Ddescription that appears in the settings screen to explain what Firefox Sync is useful for. */
+"Settings.Sync.ButtonDescription.v103" = "Sign in to sync tabs, bookmarks, passwords, and more.";
+
+/* Button label that appears in the settings to prompt the user to sign in to Firefox for iOS sync service to sync and save data. */
+"Settings.Sync.ButtonTitle.v103" = "Sync and Save Data";
+
+/* Title for the page where the user sign in to their Firefox Sync account. */
+"Settings.Sync.SignInView.Title.v103" = "Sync and Save Data";
 
 /* In the settings menu, in the Tabs customization section, this is the title for the setting that toggles the Inactive Tabs feature, a separate section of inactive tabs that appears in the Tab Tray, on or off */
 "Settings.Tabs.CustomizeTabsSection.InactiveTabs" = "Inactive Tabs";
@@ -1873,7 +1915,7 @@
 "Settings.TrackingProtection.Alert.Title" = "Heads up!";
 
 /* Header description for tracking protection options section where Basic/Strict block list can be selected */
-"Settings.TrackingProtection.BlockListsHeader" = "You can choose which list Qwant will use to block Web elements that may track your browsing activity.";
+"Settings.TrackingProtection.BlockListsHeader" = "You can choose which list Qwant Junior will use to block Web elements that may track your browsing activity.";
 
 /* Explanation of basic mode. */
 "Settings.TrackingProtection.Info.BasicTitle" = "Balanced for protection and performance.";
@@ -1984,16 +2026,16 @@
 "ShareExtension.LoadInBackgroundAction.Title" = "Load in Background";
 
 /* Share extension label shown after user has performed 'Load in Background' action. */
-"ShareExtension.LoadInBackgroundActionDone.Title" = "Loading in Qwant";
+"ShareExtension.LoadInBackgroundActionDone.Title" = "Loading in Qwant Junior";
 
 /* Action label on share extension to immediately open page in Firefox. */
-"ShareExtension.OpenInFirefoxAction.Title" = "Open in Qwant";
+"ShareExtension.OpenInFirefoxAction.Title" = "Open in Qwant Junior";
 
 /* Action label on share extension to immediately open page in Firefox in private mode. */
 "ShareExtension.OpenInPrivateModeAction.Title" = "Open in Private Mode";
 
 /* Action label on share extension to search for the selected text in Firefox. */
-"ShareExtension.SeachInFirefoxAction.Title" = "Search in Qwant";
+"ShareExtension.SeachInFirefoxAction.Title" = "Search in Qwant Junior";
 
 /* Label for show search suggestions setting. */
 "Show Search Suggestions" = "Show Search Suggestions";
@@ -2030,7 +2072,7 @@
 "Sync.FirstTimeMessage.Label" = "Your first sync may take a while";
 
 /* String displayed on Sign In to Sync page that allows the user to create a new account. */
-"Sync.NoAccount.Description" = "No account? Create one to sync Qwant between devices.";
+"Sync.NoAccount.Description" = "No account? Create one to sync Qwant Junior between devices.";
 
 /* Message displayed when the user's account is syncing with no ellipsis */
 "Sync.Syncing.Label" = "Syncing";
@@ -2152,6 +2194,12 @@
 /* The placeholder text for the tab search bar */
 "Tabs.Search.PlaceholderText" = "Search Tabs";
 
+/* Accessibility title for the inactive tabs section button when section is closed. This section groups all tabs that haven't been used in a while. */
+"TabsTray.InactiveTabs.SectionTitle.Closed.Accessibility.v103" = "View Inactive Tabs";
+
+/* Accessibility title for the inactive tabs section button when section is open. This section groups all tabs that haven't been used in a while. */
+"TabsTray.InactiveTabs.SectionTitle.Opened.Accessibility.v103" = "Hide Inactive Tabs";
+
 /* Message displayed when the reader mode page could not be loaded. This message will appear only when sharing to Firefox reader mode from another app. */
 "The page could not be displayed in Reader View." = "The page could not be displayed in Reader View.";
 
@@ -2204,10 +2252,10 @@
 "UIMenuItem.PasteGo" = "Paste & Go";
 
 /* Search in New Tab Text selection menu item */
-"UIMenuItem.SearchWithFirefox" = "Search with Qwant";
+"UIMenuItem.SearchWithFirefox" = "Search with Qwant Junior";
 
 /* Text message in the settings table view */
-"Upgrade Firefox to connect" = "Upgrade Qwant to connect";
+"Upgrade Firefox to connect" = "Upgrade Qwant Junior to connect";
 
 /* Debug option */
 "Use stage servers" = "Use stage servers";
@@ -2237,7 +2285,7 @@
 "Yesterday" = "Yesterday";
 
 /* Error message in the remote tabs panel */
-"You don’t have any tabs open in Firefox on your other devices." = "You don’t have any tabs open in Qwant on your other devices.";
+"You don’t have any tabs open in Firefox on your other devices." = "You don’t have any tabs open in Qwant Junior on your other devices.";
 
 /* Tile title for YouTube */
 "YouTube" = "YouTube";
@@ -2255,13 +2303,13 @@
 "fxa.signin.camera-signin" = "Sign In with Your Camera";
 
 /* FxA sign in create account label. */
-"fxa.signin.create-account-pt-1" = "Sync Qwant between devices with an account.";
+"fxa.signin.create-account-pt-1" = "Sync Qwant Junior between devices with an account.";
 
 /* FxA sign in create account label. This will be linked to the site to create an account. */
-"fxa.signin.create-account-pt-2" = "Create Qwant account.";
+"fxa.signin.create-account-pt-2" = "Create Qwant Junior account.";
 
 /* FxA sign in view qr code instructions */
-"fxa.signin.qr-link-instruction" = "On your computer open Qwant and go to qwant.com/pair";
+"fxa.signin.qr-link-instruction" = "On your computer open Qwant Junior and go to qwant.com/pair";
 
 /* FxA sign in view qr code scan button */
 "fxa.signin.ready-to-scan" = "Ready to Scan";

@@ -73,18 +73,18 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>6vd2jx</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>21C52</string>
+	<string>21E230</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>13A1030d</string>
+	<string>13F100</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>13.1</string>
+	<string>13.4.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
 			<key>INIntentCategory</key>
 			<string>information</string>
 			<key>INIntentDescription</key>
-			<string>Add a Qwant shortcut to your Home screen. After adding the widget, touch and hold to edit it and select a different shortcut.</string>
+			<string>Add a Qwant Junior shortcut to your Home screen. After adding the widget, touch and hold to edit it and select a different shortcut.</string>
 			<key>INIntentDescriptionID</key>
 			<string>9NY97H</string>
 			<key>INIntentEligibleForWidgets</key>

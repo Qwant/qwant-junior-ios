@@ -5,7 +5,7 @@
 "DefaultBrowserCard.Button.v2" = "Me montrer comment";
 
 /* Description for small card shown that allows user to switch their default browser to Firefox. */
-"DefaultBrowserCard.Description" = "Faites en sorte que les liens des sites web, des courriels et des messages s’ouvrent automatiquement dans Qwant.";
+"DefaultBrowserCard.Description" = "Faites en sorte que les liens des sites web, des courriels et des messages s’ouvrent automatiquement dans Qwant Junior.";
 
 /* Title for small card shown that allows user to switch their default browser to Firefox. */
 "DefaultBrowserCard.Title" = "Changez de navigateur par défaut";
@@ -20,7 +20,7 @@
 "DefaultBrowserOnboarding.Description2" = "2. Appuyez sur App du navigateur par défaut";
 
 /* Description for default browser onboarding card. */
-"DefaultBrowserOnboarding.Description3" = "3. Sélectionnez Qwant";
+"DefaultBrowserOnboarding.Description3" = "3. Sélectionnez Qwant Junior";
 
 /* Text for the screenshot of the iOS system settings page for Firefox. */
 "DefaultBrowserOnboarding.Screenshot" = "App du navigateur par défaut";
@@ -29,10 +29,10 @@
 "Settings.DefaultBrowserMenuItem" = "Définir comme navigateur par défaut";
 
 /* Title to help users understand that they can set Qwant as their default browser. */
-"DefaultBrowserOnboarding.Qwant.Title" = "Faites de l'app Qwant votre navigateur par défaut";
+"DefaultBrowserOnboarding.Qwant.Title" = "Faites de l'app Qwant Junior votre navigateur par défaut";
 
 /* Description to help users understand that they can set Qwant as their default browser. */
-"DefaultBrowserOnboarding.Qwant.Description" = "Ouvrez tous vos liens dans l'app Qwant !";
+"DefaultBrowserOnboarding.Qwant.Description" = "Ouvrez tous vos liens dans l'app Qwant Junior !";
 
 /* Button string to open settings that allows user to switch their default browser to Qwant. */
 "DefaultBrowserOnboarding.Qwant.ButtonSettings" = "Ouvrir les réglages";
