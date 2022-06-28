@@ -69,7 +69,7 @@ extension URL {
         return host
     }
 
-    var normalizedHostAndPath: String? {
+    public var normalizedHostAndPath: String? {
         return normalizedHost.flatMap { $0 + self.path }
     }
 

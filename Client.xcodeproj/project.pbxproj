@@ -485,6 +485,7 @@
 		687EE4472808199F00E8EE2B /* QwantSpecificTabContentBlocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687EE4462808199F00E8EE2B /* QwantSpecificTabContentBlocker.swift */; };
 		6896B7D528991CF300BB7289 /* QwantVIP.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6896B7D428991CF300BB7289 /* QwantVIP.xcassets */; };
 		689A58B1289D635200751CD3 /* QwantTPInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A58B0289D635200751CD3 /* QwantTPInformationVC.swift */; };
+		68A256BA285CC72500022ACC /* QwantJuniorPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A256B9285CC72500022ACC /* QwantJuniorPolicy.swift */; };
 		68AED22327EDB95D00C7A0AB /* QwantTPMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AED22227EDB95D00C7A0AB /* QwantTPMenuVC.swift */; };
 		68AED22527EDB96D00C7A0AB /* QwantTPMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AED22427EDB96D00C7A0AB /* QwantTPMenuVM.swift */; };
 		68CADF0128C7318100BCD1AB /* QwantSearchEnginesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0028C7318100BCD1AB /* QwantSearchEnginesTests.swift */; };
@@ -2137,6 +2138,7 @@
 		689A4CF494961DA72688CEB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ClearPrivateData.strings; sourceTree = "<group>"; };
 		689A58B0289D635200751CD3 /* QwantTPInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTPInformationVC.swift; sourceTree = "<group>"; };
 		68A21BB0284E656C00A1F194 /* QwantTopSiteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTopSiteManager.swift; sourceTree = "<group>"; };
+		68A256B9285CC72500022ACC /* QwantJuniorPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantJuniorPolicy.swift; sourceTree = "<group>"; };
 		68AED22227EDB95D00C7A0AB /* QwantTPMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTPMenuVC.swift; sourceTree = "<group>"; };
 		68AED22427EDB96D00C7A0AB /* QwantTPMenuVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTPMenuVM.swift; sourceTree = "<group>"; };
 		68B44DA18DC0230AEB96C03D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LoginManager.strings; sourceTree = "<group>"; };
@@ -5120,6 +5122,7 @@
 				D0C95EF5201A55A800E4E51C /* BrowserViewController+UIDropInteractionDelegate.swift */,
 				C8F457A71F1FD75A000CB895 /* BrowserViewController+WebViewDelegates.swift */,
 				434E733625EED32E006D3BDE /* BrowserViewController+URLBarDelegate.swift */,
+				68A256B9285CC72500022ACC /* QwantJuniorPolicy.swift */,
 			);
 			path = BrowserViewController;
 			sourceTree = "<group>";
@@ -8278,6 +8281,7 @@
 				689A58B1289D635200751CD3 /* QwantTPInformationVC.swift in Sources */,
 				EB9854FF2422686F0040F24B /* AppDelegate+PushNotifications.swift in Sources */,
 				68375F4328AE6C71000D9ED9 /* ButtonCell.swift in Sources */,
+				68A256BA285CC72500022ACC /* QwantJuniorPolicy.swift in Sources */,
 				DFACBF85277B9B5B003D5F41 /* TopSitesRowCountSettingsController.swift in Sources */,
 				9614BF4428AD1C6700D3F7EA /* AccountSyncHandler.swift in Sources */,
 				282DA4731A68C1E700A406E2 /* OpenSearchParser.swift in Sources */,

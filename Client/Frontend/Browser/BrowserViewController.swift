@@ -153,6 +153,7 @@ class BrowserViewController: UIViewController {
 
     private var keyboardPressesHandlerValue: Any?
     var themeManager: ThemeManager
+    let policy = QwantJuniorPolicy()
 
     @available(iOS 13.4, *)
     func keyboardPressesHandler() -> KeyboardPressesHandler {
@@ -1621,6 +1622,10 @@ class BrowserViewController: UIViewController {
                 postLocationChangeNotificationForTab(tab, navigation: navigation)
                 tab.readabilityResult = nil
                 webView.evaluateJavascriptInDefaultContentWorld("\(ReaderModeNamespace).checkReadability()")
+            }
+
+            if policy.shouldInsertCookie(baseUrl: url) {
+                webView.configuration.websiteDataStore.httpCookieStore.setCookie(policy.youtubeCookie)
             }
 
             TabEvent.post(.didChangeURL(url), for: tab)
