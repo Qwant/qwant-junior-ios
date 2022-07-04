@@ -39,7 +39,7 @@ class TabManagerStore: FeatureFlaggable {
         let profilePath: String?
         if  AppConstants.IsRunningTest || AppConstants.IsRunningPerfTest {      profilePath = (UIApplication.shared.delegate as? TestAppDelegate)?.dirForTestProfile
         } else {
-            profilePath = fileManager.containerURL( forSecurityApplicationGroupIdentifier: AppInfo.sharedContainerIdentifier)?.appendingPathComponent("profile.profile").path
+            profilePath = fileManager.containerURL( forSecurityApplicationGroupIdentifier: AppInfo.sharedContainerIdentifier)?.appendingPathComponent("profile.juniorprofile").path
         }
         guard let path = profilePath else { return nil }
         return URL(fileURLWithPath: path).appendingPathComponent("tabsState.archive").path

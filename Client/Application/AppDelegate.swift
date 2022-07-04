@@ -202,7 +202,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let profile = self.profile {
             return profile
         }
-        let p = BrowserProfile(localName: "profile", syncDelegate: application.syncDelegate)
+        let p = BrowserProfile(localName: "juniorprofile", syncDelegate: application.syncDelegate)
         self.profile = p
         return p
     }

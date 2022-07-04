@@ -70,7 +70,7 @@ git checkout -b "$branchName"
 agvtool new-marketing-version $newVersionNumber
 agvtool new-version -all $newBuildNumber
 git add *
-git commit -m "[Qwant] Bump version to $newVersionNumber-$newBuildNumber"
+git commit -m "[Qwant Junior] Bump version to $newVersionNumber-$newBuildNumber"
 git push origin -u "$branchName"
 
 echo "[v] All done, bye!"

@@ -148,7 +148,7 @@ class BrowserViewController: UIViewController {
     let downloadQueue = DownloadQueue()
     var keyboardPressesHandler = KeyboardPressesHandler()
 
-    fileprivate var shouldShowIntroScreen: Bool { profile.prefs.intForKey(PrefsKeys.IntroSeen) == nil }
+    fileprivate var shouldShowIntroScreen: Bool { return false }
 
     init(profile: Profile, tabManager: TabManager) {
         self.profile = profile
@@ -491,6 +491,9 @@ class BrowserViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
+        
         // On iPhone, if we are about to show the On-Boarding, blank out the tab so that it does
         // not flash before we present. This change of alpha also participates in the animation when
         // the intro view is dismissed.

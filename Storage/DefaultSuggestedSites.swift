@@ -44,19 +44,11 @@ open class DefaultSuggestedSites {
                 title: "Qwant Maps"
             ),
             SuggestedSiteData(
-                url: "http://www.qwantjunior.com",
+                url: "https://help.qwant.com/help/qwant-junior/",
                 bgColor: "",
                 imageUrl: "",
                 faviconUrl: "",
                 trackingId: 2,
-                title: "Qwant Junior"
-            ),
-            SuggestedSiteData(
-                url: "https://help.qwant.com/docs/mobile",
-                bgColor: "",
-                imageUrl: "",
-                faviconUrl: "",
-                trackingId: 3,
                 title: "Qwant Help"
             )
         ]

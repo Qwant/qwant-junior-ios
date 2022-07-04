@@ -9,7 +9,7 @@ import Shared
 
 class SiriShortcuts {
     enum activityType: String {
-        case openURL = "com.qwant.mobile.newTab"
+        case openURL = "com.qwantjunior.mobile.newTab"
     }
 
     func getActivity(for type: activityType) -> NSUserActivity? {

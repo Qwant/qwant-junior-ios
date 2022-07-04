@@ -213,7 +213,7 @@ class DevicePickerViewController: UITableViewController {
             return profile
         }
 
-        let profile = BrowserProfile(localName: "profile")
+        let profile = BrowserProfile(localName: "juniorprofile")
         self.profile = profile
         self.profileNeedsShutdown = true
         return profile

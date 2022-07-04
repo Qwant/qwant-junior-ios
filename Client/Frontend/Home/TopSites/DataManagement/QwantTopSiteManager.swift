@@ -10,8 +10,8 @@ class QwantTopSiteManager {
     
     struct Constants {
         // A guid is required in the case the site might become a pinned site
-        public static let guid = "DefaultQwantGUID"
-        public static let url = "https://www.qwant.com/?client=qwantbrowser"
+        public static let guid = "DefaultQwantJuniorGUID"
+        public static let url = "https://www.qwantjunior.com/"
    
         // The number of tiles taken by Qwant top site manager
         static let reservedSpaceCount = 1
@@ -34,7 +34,7 @@ class QwantTopSiteManager {
     }
     
     func suggestedSiteData() -> PinnedSite? {
-        let pinnedSite = PinnedSite(site: Site(url: Constants.url, title: "Qwant"))
+        let pinnedSite = PinnedSite(site: Site(url: Constants.url, title: "Qwant Junior"))
         pinnedSite.guid = Constants.guid
         return pinnedSite
     }

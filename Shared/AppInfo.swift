@@ -50,7 +50,7 @@ open class AppInfo {
             // This can be removed when we are able to fix the app group in the developer portal
             bundleIdentifier = "org.mozilla.ios.Fennec.enterprise"
         }
-        return "group." + bundleIdentifier
+        return "group." + bundleIdentifier.replacingOccurrences(of: "junior", with: "")
     }
 
     /// Return the keychain access group.
@@ -61,7 +61,7 @@ open class AppInfo {
             // This can be removed when we are able to fix the app group in the developer portal
             bundleIdentifier = "org.mozilla.ios.Fennec.enterprise"
         }
-        return prefix + "." + bundleIdentifier
+        return prefix + "." + bundleIdentifier.replacingOccurrences(of: "junior", with: "")
     }
 
     /// Return the base bundle identifier.
@@ -111,5 +111,5 @@ open class AppInfo {
     public static var appStoreId = "id989804926"
     
     // The App Store page identifier for the Qwant iOS application
-    public static var qwantAppStoreId = "id924470452"
+    public static var qwantAppStoreId = "id1318660239"
 }

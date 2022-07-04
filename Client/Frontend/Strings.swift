@@ -1400,8 +1400,8 @@ extension String {
     public static let DefaultBrowserOnboardingDescriptionStep3 = MZLocalizedString("DefaultBrowserOnboarding.Description3", tableName: "Default Browser", value: "3. Select Firefox", comment: "Description for default browser onboarding card.", lastUpdated: .unknown)
     public static let DefaultBrowserOnboardingButton = MZLocalizedString("DefaultBrowserOnboarding.Button", tableName: "Default Browser", value: "Go to Settings", comment: "Button string to open settings that allows user to switch their default browser to Firefox.", lastUpdated: .unknown)
     
-    public static let QwantDefaultBrowserTitle = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Title", tableName: "Default Browser", value: "Make the Qwant app your default browser", comment: "Title to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
-    public static let QwantDefaultBrowserDescription = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Description", tableName: "Default Browser", value: "Set links to open automatically in Qwant!", comment: "Description to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
+    public static let QwantDefaultBrowserTitle = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Title", tableName: "Default Browser", value: "Make the Qwant Junior app your default browser", comment: "Title to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
+    public static let QwantDefaultBrowserDescription = MZLocalizedString("DefaultBrowserOnboarding.Qwant.Description", tableName: "Default Browser", value: "Set links to open automatically in Qwant Junior!", comment: "Description to help users understand that they can set Qwant as their default browser.", lastUpdated: .unknown)
     public static let QwantDefaultBrowserButtonSettings = MZLocalizedString("DefaultBrowserOnboarding.Qwant.ButtonSettings", tableName: "Default Browser", value: "Go to Settings", comment: "Button string to open settings that allows user to switch their default browser to Qwant.", lastUpdated: .unknown)
     public static let QwantDefaultBrowserButtonIgnore = MZLocalizedString("DefaultBrowserOnboarding.Qwant.ButtonIgnore", tableName: "Default Browser", value: "Ignore", comment: "Button string to ignore the default browser capability.", lastUpdated: .unknown)
 }
@@ -1860,7 +1860,7 @@ extension String {
         public static let Statistics = MZLocalizedString("Qwant.TrackingProtection.Statistics.ScreenTitle", tableName: "QwantTrackingProtection", value: "Your statistics", comment: "Title of the statistics details page", lastUpdated: .qwant340)
         public static let GlobalProtection = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.ScreenTitle", tableName: "QwantTrackingProtection", value: "Tracking Protection", comment: "Title of the global tracking protection page", lastUpdated: .qwant340)
         public static let Help = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.Help", tableName: "QwantTrackingProtection", value: "Help", comment: "Header of the help section", lastUpdated: .qwant340)
-        public static let About = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.About", tableName: "QwantTrackingProtection", value: "Learn about Qwant V.I.P.", comment: "Cell title", lastUpdated: .qwant340)
+        public static let About = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.About", tableName: "QwantTrackingProtection", value: "Learn about Qwant VIPrivacy", comment: "Cell title", lastUpdated: .qwant340)
         public static let Experience = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.Experience", tableName: "QwantTrackingProtection", value: "Share your experience", comment: "Cell title", lastUpdated: .qwant340)
     }
     

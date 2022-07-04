@@ -16,6 +16,6 @@ extension FxHomeCustomizeButtonViewModel: FXHomeViewModelProtocol {
     }
 
     var isEnabled: Bool {
-        return true
+        return false
     }
 }
