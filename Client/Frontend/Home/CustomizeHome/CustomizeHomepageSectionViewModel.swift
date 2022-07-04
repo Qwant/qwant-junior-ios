@@ -49,7 +49,7 @@ extension CustomizeHomepageSectionViewModel: HomepageViewModelProtocol {
     }
 
     var isEnabled: Bool {
-        return true
+        return false
     }
 
     func setTheme(theme: Theme) {

@@ -255,8 +255,8 @@ open class BrowserProfile: Profile {
             prefs.clearAll()
             
             prefs.setString("HomePage", forKey: PrefsKeys.KeyNewTab)
-            prefs.setString("https://www.qwant.com/", forKey: PrefsKeys.NewTabCustomUrlPrefKey)
-            prefs.setString("https://www.qwant.com", forKey: PrefsKeys.HomeButtonHomePageURL)
+            prefs.setString("https://www.qwantjunior.com/", forKey: PrefsKeys.NewTabCustomUrlPrefKey)
+            prefs.setString("https://www.qwantjunior.com", forKey: PrefsKeys.HomeButtonHomePageURL)
         }
 
         // Set up logging from Rust.

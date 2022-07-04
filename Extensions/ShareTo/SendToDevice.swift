@@ -12,7 +12,7 @@ class SendToDevice: DevicePickerViewControllerDelegate, InstructionsViewDelegate
     weak var delegate: ShareControllerDelegate?
     private let themeManager = DefaultThemeManager()
     private var profile: Profile {
-        let profile = BrowserProfile(localName: "profile")
+        let profile = BrowserProfile(localName: "juniorprofile")
 
         // Re-open the profile if it was shutdown. This happens when we run from an app extension, where we must
         // make sure that the profile is only open for brief moments of time.

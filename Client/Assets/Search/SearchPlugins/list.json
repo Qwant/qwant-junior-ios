@@ -1,8 +1,8 @@
 {
     "default": {
-        "searchDefault": "qwant",
+        "searchDefault": "qwant-junior",
         "visibleDefaultEngines": [
-            "qwant", "qwant-junior"
+            "qwant-junior"
         ]
     }
 }

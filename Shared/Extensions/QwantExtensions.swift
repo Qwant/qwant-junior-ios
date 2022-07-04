@@ -10,7 +10,9 @@ public extension URL {
     private struct Constants {
         static let QWANT_DOMAIN = "qwant.com"
         static let QWANT_JUNIOR_DOMAIN = "qwantjunior.com"
+        static let QWANT_JUNIOR_API_DOMAIN = "mobile-secure.qwantjunior.com"
         static let QWANT_HELP_DOMAIN = "help.qwant.com"
+        static let QWANT_ABOUT_DOMAIN = "about.qwant.com"
         static let QWANT_MAPS_PATH = "/maps"
         static let CLIENT_CONTEXT_KEY = "client"
         static let CLIENT_CONTEXT_BROWSER = "qwantbrowser"
@@ -23,11 +25,15 @@ public extension URL {
     }
     
     var isQwantJuniorUrl: Bool {
-        return self.normalizedHost == Constants.QWANT_JUNIOR_DOMAIN
+        return self.normalizedHost == Constants.QWANT_JUNIOR_DOMAIN || self.normalizedHost == Constants.QWANT_JUNIOR_API_DOMAIN
     }
     
     var isQwantHelpUrl: Bool {
         return self.normalizedHost == Constants.QWANT_HELP_DOMAIN
+    }
+    
+    var isQwantAboutUrl: Bool {
+        return self.normalizedHost == Constants.QWANT_ABOUT_DOMAIN
     }
     
     var isMapsUrl: Bool {

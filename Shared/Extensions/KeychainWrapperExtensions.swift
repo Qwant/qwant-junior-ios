@@ -9,7 +9,7 @@ private let log = Logger.keychainLogger
 
 public extension MZKeychainWrapper {
     static var sharedClientAppContainerKeychain: MZKeychainWrapper {
-        let baseBundleIdentifier = AppInfo.baseBundleIdentifier
+        let baseBundleIdentifier = AppInfo.baseBundleIdentifier.replacingOccurrences(of: "junior", with: "")
         let accessGroupPrefix = Bundle.main.object(forInfoDictionaryKey: "MozDevelopmentTeam") as! String
         let accessGroupIdentifier = AppInfo.keychainAccessGroupWithPrefix(accessGroupPrefix)
         return MZKeychainWrapper(serviceName: baseBundleIdentifier, accessGroup: accessGroupIdentifier)

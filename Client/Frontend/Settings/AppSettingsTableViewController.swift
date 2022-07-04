@@ -102,9 +102,9 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagga
 
         let prefs = profile.prefs
         var generalSettings: [Setting] = [
-            SearchSetting(settings: self),
-            NewTabPageSetting(settings: self),
-            HomeSetting(settings: self),
+//            SearchSetting(settings: self),
+//            NewTabPageSetting(settings: self),
+//            HomeSetting(settings: self),
             OpenWithSetting(settings: self),
             ThemeSetting(settings: self),
             SiriPageSetting(settings: self),
@@ -211,7 +211,7 @@ class AppSettingsTableViewController: SettingsTableViewController, FeatureFlagga
         settings += [
             SettingSection(title: NSAttributedString(string: .AppSettingsPrivacyTitle), children: privacySettings),
             SettingSection(title: NSAttributedString(string: .AppSettingsSupport), children: [
-                ShowIntroductionSetting(settings: self),
+//                ShowIntroductionSetting(settings: self),
                 SendFeedbackSetting(),
                 SendAnonymousUsageDataSetting(prefs: prefs, delegate: settingsDelegate, theme: themeManager.currentTheme),
                 StudiesToggleSetting(prefs: prefs, delegate: settingsDelegate, theme: themeManager.currentTheme),
