@@ -113,7 +113,7 @@ enum Experiments {
             profilePath = FileManager.default.containerURL(
                 forSecurityApplicationGroupIdentifier: AppInfo.sharedContainerIdentifier
             )?
-                .appendingPathComponent("profile.profile")
+                .appendingPathComponent("profile.juniorprofile")
                 .path
         }
         let dbPath = profilePath.flatMap {

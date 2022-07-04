@@ -20,7 +20,7 @@ extension QwantContentBlocker {
         guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
-        return dir.appendingPathComponent("qwantsafelist")
+        return dir.appendingPathComponent("qwantjuniorsafelist")
     }
     
     // Get the safelist domain array as a JSON fragment that can be inserted at the end of a blocklist.

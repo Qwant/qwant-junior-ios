@@ -14,7 +14,7 @@ protocol TabFileManager {
 extension FileManager: TabFileManager {
     var tabPath: String? {
         return containerURL(forSecurityApplicationGroupIdentifier: AppInfo.sharedContainerIdentifier)?
-            .appendingPathComponent("profile.profile")
+            .appendingPathComponent("profile.juniorprofile")
             .path
     }
 }

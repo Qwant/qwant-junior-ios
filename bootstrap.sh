@@ -10,11 +10,11 @@
 
 getLocale() {
   echo "Getting locale..."
-  git clone https://github.com/Qwant/ios-l10n-scripts.git -b qwant-main || exit 1
+  git clone https://github.com/Qwant/ios-l10n-scripts.git -b qwantjunior-main || exit 1
 
   echo "Creating firefoxios-l10n Git repo"
   rm -rf firefoxios-l10n
-  git clone --depth 1 https://github.com/Qwant/firefoxios-l10n -b qwant-main firefoxios-l10n || exit 1
+  git clone --depth 1 https://github.com/Qwant/firefoxios-l10n -b qwantjunior-main || exit 1
 }
 
 if [ "$1" == "--force" ]; then

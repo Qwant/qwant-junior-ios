@@ -30,7 +30,7 @@ class HomeButtonHomePageAccessors: QwantHomePageAccessors {
 
 class QwantHomePageAccessors {
     
-    static let QwantHome = "https://www.qwant.com/"
+    static let QwantHome = "https://www.qwantjunior.com/"
     
     static func getDefaultHomePageString(_ prefs: Prefs) -> String? {
         return prefs.stringForKey(HomePageConstants.DefaultHomePageURLPrefKey) ?? makeQwantTheHomePageAndSetItAsDefault(prefs)

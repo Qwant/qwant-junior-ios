@@ -147,7 +147,7 @@ bump_and_push() {
   agvtool new-marketing-version $bumpingToVersionNumber
   agvtool new-version -all $bumpingToBuildNumber
   git add *
-  git commit -m "[Qwant] Bump version to $bumpingToVersionNumber-$bumpingToBuildNumber"
+  git commit -m "[Qwant Junior] Bump version to $bumpingToVersionNumber-$bumpingToBuildNumber"
   git push origin -u "$branchName"
 }
 

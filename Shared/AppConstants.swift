@@ -5,8 +5,8 @@
 import UIKit
 
 public enum AppName: String, CustomStringConvertible {
-    case shortName = "Qwant"
-    case longName = "Qwant Browser"
+    case shortName = "Qwant Junior"
+    case longName = "Qwant Junior Browser"
 
     public var description: String {
         return self.rawValue

@@ -888,7 +888,7 @@ class OpenSupportPageSetting: Setting {
 
     override func onClick(_ navigationController: UINavigationController?) {
         navigationController?.dismiss(animated: true) {
-            if let url = URL(string: "https://help.qwant.com/help/qwant-mobile/") {
+            if let url = URL(string: "https://help.qwant.com/help/qwant-junior/") {
                 self.delegate?.settingsOpenURLInNewTab(url)
             }
         }
