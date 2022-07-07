@@ -99,8 +99,8 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
 
         // We test that without a pref, google is added
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleGUID)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.guid == QwantTopSiteManager.Constants.guid)
         }
     }
 
@@ -109,8 +109,8 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
 
         // We test that without a pref, google is added even with pinned tiles
         testLoadData(manager: manager, numberOfTilesPerRow: 1) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleGUID)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.guid == QwantTopSiteManager.Constants.guid)
         }
     }
 
@@ -149,7 +149,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
             XCTAssertTrue(manager.hasData)
-            XCTAssertEqual(manager.siteCount, 12)
+            XCTAssertEqual(manager.siteCount, 11)
         }
     }
 
@@ -160,8 +160,8 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(expectedContileResult: ContileResult.success(expectedContileResult))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
-            XCTAssertTrue(manager.getSite(index: 1)!.isSponsoredTile)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
+            XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
     }
@@ -173,7 +173,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(expectedContileResult: expectedContileResult)
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
             XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
@@ -186,7 +186,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(expectedContileResult: expectedContileResult)
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
             XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
@@ -200,9 +200,9 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(expectedContileResult: ContileResult.success(expectedContileResult))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
-            XCTAssertTrue(manager.getSite(index: 1)!.isSponsoredTile)
-            XCTAssertTrue(manager.getSite(index: 2)!.isSponsoredTile)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
+            XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
+            XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 3)!.isSponsoredTile)
         }
     }
@@ -216,7 +216,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(addPinnedSiteCount: 1, expectedContileResult: ContileResult.success(expectedContileResult))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
             XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
@@ -230,8 +230,8 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(addPinnedSiteCount: 1, expectedContileResult: ContileResult.success(expectedContileResult))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
-            XCTAssertTrue(manager.getSite(index: 1)!.isSponsoredTile)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
+            XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
     }
@@ -245,9 +245,8 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(addPinnedSiteCount: 1, expectedContileResult: ContileResult.success(expectedContileResult))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
-            XCTAssertTrue(manager.getSite(index: 1)!.isSponsoredTile)
-            XCTAssertEqual(manager.getSite(index: 1)!.title, ContileProviderMock.defaultSuccessData[0].name)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
+            XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
     }
@@ -275,7 +274,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(addPinnedSiteCount: 11, expectedContileResult: expectedContileResult)
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
             XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
@@ -290,9 +289,9 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(expectedContileResult: ContileResult.success([ContileProviderMock.duplicateTile]))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
             XCTAssertEqual(manager.getSite(index: 1)!.title, ContileProviderMock.duplicateTile.name)
-            XCTAssertTrue(manager.getSite(index: 1)!.isSponsoredTile)
+            XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
         }
     }
@@ -304,7 +303,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
         let manager = createManager(addPinnedSiteCount: 1, expectedContileResult: ContileResult.success([ContileProviderMock.pinnedDuplicateTile]))
 
         testLoadData(manager: manager, numberOfTilesPerRow: 6) {
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
             XCTAssertFalse(manager.getSite(index: 1)!.isSponsoredTile)
             XCTAssertTrue(manager.getSite(index: 1)!.isPinned)
             XCTAssertFalse(manager.getSite(index: 2)!.isSponsoredTile)
@@ -321,7 +320,7 @@ class FxHomeTopSitesManagerTests: XCTestCase, FeatureFlaggable {
 
         testLoadData(manager: manager, numberOfTilesPerRow: 4) {
             XCTAssertEqual(manager.siteCount, 4, "Should have 3 sites and 1 pinned")
-            XCTAssertTrue(manager.getSite(index: 0)!.isGoogleURL)
+            XCTAssertTrue(manager.getSite(index: 0)!.site.url == QwantTopSiteManager.Constants.url)
 
             let tile1 = manager.getSite(index: 1)
             XCTAssertFalse(tile1!.isSponsoredTile)

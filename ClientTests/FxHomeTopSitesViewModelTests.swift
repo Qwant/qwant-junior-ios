@@ -181,7 +181,7 @@ extension FxHomeTopSitesViewModelTests {
 
         trackForMemoryLeaks(viewModel)
         trackForMemoryLeaks(managerStub)
-        trackForMemoryLeaks(managerStub.googleTopSiteManager)
+        trackForMemoryLeaks(managerStub.qwantTopSiteManager)
         trackForMemoryLeaks(managerStub.topSiteHistoryManager)
 
         return viewModel

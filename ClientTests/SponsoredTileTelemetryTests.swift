@@ -39,7 +39,7 @@ class SponsoredTileTelemetryTests: XCTestCase {
 
     func testTelemetryWrapper_setsContextId() {
         _ = TelemetryWrapper(profile: MockProfile())
-        XCTAssertNotNil(SponsoredTileTelemetry.contextId)
+        XCTAssertNil(SponsoredTileTelemetry.contextId)
     }
 
     // MARK: Impression
