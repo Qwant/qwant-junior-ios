@@ -135,6 +135,7 @@ class SearchViewController: SiteTableViewController, KeyboardHelperDelegate, Loa
 
         searchEngineContainerView.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(0)
         }
 
         NotificationCenter.default.addObserver(self, selector: #selector(dynamicFontChanged), name: .DynamicFontChanged, object: nil)
