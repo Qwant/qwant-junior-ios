@@ -45,6 +45,8 @@ class ContextualHintViewModel {
     // Prevent JumpBackIn CFR from being presented if the onboarding
     // CFR has not yet been presented. On iPad we don't present the onboarding CFR
     private var canJumpBackInBePresented: Bool {
+        // Qwant - Temporary deactivation
+        return false
         guard UIDevice.current.userInterfaceIdiom != .pad else { return true }
 
         if let hasShownOnboardingCFR = profile.prefs.boolForKey(CFRPrefsKeys.ToolbarOnboardingKey.rawValue),
