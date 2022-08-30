@@ -217,7 +217,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         let suggestionText = String(suggestion[suggestion.index(suggestion.startIndex, offsetBy: normalized.count)...])
         let autocompleteText = NSMutableAttributedString(string: suggestionText)
 
-        let color = AutocompleteTextField.textSelectionColor.labelMode
+        let color = UIColor.theme.urlbar.textSelectionHighlight(UIApplication.isInPrivateMode).labelMode
         autocompleteText.addAttribute(NSAttributedString.Key.backgroundColor, value: color, range: NSRange(location: 0, length: suggestionText.count))
 
         autocompleteTextLabel?.removeFromSuperview() // should be nil. But just in case
@@ -236,6 +236,14 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
 
     override func caretRect(for position: UITextPosition) -> CGRect {
         return hideCursor ? CGRect.zero : super.caretRect(for: position)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if let base = text, let autocomplete = autocompleteTextLabel?.text {
+            setAutocompleteSuggestion(base + autocomplete)
+        }
     }
 
     private func createAutocompleteLabelWith(_ autocompleteText: NSAttributedString) -> UILabel {

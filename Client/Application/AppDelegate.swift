@@ -218,3 +218,9 @@ extension AppDelegate {
         return configuration
     }
 }
+
+extension UIApplication {
+    static var isInPrivateMode: Bool {
+        return BrowserViewController.foregroundBVC()?.tabManager.selectedTab?.isPrivate ?? false
+    }
+}
