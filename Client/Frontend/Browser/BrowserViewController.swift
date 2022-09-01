@@ -92,7 +92,7 @@ class BrowserViewController: UIViewController {
 
     let profile: Profile
     let tabManager: TabManager
-    let ratingPromptManager: RatingPromptManager
+    let ratingPromptManager: QwantRatingPromptManager
 
     // Header can contain the top url bar, bottomContainer only contains toolbar
     // OverKeyboardContainer contains the reader mode and maybe the bottom url bar
@@ -175,7 +175,7 @@ class BrowserViewController: UIViewController {
         self.profile = profile
         self.tabManager = tabManager
         self.themeManager = themeManager
-        self.ratingPromptManager = ratingPromptManager
+        self.ratingPromptManager = QwantRatingPromptManager()
         self.readerModeCache = DiskReaderModeCache.sharedInstance
         self.downloadQueue = downloadQueue
 
