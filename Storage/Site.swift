@@ -40,9 +40,20 @@ open class Site: Identifiable {
 
     public init(url: String, title: String, bookmarked: Bool?, guid: String? = nil) {
         self.url = url
-        self.title = title
         self.bookmarked = bookmarked
         self.guid = guid
+        
+        if url.asURL?.isQwantJuniorUrl == true {
+            self.title = "Qwant Junior"
+        } else if url.asURL?.isQwantHelpUrl == true {
+            self.title = "Qwant Help"
+        } else if url.asURL?.isMapsUrl == true {
+            self.title = "Qwant Maps"
+        } else if url.asURL?.isQwantUrl == true {
+            self.title = "Qwant"
+        } else {
+            self.title = title
+        }
     }
 
     open func setBookmarked(_ bookmarked: Bool) {

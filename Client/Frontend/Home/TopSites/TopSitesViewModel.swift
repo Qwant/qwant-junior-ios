@@ -27,7 +27,7 @@ class TopSitesViewModel {
 
     private let topSitesDataAdaptor: TopSitesDataAdaptor
     private let topSiteHistoryManager: TopSiteHistoryManager
-    private let googleTopSiteManager: GoogleTopSiteManager
+    private let googleTopSiteManager: QwantTopSiteManager
     private var wallpaperManager: WallpaperManager
 
     init(profile: Profile,
@@ -40,7 +40,7 @@ class TopSitesViewModel {
         self.dimensionManager = TopSitesDimensionImplementation()
 
         self.topSiteHistoryManager = TopSiteHistoryManager(profile: profile)
-        self.googleTopSiteManager = GoogleTopSiteManager(prefs: profile.prefs)
+        self.googleTopSiteManager = QwantTopSiteManager(prefs: profile.prefs)
         let adaptor = TopSitesDataAdaptorImplementation(profile: profile,
                                                         topSiteHistoryManager: topSiteHistoryManager,
                                                         googleTopSiteManager: googleTopSiteManager)
@@ -107,7 +107,7 @@ class TopSitesViewModel {
     }
 
     func removePinTopSite(_ site: Site) {
-        googleTopSiteManager.removeGoogleTopSite(site: site)
+        googleTopSiteManager.removeQwantTopSite(site: site)
         topSiteHistoryManager.removeTopSite(site: site)
     }
 }

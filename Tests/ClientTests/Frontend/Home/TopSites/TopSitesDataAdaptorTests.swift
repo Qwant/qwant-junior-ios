@@ -502,7 +502,7 @@ extension TopSitesDataAdaptorTests {
 
         contileProviderMock = ContileProviderMock(result: expectedContileResult)
 
-        let googleManager = GoogleTopSiteManager(prefs: profile.prefs)
+        let googleManager = QwantTopSiteManager(prefs: profile.prefs)
         let dispatchGroup = MockDispatchGroup()
 
         let subject = TopSitesDataAdaptorImplementation(profile: profile,

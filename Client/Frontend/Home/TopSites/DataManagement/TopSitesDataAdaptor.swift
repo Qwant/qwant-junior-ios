@@ -43,7 +43,7 @@ class TopSitesDataAdaptorImplementation: TopSitesDataAdaptor, FeatureFlaggable, 
     var notificationCenter: NotificationProtocol
     weak var delegate: TopSitesManagerDelegate?
     private let topSiteHistoryManager: TopSiteHistoryManager
-    private let googleTopSiteManager: GoogleTopSiteManager
+    private let googleTopSiteManager: QwantTopSiteManager
     private let contileProvider: ContileProviderInterface
     private let dispatchGroup: DispatchGroupInterface
 
@@ -54,7 +54,7 @@ class TopSitesDataAdaptorImplementation: TopSitesDataAdaptor, FeatureFlaggable, 
 
     init(profile: Profile,
          topSiteHistoryManager: TopSiteHistoryManager,
-         googleTopSiteManager: GoogleTopSiteManager,
+         googleTopSiteManager: QwantTopSiteManager,
          contileProvider: ContileProviderInterface = ContileProvider(),
          notificationCenter: NotificationProtocol = NotificationCenter.default,
          dispatchGroup: DispatchGroupInterface = DispatchGroup()
@@ -187,11 +187,11 @@ class TopSitesDataAdaptorImplementation: TopSitesDataAdaptor, FeatureFlaggable, 
     // MARK: - Google Tile
 
     private func shouldAddGoogle(availableSpaceCount: Int) -> Bool {
-        googleTopSiteManager.shouldAddGoogleTopSite(hasSpace: availableSpaceCount > 0)
+        googleTopSiteManager.shouldAddQwantTopSite(hasSpace: availableSpaceCount > 0)
     }
 
     private func addGoogleTopSite(sites: inout [Site]) {
-        googleTopSiteManager.addGoogleTopSite(sites: &sites)
+        googleTopSiteManager.addQwantTopSite(sites: &sites)
     }
 
     // MARK: - Sponsored tiles (Contiles)
@@ -206,7 +206,7 @@ class TopSitesDataAdaptorImplementation: TopSitesDataAdaptor, FeatureFlaggable, 
 
     /// Google tile has precedence over Sponsored Tiles, if Google tile is present
     private func getSponsoredNumberTiles(shouldAddGoogle: Bool, availableSpaceCount: Int) -> Int {
-        let googleAdjustedSpaceCount = availableSpaceCount - GoogleTopSiteManager.Constants.reservedSpaceCount
+        let googleAdjustedSpaceCount = availableSpaceCount - QwantTopSiteManager.Constants.reservedSpaceCount
         return shouldAddGoogle ? googleAdjustedSpaceCount : availableSpaceCount
     }
 }
@@ -251,7 +251,13 @@ private extension Array where Element == Site {
             }
 
             let siteDomain = site.url.asURL?.shortDomain
-            let shouldAddSite = !alreadyThere.contains(where: { $0.url.asURL?.shortDomain == siteDomain })
+            var comparisonMethod: ((Site) -> Bool)!
+            if site.url.asURL?.isMapsUrl == true {
+                comparisonMethod = { $0.url.asURL?.isMapsUrl == true }
+            } else {
+                comparisonMethod = { $0.url.asURL?.shortDomain == siteDomain }
+            }
+            let shouldAddSite = !alreadyThere.contains(where: comparisonMethod )
             // If shouldAddSite or site domain was not found, then insert the site
             guard shouldAddSite || siteDomain == nil else { return nil }
             alreadyThere.insert(site)

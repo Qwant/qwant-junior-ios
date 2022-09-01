@@ -23,9 +23,15 @@ class QwantExtensionsTests: XCTestCase {
         XCTAssertTrue(url.missesClientContext)
         
         url = URL(string: "https://www.maps.qwant.com")!
-        XCTAssertTrue(url.missesClientContext)
+        XCTAssertFalse(url.missesClientContext)
         
         url = URL(string: "https://www.qwantmaps.com")!
+        XCTAssertFalse(url.missesClientContext)
+        
+        url = URL(string: "https://www.qwantjunior.com")!
+        XCTAssertFalse(url.missesClientContext)
+        
+        url = URL(string: "https://www.qwa.qwant.com")!
         XCTAssertFalse(url.missesClientContext)
         
         url = URL(string: "https://www.qwant.com?q=wikipedia")!
@@ -51,9 +57,15 @@ class QwantExtensionsTests: XCTestCase {
         XCTAssertTrue(url.missesClientContext)
         
         url = URL(string: "https://www.maps.qwant.com")!
-        XCTAssertTrue(url.missesClientContext)
+        XCTAssertFalse(url.missesClientContext)
         
         url = URL(string: "https://www.qwantmaps.com")!
+        XCTAssertFalse(url.missesClientContext)
+        
+        url = URL(string: "https://www.qwantjunior.com")!
+        XCTAssertFalse(url.missesClientContext)
+        
+        url = URL(string: "https://www.qwa.qwant.com")!
         XCTAssertFalse(url.missesClientContext)
         
         url = URL(string: "https://www.qwant.com?q=wikipedia")!
@@ -92,7 +104,7 @@ class QwantExtensionsTests: XCTestCase {
     
     func testRelaunchNavigationWithClientContext_whenOpeningTheAppViaTheWidget() {
         UserDefaults.standard.setHasOpenedAppViaTheWidget(true)
-        let url = URL(string: "https://www.maps.qwant.com?q=wikipedia")!
+        let url = URL(string: "https://www.qwant.com?q=wikipedia")!
         let request = URLRequest(url: url)
         let webview = WKWebView()
         webview.load(request)

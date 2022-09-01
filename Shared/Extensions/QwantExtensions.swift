@@ -9,21 +9,42 @@ public extension URL {
     
     private struct Constants {
         static let QWANT_DOMAIN = "qwant.com"
+        static let QWANT_JUNIOR_DOMAIN = "qwantjunior.com"
+        static let QWANT_HELP_DOMAIN = "help.qwant.com"
+        static let QWANT_MAPS_PATH = "/maps"
         static let CLIENT_CONTEXT_KEY = "client"
         static let CLIENT_CONTEXT_BROWSER = "qwantbrowser"
         static let CLIENT_CONTEXT_WIDGET = "qwantwidget"
     }
     
+    var isQwantUrl: Bool {
+        return self.normalizedHost == Constants.QWANT_DOMAIN
+    }
+    
+    var isQwantJuniorUrl: Bool {
+        return self.normalizedHost == Constants.QWANT_JUNIOR_DOMAIN
+    }
+    
+    var isQwantHelpUrl: Bool {
+        return self.normalizedHost == Constants.QWANT_HELP_DOMAIN
+    }
+    
+    var isMapsUrl: Bool {
+        return self.isQwantUrl && self.path.starts(with: Constants.QWANT_MAPS_PATH)
+    }
+    
+    var isAnyQwantUrl: Bool {
+        return self.isQwantUrl || self.isQwantJuniorUrl || self.isQwantHelpUrl
+    }
+    
     /// Determines if the `client` context is missing as a query parameter of the URL.
     ///
     /// There are 2 cases to distinguish, the first one where the client context is actually really missing from the url
-    /// as in `https://www.qwant.com?q=google` for example, but also when we can read through the
+    /// as in `https://www.qwant.com?q=wikipedia` for example, but also when we can read through the
     /// user defaults that the app has been opened via the widget, and thus that we must override the default
     /// `qwantbrowser`with the `qwantwidget` in that case.
     var missesClientContext: Bool {
-        guard self.host?.contains(Constants.QWANT_DOMAIN) == true else {
-            return false
-        }
+        guard self.isQwantUrl && !self.isMapsUrl else { return false }
         
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: false) else {
             return true
@@ -42,16 +63,16 @@ public extension URL {
     ///
     /// - Returns: the generated URL out of the re-written components
     fileprivate func appendClientContext() -> URL? {
-        guard self.host?.contains(Constants.QWANT_DOMAIN) == true else {
-            return self
-        }
+        guard self.isQwantUrl else { return self }
         
         let context = UserDefaults.standard.hasOpenedAppViaTheWidget ? Constants.CLIENT_CONTEXT_WIDGET : Constants.CLIENT_CONTEXT_BROWSER
         UserDefaults.standard.setHasOpenedAppViaTheWidget(false)
         
         var components = URLComponents(url: self, resolvingAgainstBaseURL: false)
-        var queryItems = (components?.queryItems ?? []).filter ({ $0.name != Constants.CLIENT_CONTEXT_KEY })
-        queryItems.append(URLQueryItem(name: Constants.CLIENT_CONTEXT_KEY, value: context))
+        let queryItems = (components?.percentEncodedQueryItems ?? [])
+            .filter { $0.name != Constants.CLIENT_CONTEXT_KEY }
+            + [URLQueryItem(name: Constants.CLIENT_CONTEXT_KEY, value: context)]
+        
         components?.queryItems = queryItems
         return components?.url
     }
