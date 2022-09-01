@@ -211,6 +211,7 @@ enum NavigationPath {
 
     private static func handleWidgetKitQuery(components: URLComponents) -> NavigationPath? {
         guard let host = components.host?.lowercased(), !host.isEmpty else { return nil }
+        UserDefaults.standard.setHasOpenedAppViaTheWidget(true)
         switch host {
         case "widget-medium-topsites-open-url":
             // Widget Top sites - open url
