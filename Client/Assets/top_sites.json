@@ -1395,21 +1395,21 @@
     "title": "qwant",
     "url": "https://www.qwant.com/",
     "image_url": "qwant-com.png",
-    "background_color": "#fff",
+    "background_color": "#5c97ff",
     "domain": "qwant.com"
   },
   {
     "title": "qwantjunior",
     "url": "https://www.qwantjunior.com/",
     "image_url": "qwantjunior-com.png",
-    "background_color": "#fff",
+    "background_color": "#ffd6d7",
     "domain": "qwantjunior.com"
   },
   {
     "title": "qwantmaps",
     "url": "https://www.qwant.com/maps",
     "image_url": "qwantmaps-com.png",
-    "background_color": "#fff",
+    "background_color": "#57c78f",
     "domain": "qwant.com/maps"
   },
   {

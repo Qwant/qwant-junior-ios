@@ -1,23 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "logo_qwant-120.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "logo_qwant-240.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "logo_qwant-360.png",
-      "scale" : "3x"
+      "filename" : "brands-logos-qwant-letter-monochrome.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
