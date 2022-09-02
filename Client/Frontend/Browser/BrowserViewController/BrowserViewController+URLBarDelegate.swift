@@ -139,6 +139,7 @@ extension BrowserViewController: URLBarDelegate {
             }
 
             let etpVC = QwantTPMenuVC(viewModel: etpViewModel)
+            etpViewModel.mailHelper.mailComposeDelegate = etpVC
             let controller = ThemedNavigationController(rootViewController: etpVC)
             if UIDevice.current.userInterfaceIdiom == .phone {
                 controller.modalPresentationStyle = .pageSheet

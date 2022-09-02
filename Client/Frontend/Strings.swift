@@ -4628,37 +4628,247 @@ extension String {
             comment: "Button string to ignore the default browser capability.")
     }
 
-    public struct QwantTrackingProtection {
-        public static let ConnectionSecure = MZLocalizedString("Qwant.TrackingProtection.ConnectionSecure", tableName: "QwantTrackingProtection", value: "Connection is secure", comment: "Header - SSL Cert status when the connection is secured")
-        public static let ConnectionNotSecure = MZLocalizedString("Qwant.TrackingProtection.ConnectionNotSecure", tableName: "QwantTrackingProtection", value: "Connection is not secure", comment: "Header - SSL Cert status when the connection is not secured")
-        public static let LocalProtectionEnabledTitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.EnabledTitle", tableName: "QwantTrackingProtection", value: "Protection enabled", comment: "Green title when the tracking protection is enabled for the current visited website")
-        public static let LocalProtectionEnablingTitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.EnablingTitle", tableName: "QwantTrackingProtection", value: "Enabling protection...", comment: "Pale green title when the tracking protection is enabling for the current visited website")
-        public static let LocalProtectionDisablingTitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.DisablingTitle", tableName: "QwantTrackingProtection", value: "Disabling protection...", comment: "Pale red title when the tracking protection is disabling for the current visited website")
-        public static let LocalProtectionLoadingSubtitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.LoadingSubtitle", tableName: "QwantTrackingProtection", value: "This operation can take up to 5 seconds, please wait.", comment: "Gray subtitle when the tracking protection is either enabling or disabling for the current visited website")
-        public static let LocalProtectionLongerLoadingSubtitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.LongerLoadingSubtitle", tableName: "QwantTrackingProtection", value: "Hang tight. We're almost there...", comment: "Gray subtitle when the tracking protection is either enabling or disabling for the current visited website")
-        public static let LocalProtectionDisabledTitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.DisabledTitle", tableName: "QwantTrackingProtection", value: "Protection disabled", comment: "Red title when the tracking protection is disabled for the current visited website")
-        public static let LocalProtectionEnabledSubtitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.EnabledSubtitle", tableName: "QwantTrackingProtection", value: "A problem on this website? Try to deactivate.", comment: "Gray subtitle when the tracking protection is enabled for the current visited website")
-        public static let LocalProtectionDisabledSubtitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.DisabledSubtitle", tableName: "QwantTrackingProtection", value: "Deactivated for this website.", comment: "Gray subtitle when the tracking protection is disabled for the current visited website")
-        public static let BlockedItems = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.BlockedItems", tableName: "QwantTrackingProtection", value: "Items blocked", comment: "Row title label to explain that the righthand-sight of the cell represents the # of blocked items for the current visited website")
-        public static let ProtectionLevel = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.Title", tableName: "QwantTrackingProtection", value: "Level of protection", comment: "Row title label to explain that the righthand-sight of the cell represents the current protection level")
-        public static let StandardTitle = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.StandardTitle", tableName: "QwantTrackingProtection", value: "Standard", comment: "Standard protection level")
-        public static let StandardDescription = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.StandardDescription", tableName: "QwantTrackingProtection", value: "Blocks most trackers and cookies efficiently", comment: "Description of the standard protection level")
-        public static let StrictTitle = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.StrictTitle", tableName: "QwantTrackingProtection", value: "Strict", comment: "Strict protection level")
-        public static let StrictDescription = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.StrictDescription", tableName: "QwantTrackingProtection", value: "Blocks all trackers and cookies, may affect some websites", comment: "Description of the strict protection level")
-        public static let DisabledTitle = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.DisabledTitle", tableName: "QwantTrackingProtection", value: "Disabled", comment: "Disabled protection level")
-        public static let DisabledDescription = MZLocalizedString("Qwant.TrackingProtection.ProtectionLevel.DisabledDescription", tableName: "QwantTrackingProtection", value: "The browsing protection is disabled", comment: "Description of the disabled protection level")
-        public static let LastThirtyDays = MZLocalizedString("Qwant.TrackingProtection.Statistics.LastThirtyDays", tableName: "QwantTrackingProtection", value: "Last 30 days", comment: "Header of the statistics section")
-        public static let ItemsBlocked = MZLocalizedString("Qwant.TrackingProtection.Statistics.ItemsBlocked", tableName: "QwantTrackingProtection", value: "Items blocked", comment: "Represents the # of items blocked by the tracking protection")
-        public static let TimeSaved = MZLocalizedString("Qwant.TrackingProtection.Statistics.TimeSaved", tableName: "QwantTrackingProtection", value: "Time saved", comment: "Represents the time saved by the tracking protection")
-        public static let SeeDetails = MZLocalizedString("Qwant.TrackingProtection.Statistics.SeeDetails", tableName: "QwantTrackingProtection", value: "See details", comment: "Buttons to redirect to the details of the statistics")
-        public static let LocalProtection = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.ScreenTitle", tableName: "QwantTrackingProtection", value: "Items blocked", comment: "Title of the local protection details page")
-        public static let TrackersTitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.TrackersTitle", tableName: "QwantTrackingProtection", value: "Trackers", comment: "Title to describle the value underneath it is the number of items blocked within the current website")
-        public static let DomainsTitle = MZLocalizedString("Qwant.TrackingProtection.LocalProtection.DomainsTitle", tableName: "QwantTrackingProtection", value: "Domains", comment: "Title to describle the value underneath it is the number of domains blocked within the current website")
-        public static let Statistics = MZLocalizedString("Qwant.TrackingProtection.Statistics.ScreenTitle", tableName: "QwantTrackingProtection", value: "Your statistics", comment: "Title of the statistics details page")
-        public static let GlobalProtection = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.ScreenTitle", tableName: "QwantTrackingProtection", value: "Tracking Protection", comment: "Title of the global tracking protection page")
-        public static let Help = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.Help", tableName: "QwantTrackingProtection", value: "Help", comment: "Header of the help section")
-        public static let About = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.About", tableName: "QwantTrackingProtection", value: "Learn about Qwant V.I.P.", comment: "Cell title")
-        public static let Experience = MZLocalizedString("Qwant.TrackingProtection.GlobalProtection.Experience", tableName: "QwantTrackingProtection", value: "Share your experience", comment: "Cell title")
+    public struct QwantVIP {
+        public static let ConnectionSecure = MZLocalizedString(
+            "Qwant.TrackingProtection.ConnectionSecure",
+            tableName: "Qwant",
+            value: "Connection is secure",
+            comment: "Header - SSL Cert status when the connection is secured")
+        public static let ConnectionNotSecure = MZLocalizedString(
+            "Qwant.TrackingProtection.ConnectionNotSecure",
+            tableName: "Qwant",
+            value: "Connection is not secure",
+            comment: "Header - SSL Cert status when the connection is not secured")
+        public static let LocalProtectionEnabledTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.EnabledTitle",
+            tableName: "Qwant",
+            value: "Protection enabled",
+            comment: "Green title when the tracking protection is enabled for the current visited website")
+        public static let LocalProtectionEnablingTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.EnablingTitle",
+            tableName: "Qwant",
+            value: "Enabling protection...",
+            comment: "Pale green title when the tracking protection is enabling for the current visited website")
+        public static let LocalProtectionDisablingTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.DisablingTitle",
+            tableName: "Qwant",
+            value: "Disabling protection...",
+            comment: "Pale red title when the tracking protection is disabling for the current visited website")
+        public static let LocalProtectionLoadingSubtitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.LoadingSubtitle",
+            tableName: "Qwant",
+            value: "This operation can take up to 5 seconds, please wait.",
+            comment: "Gray subtitle when the tracking protection is either enabling or disabling for the current visited website")
+        public static let LocalProtectionLongerLoadingSubtitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.LongerLoadingSubtitle",
+            tableName: "Qwant",
+            value: "Hang tight. We're almost there...",
+            comment: "Gray subtitle when the tracking protection is either enabling or disabling for the current visited website")
+        public static let LocalProtectionDisabledTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.DisabledTitle",
+            tableName: "Qwant",
+            value: "Protection disabled",
+            comment: "Red title when the tracking protection is disabled for the current visited website")
+        public static let LocalProtectionEnabledSubtitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.EnabledSubtitle",
+            tableName: "Qwant",
+            value: "A problem on this website? Try to deactivate.",
+            comment: "Gray subtitle when the tracking protection is enabled for the current visited website")
+        public static let LocalProtectionDisabledSubtitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.DisabledSubtitle",
+            tableName: "Qwant",
+            value: "Deactivated for this website.",
+            comment: "Gray subtitle when the tracking protection is disabled for the current visited website")
+        public static let BlockedItems = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.BlockedItems",
+            tableName: "Qwant",
+            value: "Items blocked",
+            comment: "Row title label to explain that the righthand-sight of the cell represents the # of blocked items for the current visited website")
+        public static let ProtectionLevel = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.Title",
+            tableName: "Qwant",
+            value: "Level of protection",
+            comment: "Row title label to explain that the righthand-sight of the cell represents the current protection level")
+        public static let StandardTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.StandardTitle",
+            tableName: "Qwant",
+            value: "Standard",
+            comment: "Standard protection level")
+        public static let StandardDescription = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.StandardDescription",
+            tableName: "Qwant",
+            value: "Blocks most trackers and cookies efficiently",
+            comment: "Description of the standard protection level")
+        public static let StrictTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.StrictTitle",
+            tableName: "Qwant",
+            value: "Strict",
+            comment: "Strict protection level")
+        public static let StrictDescription = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.StrictDescription",
+            tableName: "Qwant",
+            value: "Blocks all trackers and cookies, may affect some websites",
+            comment: "Description of the strict protection level")
+        public static let DisabledTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.DisabledTitle",
+            tableName: "Qwant",
+            value: "Disabled",
+            comment: "Disabled protection level")
+        public static let DisabledDescription = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.DisabledDescription",
+            tableName: "Qwant",
+            value: "The browsing protection is disabled",
+            comment: "Description of the disabled protection level")
+        public static let LastThirtyDays = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.LastThirtyDays",
+            tableName: "Qwant",
+            value: "Last 30 days",
+            comment: "Header of the statistics section")
+        public static let ItemsBlocked = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.ItemsBlocked",
+            tableName: "Qwant",
+            value: "Items blocked",
+            comment: "Represents the # of items blocked by the tracking protection")
+        public static let TimeSaved = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.TimeSaved",
+            tableName: "Qwant",
+            value: "Time saved",
+            comment: "Represents the time saved by the tracking protection")
+        public static let SeeDetails = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.SeeDetails",
+            tableName: "Qwant",
+            value: "See details",
+            comment: "Buttons to redirect to the details of the statistics")
+        public static let LocalProtection = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.ScreenTitle",
+            tableName: "Qwant",
+            value: "Items blocked",
+            comment: "Title of the local protection details page")
+        public static let TrackersTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.TrackersTitle",
+            tableName: "Qwant",
+            value: "Trackers",
+            comment: "Title to describle the value underneath it is the number of items blocked within the current website")
+        public static let DomainsTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.DomainsTitle",
+            tableName: "Qwant",
+            value: "Domains",
+            comment: "Title to describle the value underneath it is the number of domains blocked within the current website")
+        public static let Statistics = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.ScreenTitle",
+            tableName: "Qwant",
+            value: "Your statistics",
+            comment: "Title of the statistics details page")
+        public static let GlobalProtection = MZLocalizedString(
+            "Qwant.TrackingProtection.GlobalProtection.ScreenTitle",
+            tableName: "Qwant",
+            value: "Tracking Protection",
+            comment: "Title of the global tracking protection page")
+        public static let Help = MZLocalizedString(
+            "Qwant.TrackingProtection.GlobalProtection.Help",
+            tableName: "Qwant",
+            value: "Help",
+            comment: "Header of the help section")
+        public static let About = MZLocalizedString(
+            "Qwant.TrackingProtection.GlobalProtection.About",
+            tableName: "Qwant",
+            value: "Learn about Qwant V.I.P.",
+            comment: "Cell title")
+        public static let Experience = MZLocalizedString(
+            "Qwant.TrackingProtection.GlobalProtection.Experience",
+            tableName: "Qwant",
+            value: "Share your experience",
+            comment: "Cell title")
+        public static let Inactive = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.Inactive",
+            tableName: "Qwant",
+            value: "Inactive",
+            comment: "Local protection is deactivated for the currently visited website")
+        public static let OnDomain = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.OnDomain",
+            tableName: "Qwant",
+            value: "on %@",
+            comment: "Represents the currently visited domain. example: on mywebsite.com")
+        public static let Information = MZLocalizedString(
+            "Qwant.TrackingProtection.Information.Title",
+            tableName: "Qwant",
+            value: "Information",
+            comment: "Title of the Information row")
+        public static let Feedback = MZLocalizedString(
+            "Qwant.TrackingProtection.Feedback.Title",
+            tableName: "Qwant",
+            value: "Feedback",
+            comment: "Title of the Feedback row")
+        public static let TrackersCookiesTitle = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.TrackersCookiesTitle",
+            tableName: "Qwant",
+            value: "Trackers/Cookies",
+            comment: "Header title")
+        public static let EmptyListTrackersBlocked = MZLocalizedString(
+            "Qwant.TrackingProtection.LocalProtection.EmptyListTrackersBlocked",
+            tableName: "Qwant",
+            value: "There is nothing to block here, this is a pretty nice website!",
+            comment: "Placeholder text when the # of blocked trackers is null")
+        public static let ReactivateProtection = MZLocalizedString(
+            "Qwant.TrackingProtection.ProtectionLevel.Reactivate",
+            tableName: "Qwant",
+            value: "Reactivate protection",
+            comment: "Button title to reactivate protection")
+        public static let ReactivateStats = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.Reactivate",
+            tableName: "Qwant",
+            value: "Reactivate statistics",
+            comment: "Button title to reactivate stats")
+        public static let DeactivateStats = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.Deactivate",
+            tableName: "Qwant",
+            value: "Deactivate statistics",
+            comment: "Button title to deactivate stats")
+        public static let DeactivateStatsDetails = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.DeactivateDetails",
+            tableName: "Qwant",
+            value: "Deactivate statistics will result in deleting all cumulated statistics so far.",
+            comment: "Confirmation text before deactivating stats")
+        public static let DeactivateStatsConfirm = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.Deactivate.Confirm",
+            tableName: "Qwant",
+            value: "Confirm disable statistics",
+            comment: "Confirmation action button title")
+        public static let DeactivateStatsCancel = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.Deactivate.Cancel",
+            tableName: "Qwant",
+            value: "Cancel",
+            comment: "Cancel action button title")
+        public static let DeactivatedForNow = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.DeactivateForNow",
+            tableName: "Qwant",
+            value: "Currently disabled",
+            comment: "Placeholder text explaining that stats are deactivated")
+        public static let DeleteStats = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.Delete",
+            tableName: "Qwant",
+            value: "Delete",
+            comment: "Button title to delete stats")
+        public static let JustActivated = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.JustActivated",
+            tableName: "Qwant",
+            value: "Statistics activated! Start browsing the web, and your numbers will be displayed here.",
+            comment: "Placeholder text explaining that stats has just been reactivated")
+        public static let NothingToSee = MZLocalizedString(
+            "Qwant.TrackingProtection.Statistics.Empty",
+            tableName: "Qwant",
+            value: "Nothing yet",
+            comment: "Placeholder text explaining that stats are empty")
+        public static let GetToKnow = MZLocalizedString(
+            "Qwant.TrackingProtection.Information.GetToKnow",
+            tableName: "Qwant",
+            value: "Learn about Qwant VIPrivacy",
+            comment: "Title of the Learn More row")
+        public static let DeveloperNotes = MZLocalizedString(
+            "Qwant.TrackingProtection.Information.DeveloperNotes",
+            tableName: "Qwant",
+            value: "Developer Notes",
+            comment: "Title of the Github row")
     }
     
     public struct QwantIntro {

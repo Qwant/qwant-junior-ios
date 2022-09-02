@@ -174,6 +174,18 @@ class DarkRemoteTabTrayColor: RemoteTabTrayColor {
     override var background: UIColor { return UIColor.Photon.Grey70 }
 }
 
+class DarkQwantVIPColor: QwantVIPColor {
+    override var background: UIColor { return .black }
+    override var sectionColor: UIColor { return UIColor(rgb: 0x212327) }
+    override var textColor: UIColor { return .white }
+    override var subtextColor: UIColor { return UIColor(rgb: 0xa7acb4) }
+    override var greenText: UIColor { return UIColor(rgb: 0x57c78f) }
+    override var redText: UIColor { return UIColor(rgb: 0xff5c5f) }
+    override var blackText: UIColor { return UIColor(rgb: 0x050506) }
+    override var horizontalLine: UIColor { return UIColor(rgb: 0x4b5058) }
+    override var switchAndButtonTint: UIColor { return UIColor(rgb: 0x5c97ff) }
+}
+
 class LegacyDarkTheme: LegacyNormalTheme {
     override var name: String { return BuiltinThemeName.dark.rawValue }
     override var tableView: TableViewColor { return DarkTableViewColor() }
@@ -191,4 +203,5 @@ class LegacyDarkTheme: LegacyNormalTheme {
     override var homeTabBanner: HomeTabBannerColor { return DarkHomeTabBannerColor() }
     override var onboarding: OnboardingColor { return DarkOnboardingColor() }
     override var remotePanel: RemoteTabTrayColor { return DarkRemoteTabTrayColor() }
+    override var qwantVIP: QwantVIPColor { return DarkQwantVIPColor() }
 }

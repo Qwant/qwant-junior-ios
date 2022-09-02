@@ -255,6 +255,18 @@ class RemoteTabTrayColor {
     var background: UIColor { return UIColor.white }
 }
 
+class QwantVIPColor {
+    var background: UIColor { return .white }
+    var sectionColor: UIColor { return UIColor(rgb: 0xf4f5f6) }
+    var textColor: UIColor { return UIColor(rgb: 0x050506) }
+    var subtextColor: UIColor { return UIColor(rgb: 0x676e79) }
+    var greenText: UIColor { return UIColor(rgb: 0x297a52) }
+    var redText: UIColor { return UIColor(rgb: 0xe00004) }
+    var blackText: UIColor { return UIColor(rgb: 0x050506) }
+    var horizontalLine: UIColor { return UIColor(rgb: 0xc8cbd0) }
+    var switchAndButtonTint: UIColor { return UIColor(rgb: 0x0051e0) }
+}
+
 protocol LegacyTheme {
     var name: String { get }
     var tableView: TableViewColor { get }
@@ -274,6 +286,7 @@ protocol LegacyTheme {
     var homeTabBanner: HomeTabBannerColor { get }
     var onboarding: OnboardingColor { get }
     var remotePanel: RemoteTabTrayColor { get }
+    var qwantVIP: QwantVIPColor { get }
 }
 
 class LegacyNormalTheme: LegacyTheme {
@@ -295,4 +308,5 @@ class LegacyNormalTheme: LegacyTheme {
     var homeTabBanner: HomeTabBannerColor { return HomeTabBannerColor() }
     var onboarding: OnboardingColor { return OnboardingColor() }
     var remotePanel: RemoteTabTrayColor { return RemoteTabTrayColor() }
+    var qwantVIP: QwantVIPColor { return QwantVIPColor() }
 }

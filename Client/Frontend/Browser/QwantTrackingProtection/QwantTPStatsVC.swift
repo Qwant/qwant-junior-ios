@@ -3,34 +3,45 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
 import UIKit
-import Common
 
-class QwantTPStatsVC: UIViewController {
-    
-    // MARK: UI components
-    
-    private lazy var closeButton = {
-        return UIBarButtonItem(barButtonSystemItem: .close) { [weak self] _ in
-            self?.dismiss(animated: true, completion: nil)
-        }
-    }()
-    
-    lazy private var tableView: UITableView = .build { [weak self] tableView in
-        guard let self = self else { return }
+class QwantTPStatsVC: QwantVIPBaseVC {
+
+    lazy private var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CountersCell.self, forCellReuseIdentifier: CountersCell.Identifier)
-        tableView.register(TrackerCell.self, forCellReuseIdentifier: TrackerCell.Identifier)
-
+        tableView.register(ButtonCell.self, forCellReuseIdentifier: ButtonCell.Identifier)
+        tableView.register(TwoLabelsInlineTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: TwoLabelsInlineTableViewHeaderView.Identifier)
+        tableView.rowHeight = UITableView.automaticDimension
         // Set an empty footer to prevent empty cells from appearing in the list.
         tableView.tableFooterView = UIView()
+        
+        return tableView
+    }()
+    
+    lazy private var placeholderImage: UIImageView = .build { imageView in
+        imageView.contentMode = .scaleAspectFit
     }
     
-    private var constraints = [NSLayoutConstraint]()
+    lazy private var placeholderLabel: UILabel = .build { label in
+        label.font = QwantUX.Font.Text.l
+        label.textAlignment = .center
+        label.numberOfLines = 0
+    }
     
-    // MARK: - Variables
+    lazy private var placeholderButton: UIButton = .build { button in
+        button.setTitle(self.viewModel.placeholderButtonTitle, for: .normal)
+        button.setImage(UIImage(named: "icon_stats")!, for: .normal)
+        button.layer.cornerRadius = QwantUX.SystemDesign.cornerRadius
+        button.clipsToBounds = true
+        
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: QwantUX.Spacing.xxxs)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: QwantUX.Spacing.xxxs, bottom: 0, right: 0)
+        button.titleLabel?.font = QwantUX.Font.Text.m
+        button.addTarget(self, action: #selector(self.reactivateStats), for: .touchUpInside)
+    }
     
-    internal var notificationCenter: NotificationProtocol
     private var viewModel: QwantTPStatsVM
     
     // MARK: - View lifecycle
@@ -38,8 +49,7 @@ class QwantTPStatsVC: UIViewController {
     init(viewModel: QwantTPStatsVM,
          and notificationCenter: NotificationCenter = NotificationCenter.default) {
         self.viewModel = viewModel
-        self.notificationCenter = notificationCenter
-        super.init(nibName: nil, bundle: nil)
+        super.init(notificationCenter: notificationCenter)
     }
     
     @available(*, unavailable)
@@ -47,98 +57,183 @@ class QwantTPStatsVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        notificationCenter.removeObserver(self)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-        setupNotifications(forObserver: self, observing: [.DisplayThemeChanged, .ContentBlockerDidBlock])
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateViewDetails()
-        applyTheme()
-    }
-    
-    private func setupView() {
-        NSLayoutConstraint.deactivate(constraints)
-        constraints.removeAll()
-        
+    override func setupConstraints() {
+        super.setupConstraints()
         setupStatListView()
-        NSLayoutConstraint.activate(constraints)
+        setupPlaceholder()
     }
     
     private func setupStatListView() {
         view.addSubview(tableView)
         
-        let statListConstraints = [
+        constraints.append(contentsOf: [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ]
-        
-        constraints.append(contentsOf: statListConstraints)
+        ])
     }
     
-    private func updateViewDetails() {
-        self.title = viewModel.title
-        self.navigationItem.setRightBarButton(closeButton, animated: false)
+    private func setupPlaceholder() {
+        view.addSubviews(placeholderLabel, placeholderButton, placeholderImage)
         
+        constraints.append(contentsOf: [
+            placeholderImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            placeholderImage.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            placeholderImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: QwantUX.Spacing.m),
+            placeholderImage.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -QwantUX.Spacing.m),
+            
+            placeholderLabel.bottomAnchor.constraint(equalTo: placeholderImage.topAnchor, constant: -QwantUX.Spacing.xl),
+            placeholderLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: QwantUX.Spacing.m),
+            placeholderLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -QwantUX.Spacing.m),
+            
+            placeholderButton.topAnchor.constraint(equalTo: placeholderImage.bottomAnchor, constant: QwantUX.Spacing.xl),
+            placeholderButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: QwantUX.Spacing.m),
+            placeholderButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -QwantUX.Spacing.m),
+            placeholderButton.heightAnchor.constraint(equalToConstant: QwantUX.SystemDesign.buttonHeight)
+        ])
+    }
+    
+    override func updateViewDetails() {
+        super.updateViewDetails()
+        self.title = viewModel.title
+        
+        placeholderLabel.text = viewModel.placeholderTextTitle
+        placeholderImage.image = viewModel.placeholderImage
+        
+        tableView.tableHeaderView = TwoCountersInlineView(
+            lIcon: UIImage(named: "icon_shield_purple")!,
+            lValue: viewModel.statisticsTrackersBlockedFormattedString,
+            lTitle: viewModel.statisticsBlockedTrackersTitleString,
+            rIcon: UIImage(named: "icon_clock_purple")!,
+            rValue: viewModel.statisticsTimeSavedFormattedString,
+            rTitle: viewModel.statisticsSavedTimeTitleString)
+
         tableView.reloadData()
     }
-}
-
-extension QwantTPStatsVC: NotificationThemeable {
-    @objc func applyTheme() {
-        overrideUserInterfaceStyle =  LegacyThemeManager.instance.userInterfaceStyle
-        view.backgroundColor = UIColor.theme.etpMenu.background
+    
+    override func applyTheme() {
+        super.applyTheme()
         
-        setNeedsStatusBarAppearanceUpdate()
-    }
-}
-
-// MARK: - Notifiable
-extension QwantTPStatsVC: Notifiable {
-    func handleNotifications(_ notification: Notification) {
-        switch notification.name {
-            case .DisplayThemeChanged:
-                applyTheme()
-            case .ContentBlockerDidBlock:
-                updateViewDetails()
-            default: break
-        }
+        tableView.backgroundColor = UIColor.theme.qwantVIP.background
+        (tableView.tableHeaderView as? NotificationThemeable)?.applyTheme()
+        tableView.reloadData()
+        
+        tableView.isHidden = viewModel.shouldShowPlaceholder
+        placeholderImage.isHidden = !viewModel.shouldShowPlaceholder
+        placeholderLabel.isHidden = !viewModel.shouldShowPlaceholder
+        placeholderButton.isHidden = !viewModel.hasDeactivatedStats
+        
+        placeholderLabel.textColor = UIColor.theme.qwantVIP.textColor
+        placeholderButton.setTitleColor(UIColor.theme.qwantVIP.background, for: .normal)
+        placeholderButton.setBackgroundColor(UIColor.theme.qwantVIP.switchAndButtonTint, forState: .normal)
     }
 }
 
 extension QwantTPStatsVC: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.orderedDomains.count + 1
+        return section == 0 ? viewModel.orderedDomains.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-            case 0:
-                let lImage: UIImage = #imageLiteral(resourceName: "menu-TrackingProtection")
-                let rImage: UIImage = #imageLiteral(resourceName: "library-history")
-                return CountersCell(lIcon: lImage, lValue: viewModel.statisticsTrackersBlockedFormattedString, lTitle: viewModel.statisticsBlockedTrackersTitleString,
-                                    rIcon: rImage, rValue: viewModel.statisticsTimeSavedFormattedString, rTitle: viewModel.statisticsSavedTimeTitleString)
+        switch indexPath.section {
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: ButtonCell.Identifier, for: indexPath) as! ButtonCell
+                cell.configureCell(icon: UIImage(named: "icon_stats_red")!,
+                                   text: viewModel.deactivateStatsTitle,
+                                   color: UIColor.theme.qwantVIP.redText)
+                cell.backgroundColor = UIColor.theme.qwantVIP.sectionColor
+                return cell
+                
+            case 2:
+                let cell = tableView.dequeueReusableCell(withIdentifier: ButtonCell.Identifier, for: indexPath) as! ButtonCell
+                cell.configureCell(icon: UIImage(named: "icon_trash")!,
+                                   text: viewModel.deleteStatsTitle,
+                                   color: UIColor.theme.qwantVIP.subtextColor)
+                cell.backgroundColor = UIColor.theme.qwantVIP.sectionColor
+                return cell
+                
             default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: TrackerCell.Identifier, for: indexPath)
-                cell.textLabel?.text = viewModel.orderedDomains[indexPath.row - 1].key
-                cell.detailTextLabel?.text = String(describing: viewModel.orderedDomains[indexPath.row - 1].value)
+                let cellIdentifier = "TrackerCell"
+                var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+                
+                if cell == nil {
+                    cell = UITableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
+                }
+                
+                guard let cell = cell else {
+                    fatalError()
+                }
+                
+                cell.selectionStyle = .none
+                cell.textLabel?.text = viewModel.orderedDomains[indexPath.row].key
+                cell.textLabel?.textColor = UIColor.theme.qwantVIP.textColor
+                cell.textLabel?.font = QwantUX.Font.Text.l
+                cell.detailTextLabel?.text = String(describing: viewModel.orderedDomains[indexPath.row].value)
+                cell.detailTextLabel?.textColor = UIColor.theme.qwantVIP.subtextColor
+                cell.detailTextLabel?.font = QwantUX.Font.Text.l
+                cell.backgroundColor = UIColor.theme.qwantVIP.sectionColor
                 return cell
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-            case 0: return 110
-            default: return 44
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.section {
+            case 1: deactivateStats()
+            case 2: deleteStats()
+            default: break
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard section == 0 else { return nil }
+        
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: TwoLabelsInlineTableViewHeaderView.Identifier) as? TwoLabelsInlineTableViewHeaderView else {
+            return nil
+        }
+        
+        headerView.setValues(lValue: viewModel.leftHandSideHeaderTitle, rValue: viewModel.rightHandSideHeaderTitle)
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard section == 0 else { return 0 }
+        
+        return 140
+    }
+}
+
+extension QwantTPStatsVC {
+    
+    private func deleteStats() {
+        viewModel.stats.reset()
+        updateViewDetails()
+        applyTheme()
+    }
+    
+    private func deactivateStats() {
+        let alert = UIAlertController(title: nil, message: viewModel.deactivateStatsMessage, preferredStyle: .actionSheet)
+        let confirm = UIAlertAction(title: viewModel.deactivateStatsConfirmActionTitle, style: .destructive) { [weak self] _ in
+            self?.viewModel.hasDeactivatedStats = true
+            self?.updateViewDetails()
+            self?.applyTheme()
+        }
+        let cancel = UIAlertAction(title: viewModel.deactivateStatsCancelActionTitle, style: .cancel)
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
+    }
+    
+    @objc private func reactivateStats() {
+        viewModel.hasDeactivatedStats = false
+        updateViewDetails()
+        applyTheme()
     }
 }

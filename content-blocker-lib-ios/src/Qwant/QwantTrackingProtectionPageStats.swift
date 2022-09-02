@@ -13,16 +13,18 @@ struct QwantTPPageStats {
     }
     
     init() {
-        domains = [String]();
+        domains = [String]()
     }
     
-    private init(domains: [String], host: String) {
+    private init(domains: [String], host: String, recordStat: Bool) {
         self.domains = domains + [host]
-        QwantContentBlockerStats().appendStat(for: host)
+        if recordStat {
+            QwantContentBlockerStats().appendStat(for: host)
+        }
     }
     
-    func create(host: String) -> QwantTPPageStats {
-        return QwantTPPageStats(domains: domains, host: host)
+    func create(host: String, recordStat: Bool) -> QwantTPPageStats {
+        return QwantTPPageStats(domains: domains, host: host, recordStat: recordStat)
     }
 }
 
