@@ -267,6 +267,14 @@ class QwantVIPColor {
     var switchAndButtonTint: UIColor { return UIColor(rgb: 0x0051e0) }
 }
 
+class QwantOnboardingColor {
+    var palePink: UIColor { return UIColor(rgb: 0xffd6d7) }
+    var paleBlue: UIColor { return UIColor(rgb: 0x99beff) }
+    var paleGreen: UIColor { return UIColor(rgb: 0xb3e6cc) }
+    var blackText: UIColor { return UIColor(rgb: 0x050506) }
+    var whiteText: UIColor { return .white }
+}
+
 protocol LegacyTheme {
     var name: String { get }
     var tableView: TableViewColor { get }
@@ -287,6 +295,7 @@ protocol LegacyTheme {
     var onboarding: OnboardingColor { get }
     var remotePanel: RemoteTabTrayColor { get }
     var qwantVIP: QwantVIPColor { get }
+    var qwantOnboarding: QwantOnboardingColor { get }
 }
 
 class LegacyNormalTheme: LegacyTheme {
@@ -309,4 +318,5 @@ class LegacyNormalTheme: LegacyTheme {
     var onboarding: OnboardingColor { return OnboardingColor() }
     var remotePanel: RemoteTabTrayColor { return RemoteTabTrayColor() }
     var qwantVIP: QwantVIPColor { return QwantVIPColor() }
+    var qwantOnboarding: QwantOnboardingColor { return QwantOnboardingColor() }
 }

@@ -164,6 +164,7 @@ class BrowserViewController: UIViewController {
     }
 
     fileprivate var shouldShowIntroScreen: Bool { profile.prefs.intForKey(PrefsKeys.IntroSeen) == nil }
+    fileprivate var shouldShowSecondaryIntroScreen: Bool { profile.prefs.intForKey(PrefsKeys.SecondaryIntroSeen) == nil }
 
     init(
         profile: Profile,
@@ -559,7 +560,7 @@ class BrowserViewController: UIViewController {
         // not flash before we present. This change of alpha also participates in the animation when
         // the intro view is dismissed.
         if UIDevice.current.userInterfaceIdiom == .phone {
-            self.view.alpha = (profile.prefs.intForKey(PrefsKeys.IntroSeen) != nil) ? 1.0 : 0.0
+            self.view.alpha = (profile.prefs.intForKey(PrefsKeys.IntroSeen) != nil || profile.prefs.intForKey(PrefsKeys.SecondaryIntroSeen) != nil) ? 1.0 : 0.0
         }
 
         if !displayedRestoreTabsAlert && crashedLastLaunch() {
@@ -576,6 +577,7 @@ class BrowserViewController: UIViewController {
         super.viewDidAppear(animated)
 
         presentIntroViewController()
+        presentDBOnboardingViewController()
         presentUpdateViewController()
         screenshotHelper.viewIsVisible = true
 
@@ -2229,8 +2231,9 @@ extension BrowserViewController: UIAdaptivePresentationControllerDelegate {
 
 extension BrowserViewController {
     func presentIntroViewController(_ alwaysShow: Bool = false) {
-        if alwaysShow || shouldShowIntroScreen {
-            showProperIntroVC()
+        if alwaysShow || shouldShowIntroScreen || shouldShowSecondaryIntroScreen {
+            let content: QwantIntroContent = alwaysShow || shouldShowIntroScreen ? .full : .onlyVIP
+            showProperIntroVC(content)
         }
     }
 
@@ -2250,11 +2253,9 @@ extension BrowserViewController {
         } else {
             dBOnboardingViewController.modalPresentationStyle = .popover
         }
-        dBOnboardingViewController.didFinishClosure = { controller in
-            controller.dismiss(animated: true) {
-                if self.navigationController?.viewControllers.count ?? 0 > 1 {
-                    _ = self.navigationController?.popToRootViewController(animated: true)
-                }
+        dBOnboardingViewController.goToSettings = {
+            dBOnboardingViewController.dismiss(animated: true) {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:])
             }
         }
 
@@ -2291,14 +2292,12 @@ extension BrowserViewController {
             self.setupHomepageOnBackground()
         }
     }
-
-    private func showProperIntroVC() {
-        let introViewController = QwantIntroViewController()
-        introViewController.onViewDismissed = {
+    
+    private func showProperIntroVC(_ content: QwantIntroContent) {
+        let introViewController = QwantIntroViewController(content)
+        introViewController.didFinishFlow = {
             self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
-        }
-        introViewController.didFinishClosure = { controller, fxaLoginFlow in
-            self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
+            self.profile.prefs.setInt(1, forKey: PrefsKeys.SecondaryIntroSeen)
             introViewController.dismiss(animated: true)
         }
         self.introVCPresentHelper(introViewController: introViewController)

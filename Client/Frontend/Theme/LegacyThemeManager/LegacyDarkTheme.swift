@@ -204,4 +204,5 @@ class LegacyDarkTheme: LegacyNormalTheme {
     override var onboarding: OnboardingColor { return DarkOnboardingColor() }
     override var remotePanel: RemoteTabTrayColor { return DarkRemoteTabTrayColor() }
     override var qwantVIP: QwantVIPColor { return DarkQwantVIPColor() }
+    override var qwantOnboarding: QwantOnboardingColor { return QwantOnboardingColor() }
 }
