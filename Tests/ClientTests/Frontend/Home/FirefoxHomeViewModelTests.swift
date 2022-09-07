@@ -39,4 +39,15 @@ class FirefoxHomeViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.shownSections[1], HomepageSectionType.messageCard)
         XCTAssertEqual(viewModel.shownSections[2], HomepageSectionType.customizeHome)
     }
+    
+    func testNumberOfSection_withoutUpdatingData_has3Sections_qwantUpdate() {
+        let viewModel = HomepageViewModel(profile: profile,
+                                          isPrivate: false,
+                                          tabManager: MockTabManager(),
+                                          urlBar: URLBarView(profile: profile),
+                                          theme: LightTheme())
+        XCTAssertEqual(viewModel.shownSections.count, 2)
+        XCTAssertEqual(viewModel.shownSections[0], HomepageSectionType.messageCard)
+        XCTAssertEqual(viewModel.shownSections[1], HomepageSectionType.customizeHome)
+    }
 }

@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Client.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3B43E3CF1D95C48D00BBA9DB"
+               BuildableName = "StoragePerfTests.xctest"
+               BlueprintName = "StoragePerfTests"
+               ReferencedContainer = "container:Client.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -75,10 +89,70 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "AdjustTelemetryHelperTests">
+               </Test>
+               <Test
+                  Identifier = "DefaultSearchPrefsTests">
+               </Test>
+               <Test
+                  Identifier = "FeatureFlagManagerTests">
+               </Test>
+               <Test
+                  Identifier = "FirefoxHomeViewModelTests/testNumberOfSection_withoutUpdatingData_has3Sections()">
+               </Test>
+               <Test
+                  Identifier = "JumpBackInDataAdaptorTests">
+               </Test>
+               <Test
+                  Identifier = "PocketDataAdaptorTests">
+               </Test>
+               <Test
+                  Identifier = "PocketSponsoredStoriesProviderTests">
+               </Test>
+               <Test
+                  Identifier = "PocketStoriesTests">
+               </Test>
+               <Test
+                  Identifier = "PocketStoryProviderTests">
+               </Test>
+               <Test
+                  Identifier = "PocketViewModelTests">
+               </Test>
+               <Test
+                  Identifier = "QwantSearchTests/testURIFixupPunyCode()">
+               </Test>
+               <Test
+                  Identifier = "RatingPromptManagerTests">
+               </Test>
+               <Test
+                  Identifier = "SearchEnginesTests">
+               </Test>
+               <Test
+                  Identifier = "SearchTests">
+               </Test>
+               <Test
                   Identifier = "SearchTests/testURIFixupPunyCode()">
                </Test>
                <Test
+                  Identifier = "TabManagerTests/testGetMostRecentHomePageTab_ExistingHomepage()">
+               </Test>
+               <Test
+                  Identifier = "TabManagerTests/testGetMostRecentHomePageTab_FirstPrivateCreated()">
+               </Test>
+               <Test
+                  Identifier = "TabManagerTests/testGetMostRecentHomePageTab_LastCreated()">
+               </Test>
+               <Test
+                  Identifier = "TabManagerTests/testGetMostRecentHomePageTab_LastPrivateCreated()">
+               </Test>
+               <Test
+                  Identifier = "TabManagerTests/testGetMostRecentHomePageTab_SelectingFirst()">
+               </Test>
+               <Test
                   Identifier = "TestFavicons/testFaviconFetcherParse()">
+               </Test>
+               <Test
+                  Identifier = "TopSitesDataAdaptorTests">
                </Test>
                <Test
                   Identifier = "UIPasteboardExtensionsTests">
@@ -112,16 +186,6 @@
                   Identifier = "FeatureSwitchTests">
                </Test>
             </SkippedTests>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B43E3CF1D95C48D00BBA9DB"
-               BuildableName = "StoragePerfTests.xctest"
-               BlueprintName = "StoragePerfTests"
-               ReferencedContainer = "container:Client.xcodeproj">
-            </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">

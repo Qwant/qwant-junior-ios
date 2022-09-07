@@ -487,6 +487,12 @@
 		689A58B1289D635200751CD3 /* QwantTPInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A58B0289D635200751CD3 /* QwantTPInformationVC.swift */; };
 		68AED22327EDB95D00C7A0AB /* QwantTPMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AED22227EDB95D00C7A0AB /* QwantTPMenuVC.swift */; };
 		68AED22527EDB96D00C7A0AB /* QwantTPMenuVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AED22427EDB96D00C7A0AB /* QwantTPMenuVM.swift */; };
+		68CADF0128C7318100BCD1AB /* QwantSearchEnginesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0028C7318100BCD1AB /* QwantSearchEnginesTests.swift */; };
+		68CADF0328C7336A00BCD1AB /* QwantSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0228C7336A00BCD1AB /* QwantSearchTests.swift */; };
+		68CADF0528C7350300BCD1AB /* QwantTopSitesDataAdaptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0428C7350300BCD1AB /* QwantTopSitesDataAdaptorTests.swift */; };
+		68CADF0728C789AA00BCD1AB /* QwantAdjustTelemetryHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0628C789AA00BCD1AB /* QwantAdjustTelemetryHelperTests.swift */; };
+		68CADF0928C791EB00BCD1AB /* QwantDefaultSearchPrefsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0828C791EB00BCD1AB /* QwantDefaultSearchPrefsTests.swift */; };
+		68CADF0B28C87DEE00BCD1AB /* QwantFeatureFlagManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CADF0A28C87DEE00BCD1AB /* QwantFeatureFlagManagerTests.swift */; };
 		68D81DD827CE2BE400466B80 /* QwantRatingPromptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D81DD727CE2BE400466B80 /* QwantRatingPromptManager.swift */; };
 		68D81DDA27CE5CDE00466B80 /* QwantCumulativeDaysOfUseCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D81DD927CE5CDE00466B80 /* QwantCumulativeDaysOfUseCounter.swift */; };
 		68D81DDC27CE5ED400466B80 /* QwantCumulativeDaysOfUseCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D81DDB27CE5ED400466B80 /* QwantCumulativeDaysOfUseCounterTests.swift */; };
@@ -2139,6 +2145,12 @@
 		6A5F591C28627C0100FABA92 /* TabManagerNavDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManagerNavDelegateTests.swift; sourceTree = "<group>"; };
 		6ACB550B28633860007A6ABD /* TabManagerNavDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManagerNavDelegate.swift; sourceTree = "<group>"; };
 		6ADB651A285C03B100947EA4 /* DownloadHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadHelperTests.swift; sourceTree = "<group>"; };
+		68CADF0028C7318100BCD1AB /* QwantSearchEnginesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantSearchEnginesTests.swift; sourceTree = "<group>"; };
+		68CADF0228C7336A00BCD1AB /* QwantSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantSearchTests.swift; sourceTree = "<group>"; };
+		68CADF0428C7350300BCD1AB /* QwantTopSitesDataAdaptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantTopSitesDataAdaptorTests.swift; sourceTree = "<group>"; };
+		68CADF0628C789AA00BCD1AB /* QwantAdjustTelemetryHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantAdjustTelemetryHelperTests.swift; sourceTree = "<group>"; };
+		68CADF0828C791EB00BCD1AB /* QwantDefaultSearchPrefsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantDefaultSearchPrefsTests.swift; sourceTree = "<group>"; };
+		68CADF0A28C87DEE00BCD1AB /* QwantFeatureFlagManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantFeatureFlagManagerTests.swift; sourceTree = "<group>"; };
 		68D81DD727CE2BE400466B80 /* QwantRatingPromptManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantRatingPromptManager.swift; sourceTree = "<group>"; };
 		68D81DD927CE5CDE00466B80 /* QwantCumulativeDaysOfUseCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantCumulativeDaysOfUseCounter.swift; sourceTree = "<group>"; };
 		68D81DDB27CE5ED400466B80 /* QwantCumulativeDaysOfUseCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwantCumulativeDaysOfUseCounterTests.swift; sourceTree = "<group>"; };
@@ -4472,6 +4484,7 @@
 			children = (
 				8A7A93ED2810ADF2005E7E1B /* ContileProviderTests.swift */,
 				8A33221E27DFE318008F809E /* TopSitesDataAdaptorTests.swift */,
+				68CADF0428C7350300BCD1AB /* QwantTopSitesDataAdaptorTests.swift */,
 				3B6F40171DC7849C00656CC6 /* TopSitesViewModelTests.swift */,
 				8AE80BAC2891957C00BC12EA /* TopSitesDimensionTests.swift */,
 			);
@@ -6090,6 +6103,7 @@
 				5A70EF17295E2DF400790249 /* DependencyInjection */,
 				8ACA8F722919870B00D3075D /* Helpers */,
 				8A96C4B728F9DD0600B75884 /* Extensions */,
+				68CADF0628C789AA00BCD1AB /* QwantAdjustTelemetryHelperTests.swift */,
 				CA7BD564248185B500A0A61B /* BreachAlertsTests.swift */,
 				C889D7CD2858C4B500121E1D /* ContextMenuHelperTests.swift */,
 				F84B21D91A090F8100AAB793 /* ClientTests.swift */,
@@ -6097,10 +6111,12 @@
 				3B39EDB91E16E18900EF029F /* CustomSearchEnginesTest.swift */,
 				431C0D1C25C9D76B00395CE4 /* DefaultBrowserOnboardingTests */,
 				D82ED2631FEB3C420059570B /* DefaultSearchPrefsTests.swift */,
+				68CADF0828C791EB00BCD1AB /* QwantDefaultSearchPrefsTests.swift */,
 				8A11C8122731E54800AC7318 /* DictionaryExtensionsTests.swift */,
 				6ADB651A285C03B100947EA4 /* DownloadHelperTests.swift */,
 				6A3E5D89283831D0001E706E /* DownloadQueueTests.swift */,
 				C807CCCB28367446008E6A5A /* FeatureFlagManagerTests.swift */,
+				68CADF0A28C87DEE00BCD1AB /* QwantFeatureFlagManagerTests.swift */,
 				C8D0D6F3281C231200AFAED9 /* FeatureFlagsUserPrefsMigrationUtilityTests.swift */,
 				D3D488581ABB54CD00A93597 /* FileAccessorTests.swift */,
 				E1AEC16D286E0CF500062E29 /* Frontend */,
@@ -6131,6 +6147,8 @@
 				8A5C3BC4282ABF8E003A8CCF /* RemoteTabsPanelTests.swift */,
 				28D52E081BCDF44100187A1D /* ResetTests.swift */,
 				8AE1E1DA27B1C1320024C45E /* SearchBarSettingsViewModelTests.swift */,
+				68CADF0028C7318100BCD1AB /* QwantSearchEnginesTests.swift */,
+				68CADF0228C7336A00BCD1AB /* QwantSearchTests.swift */,
 				8A04136A2825ABEA00D20B10 /* SponsoredTileTelemetryTests.swift */,
 				213B67A727CE721E000542F5 /* StartAtHomeHelperTests.swift */,
 				2F13E79A1AC0C02700D75081 /* StringExtensionsTests.swift */,
@@ -8586,6 +8604,7 @@
 			files = (
 				E4CD9F1D1A6D9C2800318571 /* WebServerTests.swift in Sources */,
 				C869916528918C8E007ACC5C /* WallpaperURLSessionMock.swift in Sources */,
+				68CADF0928C791EB00BCD1AB /* QwantDefaultSearchPrefsTests.swift in Sources */,
 				431C0D1E25C9DC4D00395CE4 /* DefaultBrowserOnboardingTests.swift in Sources */,
 				213B67A827CE721E000542F5 /* StartAtHomeHelperTests.swift in Sources */,
 				8A7653C228A2E57D00924ABF /* PocketDataAdaptorTests.swift in Sources */,
@@ -8598,6 +8617,7 @@
 				E1AEC177286E0CF500062E29 /* HistoryHighlightsViewModelTests.swift in Sources */,
 				2165B2C42860CB34004C0786 /* MockAdjustTelemetryData.swift in Sources */,
 				0BA8964B1A250E6500C1010C /* ProfileTest.swift in Sources */,
+				68CADF0528C7350300BCD1AB /* QwantTopSitesDataAdaptorTests.swift in Sources */,
 				8AE80BAF2891960300BC12EA /* MockTraitCollection.swift in Sources */,
 				8A28C628291028870078A81A /* CanRemoveQuickActionBookmarkTests.swift in Sources */,
 				03CCC9181AF05E7300DBF30D /* RelativeDatesTests.swift in Sources */,
@@ -8619,8 +8639,10 @@
 				C80C11EE28B3C8B80062922A /* WallpaperMetadataTrackerTests.swift in Sources */,
 				8AEE284B276A973400C7104D /* RatingPromptManagerTests.swift in Sources */,
 				5A9A09D828B2E8F000B6F51E /* MockHistoryDeletionProtocol.swift in Sources */,
+				68CADF0728C789AA00BCD1AB /* QwantAdjustTelemetryHelperTests.swift in Sources */,
 				6A3E5D8A283831D1001E706E /* DownloadQueueTests.swift in Sources */,
 				8AE80BB62891AEA100BC12EA /* MockDispatchGroup.swift in Sources */,
+				68CADF0B28C87DEE00BCD1AB /* QwantFeatureFlagManagerTests.swift in Sources */,
 				8AA6ADB52742B567004EEE23 /* TelemetryWrapperTests.swift in Sources */,
 				21534904288201E300FADB4D /* GleanPlumbMessageManagerTests.swift in Sources */,
 				E1390FB628B040E900C9EF3E /* WallpaperSelectorViewModelTests.swift in Sources */,
@@ -8640,12 +8662,14 @@
 				8A86DAD8277298DE00D7BFFF /* ClosedTabsStoreTests.swift in Sources */,
 				21E78A7028F9A8C500F8D687 /* MockUIDevice.swift in Sources */,
 				554867231DC3935A00183DAA /* HomePageTests.swift in Sources */,
+				68CADF0328C7336A00BCD1AB /* QwantSearchTests.swift in Sources */,
 				5F97DD5F27FB0FE800AD3C60 /* GleanTelemetryTests.swift in Sources */,
 				8ACA8F74291987AE00D3075D /* AccountSyncHandlerTests.swift in Sources */,
 				8AA7347B28AEDB3100443D24 /* PocketViewModelTests.swift in Sources */,
 				C869915728917809007ACC5C /* NetworkingMock.swift in Sources */,
 				8AED868328CA3B3400351A50 /* BookmarkPanelViewModelTests.swift in Sources */,
 				DACDE996225E537900C8F37F /* VersionSettingTests.swift in Sources */,
+				68CADF0128C7318100BCD1AB /* QwantSearchEnginesTests.swift in Sources */,
 				5A31275828906422001F30FA /* RecentlySavedDelegateMock.swift in Sources */,
 				DFA51484276103A000266AA0 /* HistoryHighlightsManagerTests.swift in Sources */,
 				8ADAFAC628AEBF6300FFEBE3 /* HomeLogoHeaderViewModelTests.swift in Sources */,

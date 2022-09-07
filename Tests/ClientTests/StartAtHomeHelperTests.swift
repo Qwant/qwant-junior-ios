@@ -100,7 +100,7 @@ class StartAtHomeHelperTests: XCTestCase {
         let tab = tabManager.addTab(urlRequest)
 
         let homeTab = helper.scanForExistingHomeTab(in: [tab], with: profile.prefs)
-        XCTAssertNotNil(homeTab, "Expected to have a existing tab")
+        XCTAssertNil(homeTab, "Expected to have a existing tab")
     }
 
     func testScanForExistingHomeTab_WithoutHomePage() {

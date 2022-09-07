@@ -7,8 +7,11 @@ import XCTest
 import WebKit
 
 class QwantExtensionsTests: XCTestCase {
+
+    var expectation: XCTestExpectation?
     
     override func tearDownWithError() throws {
+        expectation = nil
         UserDefaults.standard.setHasOpenedAppViaTheWidget(false)
     }
     
@@ -94,10 +97,15 @@ class QwantExtensionsTests: XCTestCase {
         let url = URL(string: "https://www.qwant.com?q=wikipedia")!
         let request = URLRequest(url: url)
         let webview = WKWebView()
+        webview.navigationDelegate = self
         webview.load(request)
         
         XCTAssertTrue(webview.url!.missesClientContext)
         webview.relaunchNavigationWithContext()
+
+        expectation = self.expectation(description: "WebView did finish loading, and qwantbrowser query param exist")
+        waitForExpectations(timeout: 5, handler: nil)
+
         XCTAssertFalse(webview.url!.missesClientContext)
         XCTAssertTrue(webview.url!.absoluteString.contains("qwantbrowser"))
     }
@@ -107,10 +115,15 @@ class QwantExtensionsTests: XCTestCase {
         let url = URL(string: "https://www.qwant.com?q=wikipedia")!
         let request = URLRequest(url: url)
         let webview = WKWebView()
+        webview.navigationDelegate = self
         webview.load(request)
         
         XCTAssertTrue(webview.url!.missesClientContext)
         webview.relaunchNavigationWithContext()
+
+        expectation = self.expectation(description: "WebView did finish loading, and qwantwidget query param exist")
+        waitForExpectations(timeout: 5, handler: nil)
+
         XCTAssertFalse(webview.url!.missesClientContext)
         XCTAssertTrue(webview.url!.absoluteString.contains("qwantwidget"))
     }
@@ -234,5 +247,12 @@ class QwantExtensionsTests: XCTestCase {
         XCTAssertNil(URL(string: "https://www.qwantjunior.com/?q=&client=qwantbrowser")!.qwantSearchTerm)
         XCTAssertNil(URL(string: "https://www.qwnt.com/?q=&client=qwantbrowser")!.qwantSearchTerm)
         XCTAssertNil(URL(string: "https://www.wikipedia.com/?q=&client=qwantbrowser")!.qwantSearchTerm)
+    }
+}
+
+extension QwantExtensionsTests: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        expectation?.fulfill()
     }
 }

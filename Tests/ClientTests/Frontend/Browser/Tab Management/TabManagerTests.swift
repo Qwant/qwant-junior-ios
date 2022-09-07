@@ -308,10 +308,11 @@ class TabManagerTests: XCTestCase {
         manager.willSwitchTabMode(leavingPBM: false)
         XCTAssertEqual(manager.privateTabs.count, 1, "There should be 1 private tab")
         manager.willSwitchTabMode(leavingPBM: true)
+        manager.selectTab(manager.addTab())
         XCTAssertEqual(manager.privateTabs.count, 0, "There should be 0 private tab")
 
         removeTabAndAssert(tab: tab) {
-            XCTAssertEqual(self.manager.normalTabs.count, 1, "There should be 1 normal tab")
+            XCTAssertEqual(self.manager.normalTabs.count, 2, "There should be 2 normal tab")
         }
     }
 
