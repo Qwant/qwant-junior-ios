@@ -48,6 +48,8 @@ class ConnectSetting: WithoutAccountSetting {
         cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
         cell.imageView?.layer.masksToBounds = true
     }
+    
+    override var hidden: Bool { return true }
 }
 
 // MARK: - SyncNowSetting
@@ -163,7 +165,7 @@ class SyncNowSetting: WithAccountSetting {
         return attributedString
     }
 
-    override var hidden: Bool { return !enabled }
+    override var hidden: Bool { return true }
 
     override var enabled: Bool {
         get {
@@ -377,6 +379,8 @@ class AccountStatusSetting: WithAccountSetting {
             }
         }
     }
+    
+    override var hidden: Bool { return true }
 }
 
 // MARK: - Hidden Settings
@@ -757,6 +761,8 @@ class YourRightsSetting: Setting {
     override func onClick(_ navigationController: UINavigationController?) {
         setUpAndPushSettingsContentViewController(navigationController, self.url)
     }
+    
+    override var hidden: Bool { return true }
 }
 
 // Opens the on-boarding screen again
@@ -797,6 +803,8 @@ class SendFeedbackSetting: Setting {
     override func onClick(_ navigationController: UINavigationController?) {
         setUpAndPushSettingsContentViewController(navigationController, self.url)
     }
+    
+    override var hidden: Bool { return true }
 }
 
 class SendAnonymousUsageDataSetting: BoolSetting {
@@ -809,18 +817,18 @@ class SendAnonymousUsageDataSetting: BoolSetting {
         super.init(
             prefs: prefs,
             prefKey: AppConstants.PrefSendUsageData,
-            defaultValue: true,
+            defaultValue: false,
             attributedTitleText: NSAttributedString(string: .SendUsageSettingTitle),
             attributedStatusText: statusText,
-            settingDidChange: {
-                AdjustHelper.setEnabled($0)
-                Glean.shared.setUploadEnabled($0)
-                Experiments.setTelemetrySetting($0)
+            settingDidChange: { _ in
+                AdjustHelper.setEnabled(false)
+                Glean.shared.setUploadEnabled(false)
+                Experiments.setTelemetrySetting(false)
             }
         )
         // We make sure to set this on initialization, in case the setting is turned off
         // in which case, we would to make sure that users are opted out of experiments
-        Experiments.setTelemetrySetting(prefs.boolForKey(AppConstants.PrefSendUsageData) ?? true)
+        Experiments.setTelemetrySetting(prefs.boolForKey(AppConstants.PrefSendUsageData) ?? false)
     }
 
     override var accessibilityIdentifier: String? { return "SendAnonymousUsageData" }
@@ -832,6 +840,8 @@ class SendAnonymousUsageDataSetting: BoolSetting {
     override func onClick(_ navigationController: UINavigationController?) {
         setUpAndPushSettingsContentViewController(navigationController, self.url)
     }
+    
+    override var hidden: Bool { return true }
 }
 
 class StudiesToggleSetting: BoolSetting {
@@ -844,16 +854,16 @@ class StudiesToggleSetting: BoolSetting {
         super.init(
             prefs: prefs,
             prefKey: AppConstants.PrefStudiesToggle,
-            defaultValue: true,
+            defaultValue: false,
             attributedTitleText: NSAttributedString(string: .SettingsStudiesToggleTitle),
             attributedStatusText: statusText,
-            settingDidChange: {
-                Experiments.setStudiesSetting($0)
+            settingDidChange: { _ in 
+                Experiments.setStudiesSetting(false)
             }
         )
         // We make sure to set this on initialization, in case the setting is turned off
         // in which case, we would to make sure that users are opted out of experiments
-        Experiments.setStudiesSetting(prefs.boolForKey(AppConstants.PrefStudiesToggle) ?? true)
+        Experiments.setStudiesSetting(prefs.boolForKey(AppConstants.PrefStudiesToggle) ?? false)
     }
 
     override var accessibilityIdentifier: String? { return "StudiesToggle" }
@@ -865,6 +875,8 @@ class StudiesToggleSetting: BoolSetting {
     override func onClick(_ navigationController: UINavigationController?) {
         setUpAndPushSettingsContentViewController(navigationController, self.url)
     }
+
+    override var hidden: Bool { return true }
 }
 
 // Opens the SUMO page in a new tab
@@ -876,7 +888,7 @@ class OpenSupportPageSetting: Setting {
 
     override func onClick(_ navigationController: UINavigationController?) {
         navigationController?.dismiss(animated: true) {
-            if let url = URL(string: "https://support.mozilla.org/products/ios") {
+            if let url = URL(string: "https://help.qwant.com/help/qwant-mobile/") {
                 self.delegate?.settingsOpenURLInNewTab(url)
             }
         }
@@ -951,7 +963,7 @@ class LoginsSetting: Setting {
 
         if AppAuthenticator.canAuthenticateDeviceOwner() {
             if LoginOnboarding.shouldShow() {
-                let loginOnboardingViewController = LoginOnboardingViewController(profile: profile, tabManager: tabManager)
+                let loginOnboardingViewController = QwantLoginOnboardingViewController(profile: profile, tabManager: tabManager)
 
                 loginOnboardingViewController.doneHandler = {
                     loginOnboardingViewController.dismiss(animated: true)
@@ -984,7 +996,7 @@ class LoginsSetting: Setting {
                     }
             }
         } else {
-            let viewController = DevicePasscodeRequiredViewController()
+            let viewController = QwantDevicePasscodeRequiredViewController()
             viewController.profile = profile
             viewController.tabManager = tabManager
             navigationController?.pushViewController(viewController, animated: true)
@@ -1005,7 +1017,7 @@ class ContentBlockerSetting: Setting {
     }
 
     override func onClick(_ navigationController: UINavigationController?) {
-        let viewController = ContentBlockerSettingViewController(prefs: profile.prefs)
+        let viewController = QwantContentBlockerSettingViewController(prefs: profile.prefs)
         viewController.profile = profile
         viewController.tabManager = tabManager
         navigationController?.pushViewController(viewController, animated: true)
@@ -1061,7 +1073,7 @@ class PrivacyPolicySetting: Setting {
     }
 
     override var url: URL? {
-        return URL(string: "https://www.mozilla.org/privacy/firefox/")
+        return URL(string: "https://about.qwant.com/legal/privacy/")
     }
 
     override func onClick(_ navigationController: UINavigationController?) {
@@ -1076,7 +1088,7 @@ class ChinaSyncServiceSetting: Setting {
     let profile: Profile
     let settings: UIViewController
 
-    override var hidden: Bool { return !AppInfo.isChinaEdition }
+    override var hidden: Bool { return true }
 
     override var title: NSAttributedString? {
         return NSAttributedString(string: "本地同步服务",
@@ -1314,9 +1326,7 @@ class AdvancedAccountSetting: HiddenSetting {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    override var hidden: Bool {
-        return !ShowDebugSettings || profile.hasAccount()
-    }
+    override var hidden: Bool { return true }
 }
 
 class ThemeSetting: Setting {

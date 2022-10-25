@@ -86,7 +86,7 @@ class TelemetryWrapper: TelemetryWrapperProtocol {
         telemetryConfig.userDefaultsSuiteName = AppInfo.sharedContainerIdentifier
         telemetryConfig.dataDirectory = .cachesDirectory
         telemetryConfig.updateChannel = AppConstants.BuildChannel.rawValue
-        let sendUsageData = profile.prefs.boolForKey(AppConstants.PrefSendUsageData) ?? true
+        let sendUsageData = profile.prefs.boolForKey(AppConstants.PrefSendUsageData) ?? false
         telemetryConfig.isCollectionEnabled = sendUsageData
         telemetryConfig.isUploadEnabled = sendUsageData
 
@@ -166,6 +166,11 @@ class TelemetryWrapper: TelemetryWrapperProtocol {
     }
 
     func initGlean(_ profile: Profile, sendUsageData: Bool) {
+        
+        if !sendUsageData {
+            return
+        }
+        
         // Get the legacy telemetry ID and record it in Glean for the deletion-request ping
         if let uuidString = UserDefaults.standard.string(forKey: "telemetry-key-prefix-clientId"), let uuid = UUID(uuidString: uuidString) {
             GleanMetrics.LegacyIds.clientId.set(uuid)
@@ -650,7 +655,7 @@ extension TelemetryWrapper {
     }
 
     public static func recordEvent(category: EventCategory, method: EventMethod, object: EventObject, value: EventValue? = nil, extras: [String: Any]? = nil) {
-        Telemetry.default.recordEvent(category: category.rawValue, method: method.rawValue, object: object.rawValue, value: value?.rawValue ?? "", extras: extras)
+//        Telemetry.default.recordEvent(category: category.rawValue, method: method.rawValue, object: object.rawValue, value: value?.rawValue ?? "", extras: extras)
 
         gleanRecordEvent(category: category, method: method, object: object, value: value, extras: extras)
     }

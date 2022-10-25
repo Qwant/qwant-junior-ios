@@ -25,15 +25,15 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
 
     var isWallpaperSectionEnabled: Bool {
         return wallpaperManager.canSettingsBeShown &&
-            featureFlags.isFeatureEnabled(.wallpapers, checking: .buildOnly)
+            featureFlags.isFeatureEnabled(.wallpapers, checking: .buildOnly) && false
     }
 
     var isPocketSectionEnabled: Bool {
-        return featureFlags.isFeatureEnabled(.pocket, checking: .buildOnly)
+        return featureFlags.isFeatureEnabled(.pocket, checking: .buildOnly) && false
     }
 
     var isPocketSponsoredStoriesEnabled: Bool {
-        return featureFlags.isFeatureEnabled(.sponsoredPocket, checking: .buildOnly)
+        return featureFlags.isFeatureEnabled(.sponsoredPocket, checking: .buildOnly) && false
     }
 
     var isHistoryHighlightsSectionEnabled: Bool {
@@ -126,7 +126,7 @@ class HomePageSettingViewController: SettingsTableViewController, FeatureFlaggab
         // This sets whether the cell is enabled or not, and not the setting itself.
         pocketSponsoredSetting.enabled = featureFlags.isFeatureEnabled(
             .pocket,
-            checking: .buildAndUser)
+            checking: .buildAndUser) && false
 
         let pocketSetting = BoolSetting(
             with: .pocket,

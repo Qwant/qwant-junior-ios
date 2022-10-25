@@ -104,7 +104,7 @@ class SyncDataDisplay {
         self.contentHandler = contentHandler
         self.notificationContent = content
         self.tabQueue = tabQueue
-        SentryIntegration.shared.setup(sendUsageData: true)
+        SentryIntegration.shared.setup(sendUsageData: false)
     }
 
     func displayNotification(_ message: PushMessage? = nil, profile: ExtensionProfile?, with error: PushMessageError? = nil) {

@@ -172,8 +172,8 @@ public class SentryIntegration: SentryProtocol {
             return
         }
 
-        let event = makeEvent(message: message, tag: tag.rawValue, severity: severity, extra: extraEvents)
-        captureEvent(event: event)
+//        let event = makeEvent(message: message, tag: tag.rawValue, severity: severity, extra: extraEvents)
+//        captureEvent(event: event)
     }
 
     public func addAttributes(_ attributes: [String: Any]) {

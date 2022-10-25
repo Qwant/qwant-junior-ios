@@ -40,7 +40,7 @@ features:
             "status": true
           },
           "report-site-issue": {
-            "status": true
+            "status": false
           },
           "shake-to-restore": {
             "status": true
@@ -52,7 +52,7 @@ features:
             "status": true
           },
           "report-site-issue": {
-            "status": true
+            "status": false
           },
           "shake-to-restore": {
             "status": true
@@ -91,12 +91,12 @@ features:
       - channel: beta
         value: {
           "upgrade-flow": false,
-          "first-run-flow": true
+          "first-run-flow": false
         }
       - channel: developer
         value: {
           "upgrade-flow": false,
-          "first-run-flow": true
+          "first-run-flow": false
         }
   spotlight-search:
     description: Add pages as items findable with Spotlight.
@@ -179,7 +179,7 @@ features:
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true
+            "pocket": false
           }
       sponsored-tiles:
         description: >
@@ -188,8 +188,8 @@ features:
         type: SponsoredTiles
         default:
           {
-            "status": true,
-            "max-number-of-tiles": 2
+            "status": false,
+            "max-number-of-tiles": 0
           }
       pocket-sponsored-stories:
         description: >
@@ -202,7 +202,7 @@ features:
           This property defines whether the synced tab card
           appears on the homepage in the jump back in section.
         type: Boolean
-        default: true
+        default: false
     defaults:
       - channel: developer
         value: {
@@ -211,17 +211,17 @@ features:
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true
+            "pocket": false
           },
           "sponsored-tiles": {
-            "status": true,
-            "max-number-of-tiles": 2
+            "status": false,
+            "max-number-of-tiles": 0
           },
           "wallpaper-feature": {
-            "status": true
+            "status": false
           },
-          "pocket-sponsored-stories": true,
-          "jump-back-in-synced-tab": true
+          "pocket-sponsored-stories": false,
+          "jump-back-in-synced-tab": false
         }
       - channel: beta
         value: {
@@ -230,17 +230,17 @@ features:
             "jump-back-in": true,
             "recently-saved": true,
             "recent-explorations": true,
-            "pocket": true
+            "pocket": false
           },
           "sponsored-tiles": {
-            "status": true,
-            "max-number-of-tiles": 1
+            "status": false,
+            "max-number-of-tiles": 0
           },
           "wallpaper-feature": {
-            "status": true
+            "status": false
           },
           "pocket-sponsored-stories": false,
-          "jump-back-in-synced-tab": true
+          "jump-back-in-synced-tab": false
         }
   search-term-groups-feature:
     description: The feature that controls whether or not search term groups are enabled.
@@ -287,22 +287,22 @@ features:
         type: Map<ContextualHint, Boolean>
         default:
         {
-          "jump-back-in-synced-tab-contextual-hint": true,
+          "jump-back-in-synced-tab-contextual-hint": false,
           "toolbar-hint": false
         }
     defaults:
       - channel: developer
         value: {
           "features-enabled": {
-            "jump-back-in-synced-tab-contextual-hint": true,
-            "toolbar-hint": true
+            "jump-back-in-synced-tab-contextual-hint": false,
+            "toolbar-hint": false
           }
         }
       - channel: beta
         value: {
           "features-enabled": {
-            "jump-back-in-synced-tab-contextual-hint": true,
-            "toolbar-hint": true
+            "jump-back-in-synced-tab-contextual-hint": false,
+            "toolbar-hint": false
           }
         }
 
@@ -404,7 +404,7 @@ features:
               title: Default Browser/DefaultBrowserCard.Title
               text: Default Browser/DefaultBrowserCard.Description
               action: "MAKE_DEFAULT_BROWSER_WITH_TUTORIAL"
-              trigger: ["I_AM_NOT_DEFAULT_BROWSER", "SUPPORTS_DEFAULT_BROWSER"]
+              trigger: ["I_AM_NOT_DEFAULT_BROWSER", "SUPPORTS_DEFAULT_BROWSER", "NEVER"]
               style: "FALLBACK"
               button-label: Default Browser/DefaultBrowserCard.Button.v2
 
@@ -416,13 +416,13 @@ features:
         type: WallpaperConfiguration
         default:
           {
-            "status": true,
+            "status": false,
             "version": v1,
           }
       onboarding-sheet:
         description: This property defines whether the wallpaper onboarding is shown or not
         type: Boolean
-        default: true
+        default: false
     defaults:
       - channel: beta
         value: {
@@ -430,7 +430,7 @@ features:
             "status": true,
             "version": v1,
           },
-          "onboarding-sheet": true
+          "onboarding-sheet": false
         }
       - channel: developer
         value: {
@@ -438,7 +438,7 @@ features:
             "status": true,
             "version": v1,
           },
-          "onboarding-sheet": true
+          "onboarding-sheet": false
         }
   share-sheet:
     description: This feature define the redesign of the share sheet
@@ -542,7 +542,7 @@ types:
         max-number-of-tiles:
           type: Int
           description: The maximum number of sponsored tiles a user can see
-          default: 2
+          default: 0
 
     MessageData:
       description: >

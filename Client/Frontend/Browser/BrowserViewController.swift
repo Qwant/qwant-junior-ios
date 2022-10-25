@@ -2280,9 +2280,8 @@ extension BrowserViewController {
     }
 
     private func showProperIntroVC() {
-        let introViewModel = IntroViewModel()
-        let introViewController = IntroViewController(viewModel: introViewModel, profile: profile)
-        introViewController.didFinishFlow = {
+        let introViewController = QwantDefaultBrowserOnboardingViewController()
+        introViewController.didFinishClosure = { controller, fxaLoginFlow in
             self.profile.prefs.setInt(1, forKey: PrefsKeys.IntroSeen)
             introViewController.dismiss(animated: true)
         }
@@ -2293,8 +2292,8 @@ extension BrowserViewController {
         // On iPad we present it modally in a controller
         if topTabsVisible {
             introViewController.preferredContentSize = CGSize(
-                width: ViewControllerConsts.PreferredSize.IntroViewController.width,
-                height: ViewControllerConsts.PreferredSize.IntroViewController.height)
+                width: ViewControllerConsts.PreferredSize.QwantDefaultBrowserOnboardingViewController.width,
+                height: ViewControllerConsts.PreferredSize.QwantDefaultBrowserOnboardingViewController.height)
             introViewController.modalPresentationStyle = .formSheet
         } else {
             introViewController.modalPresentationStyle = .fullScreen

@@ -5,6 +5,15 @@
 import UIKit
 import Shared
 
+class QwantLoginOnboardingViewController: LoginOnboardingViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let learnMoreButton = self.view.subviews.first(where: { ($0 as? UIButton)?.titleLabel?.text == .LoginsOnboardingLearnMoreButtonTitle })
+        learnMoreButton?.removeFromSuperview()
+    }
+}
+
 class LoginOnboardingViewController: SettingsViewController {
     private var shownFromAppMenu: Bool = false
 

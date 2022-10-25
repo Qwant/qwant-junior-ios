@@ -4574,3 +4574,44 @@ extension String {
         value: "Connection is not secure",
         comment: "This is the value for a label that indicates if a user is on an unencrypted website.")
 }
+
+extension String {
+    // Home screen
+    public static let RecentlyVisitedRemoveButtonTitle = MZLocalizedString(
+        "ActivityStream.RecentlyVisited.RemoveButton.Title",
+        tableName: nil,
+        value: "Remove",
+        comment: "When long pressing an item in the Recently Visited section, this is the title of the button that appears, letting the user know to remove that particular item from the menu.")
+}
+
+// MARK: - Qwant extension
+extension String {
+    
+    public struct QwantDefaultBrowser {
+        public static let DefaultBrowserTitle1 = MZLocalizedString(
+            "DefaultBrowserOnboarding.Qwant.Title1",
+            tableName: "Default Browser",
+            value: "Make the Qwant app",
+            comment: "First part of the title to help users understand that they can set Qwant as their default browser.")
+        public static let DefaultBrowserTitle2 = MZLocalizedString(
+            "DefaultBrowserOnboarding.Qwant.Title2",
+            tableName: "Default Browser",
+            value: "your default browser",
+            comment: "Second part of the title to help users understand that they can set Qwant as their default browser.")
+        public static let DefaultBrowserDescription = MZLocalizedString(
+            "DefaultBrowserOnboarding.Qwant.Description",
+            tableName: "Default Browser",
+            value: "Set links to open automatically in Qwant!",
+            comment: "Description to help users understand that they can set Qwant as their default browser.")
+        public static let DefaultBrowserButtonSettings = MZLocalizedString(
+            "DefaultBrowserOnboarding.Qwant.ButtonSettings",
+            tableName: "Default Browser",
+            value: "Go to Settings",
+            comment: "Button string to open settings that allows user to switch their default browser to Qwant.")
+        public static let DefaultBrowserButtonIgnore = MZLocalizedString(
+            "DefaultBrowserOnboarding.Qwant.ButtonIgnore",
+            tableName: "Default Browser",
+            value: "Ignore",
+            comment: "Button string to ignore the default browser capability.")
+    }
+}

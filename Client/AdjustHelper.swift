@@ -77,7 +77,7 @@ final class AdjustHelper: FeatureFlaggable {
 
     /// Return true if retention (session) tracking should be enabled. This follows the Send Anonymous Usage Data setting.
     private var shouldTrackRetention: Bool {
-        return profile.prefs.boolForKey(AppConstants.PrefSendUsageData) ?? true
+        return profile.prefs.boolForKey(AppConstants.PrefSendUsageData) ?? false
     }
 
     // MARK: - UserDefaults
