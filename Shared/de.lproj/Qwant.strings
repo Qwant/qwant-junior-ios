@@ -1,8 +1,8 @@
 /* Title to help users understand that they can set Qwant as their default browser. */
-"DefaultBrowserOnboarding.Qwant.Title" = "Make the Qwant app your default browser";
+"DefaultBrowserOnboarding.Qwant.Title" = "Make the Qwant Junior app your default browser";
 
 /* Description to help users understand that they can set Qwant as their default browser. */
-"DefaultBrowserOnboarding.Qwant.Description" = "Set links to open automatically in Qwant!";
+"DefaultBrowserOnboarding.Qwant.Description" = "Set links to open automatically in Qwant Junior!";
 
 /* Button string to open settings that allows user to switch their default browser to Qwant. */
 "DefaultBrowserOnboarding.Qwant.ButtonSettings" = "Go to Settings";
@@ -26,7 +26,7 @@
 "Qwant.Intro.General.Later" = "Später";
 
 /* Title for the first panel 'Welcome' in the First Run tour. */
-"Qwant.Intro.Welcome.Title" = "Willkommen bei Qwant, lieber Anonymus";
+"Qwant.Intro.Welcome.Title" = "Willkommen bei Qwant Junior, lieber Anonymus";
 
 /* Subtitle for the first panel 'Welcome' in the First Run tour. */
 "Qwant.Intro.Welcome.Subtitle" = "Hier können Sie völlig sicher und anonym suchen:";
@@ -50,10 +50,10 @@
 "Qwant.Intro.QwantVIP.Bullet2" = "Blockieren von Trackern, endlich Freiheit!";
 
 /* Title for the third panel 'Default Browser' in the First Run tour. */
-"Qwant.Intro.DefaultBrowser.Title" = "Wählen Sie Qwant als Standard-Browser-App aus";
+"Qwant.Intro.DefaultBrowser.Title" = "Wählen Sie Qwant Junior als Standard-Browser-App aus";
 
 /* Subtitle for the third panel 'Default Browser' in the First Run tour. */
-"Qwant.Intro.DefaultBrowser.Subtitle" = "Alle Links, die Sie anklicken, werden automatisch in der Qwant-App geöffnet.";
+"Qwant.Intro.DefaultBrowser.Subtitle" = "Alle Links, die Sie anklicken, werden automatisch in der Qwant Junior-App geöffnet.";
 
 /* Bullet point #1 for the third panel 'Default Browser' in the First Run tour. */
 "Qwant.Intro.DefaultBrowser.Bullet1" = "1. Öffnen Sie die **Einstellungen**";
@@ -62,7 +62,7 @@
 "Qwant.Intro.DefaultBrowser.Bullet2" = "2. Wählen Sie **Standard-Browser-App**";
 
 /* Bullet point #3 for the third panel 'Default Browser' in the First Run tour. */
-"Qwant.Intro.DefaultBrowser.Bullet3" = "3. Wählen Sie **Qwant**";
+"Qwant.Intro.DefaultBrowser.Bullet3" = "3. Wählen Sie **Qwant Junior**";
 
 /* Header - SSL Cert status when the connection is secured */
 "Qwant.TrackingProtection.ConnectionSecure" = "Verbindung ist sicher";
