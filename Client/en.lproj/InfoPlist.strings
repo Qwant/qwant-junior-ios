@@ -1,8 +1,8 @@
 
 NSLocationWhenInUseUsageDescription = "Websites you visit may request your location.";
 NSPhotoLibraryAddUsageDescription = "This lets you save photos.";
-NSCameraUsageDescription = "Qwant uses your camera to scan QR codes and take photos and video.";
-NSMicrophoneUsageDescription = "Qwant uses your microphone to record and upload audio.";
+NSCameraUsageDescription = "Qwant Junior uses your camera to scan QR codes and take photos and video.";
+NSMicrophoneUsageDescription = "Qwant Junior uses your microphone to record and upload audio.";
 "New Tab" = "New Tab";
 "New Private Tab" = "New Private Tab";
 "Scan QR Code" = "Scan QR Code";
